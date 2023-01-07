@@ -1,0 +1,18 @@
+services:
+  emberstone:
+    user: 1000:1000
+    build: 
+      context: .
+      dockerfile: ./build/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - SQLITE_LOCATION=/app/database
+    volumes:
+      - database:/app/database
+
+volumes:
+  database:
+  
