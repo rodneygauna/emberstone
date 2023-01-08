@@ -1,0 +1,3988 @@
+,"Please note that for the numeric code values listed below, hierarchical code placeholders are used. These placeholders are not themselves valid codes used for data entry. Instead they are used as section titles for code groups and are intended for use in automated pick-lists and database groupings used by data analysts. They should never be allowed as valid choices for data entry and will be rejected as invalid by the NFIRS 5.0 edits. Some examples of code placeholders are ""1 Fire"" and ""10 Fire, other"" in the Incident Type field listing below."
+,
+ ,LOCATION TYPE
+1,Street address
+2,Intersection
+3,In front of
+4,Rear of
+5,Adjacent to
+6,Directions
+7,US National Grid
+,
+,STREET PREFIX OR STREET SUFFIX
+E,East
+N,North
+S,South
+W,West
+NE,Northeast
+NW,Northwest
+SE,Southeast
+SW,Southwest
+,
+,STREET TYPE
+ALY,Alley
+ANX,Annex
+ARC,Arcade
+AVE,Avenue
+BCH,Beach
+BND,Bend
+BLF,Bluff
+BLFS,Bluffs
+BTM,Bottom
+BLVD,Boulevard
+BR,Branch
+BRG,Bridge
+BRK,Brook
+BRKS,Brooks
+BG,Burg
+BGS,Burgs
+BYP,Bypass
+CP,Camp
+CYN,Canyon
+CPE,Cape
+CSWY,Causeway
+CTR,Center
+CTRS,Centers
+CIR,Circle
+CIRS,Circles
+CLF,Cliff
+CLFS,Cliffs
+CLB,Club
+CMN,Common
+CMNS,Commons
+COR,Corner
+CORS,Corners
+CT,Court
+CTS,Courts
+CV,Cove
+CVS,Coves
+CRK,Creek
+CRES,Crescent
+CRST,Crest
+XING,Crossing
+XRD,Crossroad
+XRDS,Crossroads
+CURV,Curve
+DL,Dale
+DM,Dam
+DV,Divide
+DR,Drive
+DRS,Drives
+EST,Estate
+ESTS,Estates
+EXPY,Expressway
+EXT,Extension
+EXTS,Extensions
+FALL,Fall
+FLS,Falls
+FRY,Ferry
+FLD,Field
+FLDS,Fields
+FLT,Flat
+FLTS,Flats
+FRD,Ford
+FRDS,Fords
+FRST,Forest
+FRG,Forge
+FRGS,Forges
+FRK,Fork
+FRKS,Forks
+FT,Fort
+FWY,Freeway
+GDN,Garden
+GDNS,Gardens
+GTWY,Gateway
+GLN,Glen
+GLNS,Glens
+GRN,Green
+GRNS,Greens
+GRV,Grove
+GRVS,Groves
+HBR,Harbor
+HBRS,Harbors
+HVN,Haven
+HTS,Heights
+HWY,Highway
+HL,Hill
+HLS,Hills
+HOLW,Hollow
+INLT,Inlet
+IS,Island
+ISS,Islands
+ISLE,Isle
+JCT,Junction
+JCTS,Junctions
+KY,Key
+KYS,Keys
+KNL,Knoll
+KNLS,Knolls
+LK,Lake
+LKS,Lakes
+LNDG,Landing
+LN,Lane
+LGT,Light
+LGTS,Lights
+LF,Loaf
+LCK,Lock
+LCKS,Locks
+LDG,Lodge
+LOOP,Loop
+MALL,Mall
+MNR,Manor
+MNRS,Manors
+MDW,Meadow
+MDWS,Meadows
+MEWS,Mews
+ML,Mill
+MLS,Mills
+MSN,Mission
+MTWY,Motorway
+MT,Mount
+MTN,Mountain
+MTNS,Mountains
+NCK,Neck
+ORCH,Orchard
+OVAL,Oval
+PARK,Park
+PKY,Parkway
+PKYS,Parkways
+PASS,Pass
+PSGE,Passage
+PATH,Path
+PIKE,Pike
+PNE,Pine
+PNES,Pines
+PL,Place
+PLZ,Plaza
+PT,Point
+PTS,Points
+PRT,Port
+PRTS,Ports
+PR,Prairie
+RADL,Radial
+RAMP,Ramp
+RNCH,Ranch
+RPD,Rapid
+RPDS,Rapids
+RST,Rest
+RDG,Ridge
+RDGS,Ridges
+RIV,River
+RD,Road
+RDS,Roads
+RT,Route
+ROW,Row
+RUE,Rue
+RUN,Run
+SHL,Shoal
+SHLS,Shoals
+SHR,Shore
+SHRS,Shores
+SKWY,Skyway
+SPG,Spring
+SPGS,Springs
+SPUR,Spur
+SPRS,Spurs
+SQ,Square
+SQS,Squares
+STA,Station
+STRA,Stravenue
+STRM,Stream
+ST,Street
+STS,Streets
+SMT,Summit
+TER,Terrace
+TRWY,Throughway
+TRCE,Trace
+TRAK,Track
+TRFY,Trafficway
+TRL,Trail
+TRLR,Trailer
+TUNL,Tunnel
+TPKE,Turnpike
+UPAS,Underpass
+UN,Union
+UNS,Unions
+VLY,Valley
+VLYS,Valleys
+VIA,Viaduct
+VW,View
+VWS,Views
+VLG,Village
+VLGS,Villages
+VL,Ville
+VIS,Vista
+WALK,Walk
+WALK,Walks
+WALL,Wall
+WAY,Way
+WL,Well
+WLS,Wells
+,
+,"STATE, U. S. TERRITORY ABBREVIATIONS"
+AL,Alabama
+AK,Alaska
+AZ,Arizona
+AR,Arkansas
+CA,California
+CO,Colorado
+CT,Connecticut
+DE,Delaware
+DC,District of Columbia
+FL,Florida
+GA,Georgia
+HI,Hawaii
+ID,Idaho
+IL,Illinois
+IN,Indiana
+IA,Iowa
+KS,Kansas
+KY,Kentucky
+LA,Louisiana
+ME,Maine
+MD,Maryland
+MA,Massachusetts
+MI,Michigan
+MN,Minnesota
+MS,Mississippi
+MO,Missouri
+MT,Montana
+NE,Nebraska
+NV,Nevada
+NH,New Hampshire
+NJ,New Jersey
+NM,New Mexico
+NY,New York
+NC,North Carolina
+ND,North Dakota
+OH,Ohio
+OK,Oklahoma
+OR,Oregon
+PA,Pennsylvania
+RI,Rhode Island
+SC,South Carolina
+SD,South Dakota
+TN,Tennessee
+TX,Texas
+UT,Utah
+VT,Vermont
+VA,Virginia
+WA,Washington
+WV,West Virginia
+WI,Wisconsin
+WY,Wyoming
+AS,American Samoa
+CZ,Canal Zone
+DD,Department of Defense
+GU,Guam
+FM,Federated States of Micronesia
+MH,Marshall Islands
+MP,Northern Mariana Islands
+PW,Palau
+PR,Puerto Rico
+UM,US Minor Outlying Islands
+NA,Native American Tribal Authority
+VI,Virgin Islands
+OO,Other
+,
+,INCIDENT TYPE
+1,Fire
+10,"Fire, other"
+100,"Fire, other"
+11,Structure Fire
+110,"Structure fire, other (conversion only)"
+111,Building fire
+112,Fires in structure other than in a building
+113,"Cooking fire, confined to container"
+114,"Chimney or flue fire, confined to chimney or flue"
+115,"Incinerator overload or malfunction, fire confined"
+116,"Fuel burner/boiler malfunction, fire confined"
+117,"Commercial Compactor fire, confined to rubbish"
+118,"Trash or rubbish fire, contained"
+12,Fire in mobile property used as a fixed structure
+120,"Fire in mobile prop. used as a fixed struc., other"
+121,Fire in mobile home used as fixed residence
+122,"Fire in motor home, camper, recreational vehicle"
+123,"Fire in portable building, fixed location"
+13,Mobile property (vehicle) fire
+130,"Mobile property (vehicle) fire, other"
+131,Passenger vehicle fire
+132,Road freight or transport vehicle fire
+133,Rail vehicle fire
+134,Water vehicle fire
+135,Aircraft fire
+136,Self-propelled motor home or recreational vehicle
+137,Camper or recreational vehicle (RV) fire
+138,Off-road vehicle or heavy equipment fire
+14,Natural vegetation fire
+140,"Natural vegetation fire, other"
+141,"Forest, woods or wildland fire"
+142,Brush or brush-and-grass mixture fire
+143,Grass fire
+15,Outside rubbish fire
+150,"Outside rubbish fire, other"
+151,"Outside rubbish, trash or waste fire"
+152,Garbage dump or sanitary landfill fire
+153,Construction or demolition landfill fire
+154,Dumpster or other outside trash receptacle fire
+155,Outside stationary compactor/compacted trash fire
+16,Special outside fire
+160,"Special outside fire, other"
+161,Outside storage fire
+162,Outside equipment fire
+163,Outside gas or vapor combustion explosion
+164,Outside mailbox fire
+17,"Cultivated vegetation, crop fire"
+170,"Cultivated vegetation, crop fire, other"
+171,Cultivated grain or crop fire
+172,Cultivated orchard or vineyard fire
+173,Cultivated trees or nursery stock fire
+,
+2,"Overpressure Rupture, Explosion, Overheat(no fire)"
+20,"Overpressure rupture, explosion, overheat, other"
+200,"Overpressure rupture, explosion, overheat other"
+21,Overpressure rupture from steam (no ensuing fire)
+210,"Overpressure rupture from steam, other"
+211,Overpressure rupture of steam pipe or pipeline
+212,Overpressure rupture of steam boiler
+213,Steam rupture of pressure or process vessel
+22,Overpressure rupture from air or gas (no fire)
+220,"Overpressure rupture from air or gas, other"
+221,Overpressure rupture of air or gas pipe/pipeline
+222,Overpressure rupture of boiler from air or gas
+223,Air or gas rupture of pressure or process vessel
+23,"Overpressure rupture, chemical reaction (no fire)"
+231,Chemical reaction rupture of process vessel
+24,Explosion (no fire)
+240,"Explosion (no fire), other"
+241,Munitions or bomb explosion (no fire)
+242,Blasting agent explosion (no fire)
+243,Fireworks explosion (no fire)
+244,Dust explosion (no fire)
+25,"Excessive heat, scorch burns with no ignition"
+251,"Excessive heat, scorch burns with no ignition"
+3,Rescue & Emergency Medical Service Incident
+30,"Rescue, emergency medical call (EMS), other"
+300,"Rescue, EMS incident, other"
+31,Medical assist
+311,"Medical assist, assist EMS crew"
+32,Emergency medical service (EMS) incident
+320,"Emergency medical service incident, other"
+321,"EMS call, excluding vehicle accident with injury"
+322,Motor vehicle accident with injuries
+323,Motor vehicle/pedestrian accident (MV Ped)
+324,Motor vehicle accident with no injuries.
+33,Lock-In
+331,"Lock-in (if lock out , use 511 )"
+34,Search for lost person
+340,"Search for lost person, other"
+341,Search for person on land
+342,Search for person in water
+343,Search for person underground
+35,"Extrication, rescue"
+350,"Extrication, rescue, other"
+351,Extrication of victim(s) from building/structure
+352,Extrication of victim(s) from vehicle
+353,Removal of victim(s) from stalled elevator
+354,Trench/below-grade rescue
+355,Confined space rescue
+356,High-angle rescue
+357,Extrication of victim(s) from machinery
+36,Water or ice-related rescue
+360,"Water & ice-related rescue, other"
+361,Swimming/recreational water areas rescue
+362,Ice rescue
+363,Swift water rescue
+364,Surf rescue
+365,Watercraft rescue
+37,Electrical rescue
+370,"Electrical rescue, other"
+371,Electrocution or potential electrocution
+372,Trapped by power lines
+38,Rescue or EMS standby
+381,Rescue or EMS standby
+4,Hazardous Condition (No Fire)
+40,"Flammable gas or liquid condition, other"
+400,"Hazardous condition, other"
+41,Combustible/flammable spills & leaks
+410,"Combustible/flammable gas/liquid condition, other"
+411,Gasoline or other flammable liquid spill
+412,Gas leak (natural gas or LPG)
+413,Oil or other combustible liquid spill
+42,"Chemical release, reaction, or toxic condition"
+420,"Toxic condition, other"
+421,Chemical hazard (no spill or leak)
+422,Chemical spill or leak
+423,Refrigeration leak
+424,Carbon monoxide incident
+43,Radioactive condition
+430,"Radioactive condition, other"
+431,"Radiation leak, radioactive material"
+44,Electrical wiring/equipment problem
+440,"Electrical  wiring/equipment problem, other"
+441,"Heat from short circuit (wiring), defective/worn"
+442,Overheated motor
+443,Breakdown of light ballast
+444,Power line down
+445,"Arcing, shorted electrical equipment"
+45,Biological hazard
+451,"Biological hazard, confirmed or suspected"
+46,"Accident, potential accident"
+460,"Accident, potential accident, other"
+461,Building or structure weakened or collapsed
+462,Aircraft standby
+463,"Vehicle accident, general cleanup"
+47,"Explosive, bomb removal"
+471,"Explosive, bomb removal (for bomb scare, use 721)"
+48,"Attempted burning, illegal action"
+480,"Attempted burning, illegal action, other"
+481,Attempt to burn
+482,Threat to burn
+5,Service Call
+50,"Service call, other"
+500,"Service Call, other"
+51,Person in distress
+510,"Person in distress, other"
+511,Lock-out
+512,Ring or jewelry removal
+52,Water problem
+520,"Water problem, other"
+521,Water evacuation
+522,Water or steam leak
+53,"Smoke, odor problem"
+531,Smoke or odor removal
+54,Animal problem or rescue
+540,"Animal problem, other"
+541,Animal problem
+542,Animal rescue
+55,Public service assistance
+550,"Public service assistance, other"
+551,Assist police or other governmental agency
+552,Police matter
+553,Public service
+554,Assist invalid
+555,"Defective elevator, no occupants"
+56,Unauthorized burning
+561,Unauthorized burning
+57,"Cover assignment, standby at fire station, move-up"
+571,"Cover assignment, standby, moveup"
+6,Good Intent Call
+60,"Good intent call, other"
+600,"Good intent call, other"
+61,Dispatched and canceled en route
+611,Dispatched & canceled en route
+62,"Wrong location, no emergency found"
+621,Wrong location
+622,No incident found on arrival at dispatch address
+63,Controlled burning
+631,Authorized controlled burning
+632,Prescribed fire
+64,Vicinity alarm
+641,Vicinity alarm (incident in other location)
+65,"Steam, other gas mistaken for smoke"
+650,"Steam, other gas mistaken for smoke, other"
+651,"Smoke scare, odor of smoke"
+652,"Steam, vapor, fog or dust thought to be smoke"
+653,"Smoke from barbecue, tar kettle"
+66,EMS call where  party has been transported
+661,"EMS call, party transported by non-fire agency"
+67,HazMat release investigation w/no HazMat
+671,HazMat release investigation w/no HazMat
+672,"Biological hazard investigation, none found"
+7,False Alarm & False Call
+70,"False alarm and false call, other"
+700,"False alarm or false call, other"
+71,"Malicious, mischievous false alarm"
+710,"Malicious, mischievous false call, other"
+711,"Municipal alarm system, malicious false alarm"
+712,"Direct tie to FD, malicious false alarm"
+713,"Telephone, malicious false alarm"
+714,"Central station, malicious false alarm"
+715,"Local alarm system, malicious false alarm"
+72,Bomb scare
+721,Bomb scare - no bomb
+73,System or detector malfunction
+730,"System malfunction, other"
+731,Sprinkler activation due to malfunction
+732,Extinguishing system activation due to malfunction
+733,Smoke detector activation due to malfunction
+734,Heat detector activation due to malfunction
+735,Alarm system sounded due to malfunction
+736,CO detector activation due to malfunction
+74,Unintentional system/detector operation (no fire)
+740,"Unintentional transmission of alarm, other"
+741,"Sprinkler activation, no fire - unintentional"
+742,Extinguishing system activation
+743,"Smoke detector activation, no fire - unintentional"
+744,"Detector activation, no fire - unintentional"
+745,"Alarm system activation, no fire - unintentional"
+746,"Carbon monoxide detector activation, no CO"
+75,Biohazard scare
+751,"Biological hazard, malicious false report"
+8,Severe Weather & Natural Disaster
+800,"Severe weather or natural disaster, other"
+811,Earthquake assessment
+812,Flood assessment
+813,"Wind storm, tornado/hurricane assessment"
+814,Lightning strike (no fire)
+815,Severe weather or natural disaster standby
+9,Special Incident Type
+90,"Special type of incident, other"
+900,"Special type of incident, other"
+91,Citizen complaint
+911,Citizen complaint
+UUU,Undetermined incident type (conversion only)
+,
+,AID GIVEN OR RECEIVED
+1,Mutual aid received
+2,Automatic aid received
+3,Mutual aid given
+4,Automatic aid given
+5,Other aid given
+N,None
+,
+,ACTIONS TAKEN
+1,Fire Control or Extinguishment
+10,"Fire control or extinguishment, other"
+11,Extinguishment by fire service personnel
+12,Salvage & overhaul
+13,Establish fire lines (wildfire)
+14,Contain fire (wildland)
+15,Confine fire (wildland)
+16,Control fire (wildland)
+17,Manage prescribed fire (wildland)
+2,Search & Rescue
+20,"Search & rescue, other"
+21,Search
+22,"Rescue, remove from harm"
+23,"Extricate, disentangle"
+24,Recover body
+3,EMS & Transport
+30,"Emergency medical services, other"
+31,Provide first aid & check for injuries
+32,Provide basic life support (BLS)
+33,Provide advanced life support (ALS)
+34,Transport person
+4,Hazardous Condition
+40,"Hazardous condition, other"
+41,"Identify, analyze hazardous materials"
+42,"HazMat detection, monitoring, sampling, & analysis"
+43,Hazardous materials spill control and confinement
+44,Hazardous materials leak control & containment
+45,Remove hazard
+46,Decontaminate persons or equipment
+47,Decontaminate occupancy or area
+48,Remove hazardous materials
+5,"Fires, Rescues & Hazardous Conditions"
+50,"Fires, rescues & hazardous conditions, other"
+51,Ventilate
+52,Forcible entry
+53,Evacuate area
+54,Determine if materials are non-hazardous
+55,Establish safe area
+56,Provide air supply
+57,Provide light or electrical power
+58,Operate apparatus or vehicle
+6,Systems & Services
+60,"Systems and services, other"
+61,Restore municipal services
+62,Restore sprinkler or fire protection system
+63,Restore fire alarm system
+64,Shut down system
+65,Secure property
+66,Remove water
+7,Assistance
+70,"Assistance, other"
+71,Assist physically disabled
+72,Assist animal
+73,Provide manpower
+74,Provide apparatus
+75,Provide equipment
+76,Provide water
+77,Control crowd
+78,Control traffic
+79,Assess severe weather or natural disaster damage
+8,"Information, Investigation & Enforcement"
+80,"Information, investigation & enforcement, other"
+81,Incident command
+82,Notify other agencies.
+83,Provide information to public or media
+84,Refer to proper authority
+85,Enforce codes
+86,Investigate
+87,Investigate fire out on arrival
+9,"Fill-in, Standby"
+90,"Fill-in, standby, other"
+91,Fill-in or moveup
+92,Standby
+93,Cancelled en route
+00,"Action taken, other"
+UU,Undetermined (conversion only)
+,
+,DETECTOR
+1,Detector alerted occupants
+2,Detector did not alert occupants
+U,Unknown
+,
+,HAZARDOUS MATERIALS RELEASE
+1,"Natural gas: slow leak, no evac. or HazMat actions"
+2,Propane gas - Less than a 21 lb. tank
+3,Gasoline - vehicle fuel tank or portable container
+4,Kerosene - fuel-burning equipment/portable storage
+5,Diesel fuel/fuel oil - vehicle fuel tank/portable
+6,Household/office solvent or chemical spill
+7,Motor oil - from engine or portable container
+8,Paint - spills less than 55 gallons
+0,Special HazMat actions required or spill >= 55 gal.
+N,None
+,
+,MIXED USE PROPERTY
+10,Assembly use
+20,Educational use
+33,Medical use
+40,Residential use
+51,Row of stores
+53,Enclosed mall
+58,Business and residential use
+59,Office use
+60,Industrial use
+63,Military use
+65,Farm use
+00,"Mixed use, other"
+NN,Not mixed use
+,
+,PROPERTY USE
+1,Assembly
+100,"Assembly, other"
+110,"Fixed-use recreation places, other"
+111,Bowling establishment
+112,"Billiard center, pool hall"
+113,Electronic amusement center
+114,"Ice rink: indoor, outdoor"
+115,Roller rink: indoor or outdoor
+116,Swimming facility: indoor or outdoor
+120,"Variable-use amusement, recreation places, other"
+121,"Ballroom, gymnasium"
+122,"Convention center, exhibition hall"
+123,"Stadium, arena"
+124,Playground
+129,Amusement center: indoor/outdoor
+130,"Places of worship, funeral parlors, other"
+131,"Church, mosque, synagogue, temple, chapel"
+134,Funeral parlor
+140,"Clubs, other"
+141,Athletic/health club
+142,Clubhouse
+143,Yacht Club
+144,"Casino, gambling clubs"
+150,"Public or government, other"
+151,Library
+152,Museum
+154,"Memorial structure, including monuments & statues"
+155,Courthouse
+160,"Eating, drinking places, other"
+161,Restaurant or cafeteria
+162,Bar or nightclub
+170,"Passenger terminal, other"
+171,Airport passenger terminal
+173,Bus station
+174,Rapid transit station
+180,"Studio/theater, other"
+181,Live performance theater
+182,"Auditorium, concert hall"
+183,Movie theater
+185,"Radio, television studio"
+186,Film/movie production studio
+2,Educational
+200,"Educational, other"
+210,"Schools, non-adult, other"
+211,Preschool
+213,"Elementary school, including kindergarten"
+215,High school/junior high school/middle school
+241,"Adult education center, college classroom"
+250,"Day care, other (Conversion only)"
+254,"Day care, in commercial property"
+255,"Day care, in residence, licensed"
+256,"Day care in residence, unlicensed."
+3,"Health Care, Detention & Correction"
+300,"Health care, detention, & correction, other"
+311,"24-hour care Nursing homes, 4 or more persons"
+321,Mental retardation/development disability facility
+322,Alcohol or substance abuse recovery center
+323,"Asylum, mental institution"
+331,Hospital - medical or psychiatric
+332,Hospices
+340,"Clinics, doctors offices, hemodialysis cntr, other"
+341,"Clinic, clinic-type infirmary"
+342,"Doctor, dentist or oral surgeon office"
+343,Hemodialysis unit
+361,"Jail, prison (not juvenile)"
+363,"Reformatory, juvenile detention center"
+365,Police station
+4,Residential
+400,"Residential, other"
+419,1 or 2 family dwelling
+429,Multifamily dwelling
+439,"Boarding/rooming house, residential hotels"
+449,"Hotel/motel, commercial"
+459,Residential board and care
+460,"Dormitory-type residence, other"
+462,"Sorority house, fraternity house"
+464,"Barracks, dormitory"
+5,"Mercantile, Business"
+500,"Mercantile, business, other"
+511,Convenience store
+519,"Food and beverage sales, grocery store"
+529,"Textile, wearing apparel sales"
+539,"Household goods, sales, repairs"
+549,Specialty shop
+557,"Personal service, including barber & beauty shops"
+559,"Recreational, hobby, home repair sales, pet store"
+564,"Laundry, dry cleaning"
+569,"Professional supplies, services"
+571,"Service station, gas station"
+579,"Motor vehicle or boat sales, services, repair"
+580,"General retail, other"
+581,Department or discount store
+592,Bank
+593,Office:  veterinary or research
+596,Post office or mailing firms
+599,Business office
+6,"Industrial, Utility, Defense, Agriculture, Mining"
+600,"Ind., utility, defense, agriculture, mining, other"
+610,"Energy production plant, other"
+614,Steam or heat-generating plant
+615,Electric-generating plant
+629,Laboratory or science laboratory
+631,"Defense, military installation"
+632,Flight control tower
+635,Computer center
+639,Communications center
+640,"Utility or Distribution system, other"
+642,Electrical distribution
+644,"Gas distribution, gas pipeline"
+645,"Flammable liquid distribution, F.L. pipeline"
+647,Water utility
+648,Sanitation utility
+655,Crops or orchard
+659,Livestock production
+669,"Forest, timberland, woodland"
+679,"Mine, quarry"
+7,"Manufacturing, Processing"
+700,"Manufacturing, processing"
+8,Storage
+800,"Storage, other"
+807,Outside material storage area
+808,Outbuilding or shed
+816,"Grain elevator, silo"
+819,"Livestock, poultry storage"
+839,Refrigerated storage
+849,Outside storage tank
+880,"Vehicle storage, other"
+881,"Parking garage, (detached residential garage)"
+882,"Parking garage, general vehicle"
+888,Fire station
+891,Warehouse
+898,"Dock, marina, pier, wharf"
+899,Residential or self-storage units
+9,Outside or Special Property
+900,"Outside or special property, other"
+919,"Dump, sanitary landfill"
+921,"Bridge, trestle"
+922,Tunnel
+926,"Outbuilding, protective shelter"
+931,Open land or field
+935,Campsite with utilities
+936,Vacant lot
+937,Beach
+938,Graded and cared-for plots of land
+940,"Water area, other"
+941,"Open ocean, sea or tidal waters"
+946,"Lake, river, stream"
+951,Railroad right-of-way
+952,Railroad yard
+960,"Street, other"
+961,Highway or divided highway
+962,"Residential street, road or residential driveway"
+963,Street or road in commercial area
+965,Vehicle parking area
+972,Aircraft runway
+973,Aircraft taxiway
+974,Aircraft loading area
+981,Construction site
+982,Oil or gas field
+983,"Pipeline, power line or other utility right-of-way"
+984,Industrial plant yard - area
+000,"Property Use, other"
+NNN,None
+UUU,Undetermined
+,
+,NAME PREFIX
+MR,Mr.
+MRS,Mrs.
+MS,Ms.
+DR,Doctor
+REV,Reverend
+,
+,NAME SUFFIX
+JR,Junior
+SR,Senior
+I,The First
+II,The Second
+III,The Third
+IV,The Fourth
+V,The Fifth
+MD,Medical Doctor
+DDS,Doctor of Dental Science
+,End Basic Module; Begin Fire Module
+,ON-SITE MATERIALS OR PRODUCTS
+1,"Foods, Beverages, Agriculture"
+100,"Foods, beverages, agriculture, other"
+11,Food
+110,"Food, other"
+111,Baked goods
+112,"Meat products, including poultry & fish"
+113,Dairy products
+114,"Produce, fruit, or vegetables"
+115,"Sugar, spices"
+116,Deli products
+117,"Cereals, grains; packaged"
+118,"Fat/cooking grease, including lard & animal fat"
+12,Beverages
+120,"Beverages, other"
+121,Alcoholic beverage
+122,Nonalcoholic beverage
+13,Agriculture
+130,"Agriculture, other"
+131,"Trees, plants, flowers"
+132,"Feed, grain, seed"
+133,"Hay, straw"
+134,"Crop, not grain"
+135,Livestock
+136,Pets
+137,Pesticides
+138,Fertilizer
+2,Personal & Home Products
+200,"Personal & home products, other"
+21,Fabrics
+210,"Fabrics, other"
+211,"Curtains, drapes"
+212,Linens
+213,Bedding
+214,"Cloth, yarn, dry goods"
+22,Wearable products
+220,"Wearable products, other"
+221,Clothes
+222,Footwear
+223,Eyeglasses
+225,"Perfumes, colognes, cosmetics"
+226,Toiletries
+23,Accessories
+230,"Accessories, other"
+231,"Jewelry, watches"
+232,"Luggage, suitcases"
+233,"Purses, satchels, briefcases, wallets, belts"
+24,Furnishings
+240,"Furnishings, other"
+241,Furniture
+242,"Beds, mattresses"
+243,Clocks
+244,Housewares
+245,"Glass, ceramics, china, pottery, stoneware"
+246,Silverware
+3,Raw Materials
+300,"Raw materials, other"
+31,Wood
+310,"Wood, other"
+311,"Lumber, sawn wood"
+312,Timber
+313,Cork
+314,Pulp
+315,"Sawdust, wood chips"
+32,Fibers
+320,"Fibers, other"
+321,Cotton
+322,Wool
+323,Silk
+33,Animal skins
+330,"Animal skins, other"
+331,Leather
+332,Fur
+34,Other raw materials
+341,Ore
+342,Rubber
+343,Plastics
+344,Fiberglass
+345,Salt
+4,"Paper Products, Rope"
+400,"Paper products, rope, other"
+41,Paper products
+410,"Paper products, other"
+411,"Newspaper, magazines"
+412,Books
+413,Greeting cards
+414,"Paper, rolled"
+415,Cardboard
+416,"Packaged paper products, including stationery"
+417,Paper records or reports
+42,"Rope, twine, cordage"
+421,"Rope, twine, cordage"
+5,"Flammables, Chemicals, Plastics,"
+500,"Flammables, chemicals, plastics, other"
+51,"Flammables, combustible liquids"
+510,"Flammables, combustible liquids, other"
+511,"Gasoline, diesel fuel"
+512,"Flammable liquid, not gasoline"
+513,"Combustible liquid, including heating oil"
+514,Motor oil
+515,"Heavy oils, grease, noncooking related"
+516,Asphalt
+517,"Adhesive, resin, tar"
+52,Flammable gases
+520,"Flammable gases, other"
+521,Natural gas
+522,"LP gas, butane, propane"
+523,Hydrogen gas
+53,"Solid fuel, coal type"
+530,"Solid fuel, coal type, other"
+531,Charcoal
+532,Coal
+533,Peat
+534,Coke
+54,"Chemicals, drugs"
+540,"Chemicals, drugs, other"
+541,Hazardous chemicals
+542,Nonhazardous chemicals
+543,Cleaning supplies
+544,"Pharmaceuticals, drugs"
+545,Illegal drugs
+55,Radioactive materials
+551,Radioactive materials
+6,"Construction, Machinery, Metals"
+600,"Construction, machinery, metals, other"
+61,"Machinery, tools"
+610,"Machinery, tools, other"
+611,Industrial machinery
+612,Machine parts
+613,Tools (power and hand tools)
+62,Construction supplies
+620,"Construction supplies, other"
+621,Hardware products
+622,Construction and home improvement products
+623,"Pipes, fittings"
+624,Stone-working materials
+625,Lighting fixtures and lamps
+626,"Electrical parts, supplies, equipment"
+627,Insulation
+628,Abrasives
+629,"Fencing, fence supplies"
+63,Floor and wall coverings
+630,"Floor and wall coverings, other"
+631,"Carpets, rugs"
+632,"Linoleum, tile"
+633,Ceramic tile
+634,Wallpaper
+635,Paint
+64,Metal products
+640,"Metal products, other"
+641,"Steel, iron products"
+642,Nonferrous metal products
+643,Combustible metals products
+7,"Appliances, Electronics, Medical, Laboratory"
+700,"Appliances, electronics, medical, laboratory, other"
+71,"Appliances, electronics"
+710,"Appliances, electronics, other"
+711,Appliances
+712,"Electronic parts, supplies, equipment"
+713,Electronic media
+714,"Photographic equipment, supplies, materials"
+72,"Medical, laboratory products"
+720,"Medical, laboratory products, other"
+721,Dental supplies
+722,Medical supplies
+723,Optical products
+724,Veterinary supplies
+725,Laboratory supplies
+8,"Vehicles, Vehicle Parts"
+800,"Vehicles, other (Conversion only)"
+81,Motor vehicles
+810,"Motor vehicles and parts, other"
+811,"Autos, trucks, buses, recreational vehicles"
+812,Construction vehicles
+813,"Motor vehicle parts, not including tires"
+814,Tires
+82,Watercraft
+820,"Watercraft, other"
+821,"Boats, ships"
+83,Aircraft
+830,"Aircraft, other"
+831,"Planes, airplanes"
+832,Helicopters
+84,Rail
+840,"Rail, other"
+841,"Trains, light rail, rapid transit cars"
+842,Rail equipment
+85,Non-motorized vehicles
+850,"Non-motorized vehicles, other"
+851,"Bicycles, tricycles, unicycles"
+9,Other Products
+91,"Containers, packing materials"
+910,"Containers, packing materials, other"
+911,"Bottles, barrels, boxes"
+912,Packing material
+913,Pallets
+92,Previously owned products
+920,"Previously owned products, other"
+921,Antiques
+922,Collectibles
+923,Used merchandise
+93,"Ordnance, explosives, fireworks"
+930,"Ordnance, explosives, fireworks, other"
+931,Guns
+932,Ammunition
+933,Explosives
+934,"Fireworks, commercially made"
+935,"Rockets, missiles"
+94,"Recreation, arts (products)"
+940,"Recreation, arts products, other"
+941,Musical instruments
+942,"Hobby, crafts"
+943,Art supply/artwork
+944,Sporting goods
+945,"Camping, hiking, outdoor products"
+946,"Games, toys"
+95,Mixed sales products
+950,"Mixed sales products, other"
+951,Office supplies
+952,"Restaurant supplies, not including food"
+96,Discarded material
+960,"Discarded material, other"
+961,Junkyard materials
+962,Recyclable materials
+963,"Trash, not recyclable"
+000,"On-site materials, other"
+NNN,None
+UUU,Undetermined
+,
+,ON-SITE MATERIALS STORAGE USE
+1,Bulk storage or warehousing
+2,Processing or manufacturing
+3,Packaged goods for sale
+4,Repair or service
+N,None
+U,Undetermined
+,
+,AREA OF FIRE ORIGIN
+0,Means of Egress
+01,"Hallway corridor, mall"
+02,"Exterior stairway, ramp, or fire escape"
+03,Interior stairway or ramp
+04,"Escalator: exterior, interior"
+05,"Entranceway, lobby"
+09,"Egress/exit, other"
+1,"Assembly, Sales Areas (Groups of People)"
+11,"Arena, assembly area w/ fixed seats - 100+ persons"
+12,Assembly area without fixed seats - 100+ persons
+13,Assembly area - less than 100 persons
+14,"Common room, den, family room, living room, lounge"
+15,"Sales area, showroom (excludes display window)"
+16,"Art gallery, exhibit hall, library"
+17,Swimming pool
+10,"Assembly or sales area, other"
+2,Function Areas
+21,Bedroom - < 5 persons; included are jail or prison
+22,Bedroom - 5+ persons; including barrack/dormitory
+23,"Dining room, cafeteria, bar area, beverage service"
+24,"Cooking area, kitchen"
+25,"Bathroom, checkroom, lavatory, locker room"
+26,"Laundry area, wash house (laundry)"
+27,Office
+28,"Personal service area, barber/beauty salon area"
+20,"Function areas, other"
+3,Technical Processing Areas
+31,Laboratory
+32,"Dark room, photography area, or printing area"
+33,"Treatment - first aid area, surgery area"
+34,"Surgery area - major operations, operating room"
+35,"Computer room, control room or center"
+36,"Stage area - performance, basketball court, boxing"
+37,"Projection room, spotlight area"
+38,"Processing/manufacturing area, workroom"
+30,"Technical processing areas, other"
+4,Storage Areas
+41,"Storage room, area, tank, or bin"
+42,Closet
+43,Storage: supplies or tools; dead storage
+44,"Records storage room, storage vault"
+45,"Shipping/receiving area; loading area, dock or bay"
+46,"Chute/container - trash, rubbish, waste"
+47,"Vehicle storage area; garage, carport"
+40,"Storage area, other"
+5,Service Areas
+51,Dumbwaiter or elevator shaft
+52,"Conduit, pipe, utility, or ventilation shaft"
+53,Light shaft
+54,"Chute; laundry or mail, excluding trash chutes"
+55,"Duct: hvac, cable, exhaust, heating, or AC"
+56,Display window
+57,Chimney (conversion only)
+58,Conveyor
+50,"Service facilities, other"
+6,"Service, Equipment Areas"
+61,Machinery room or area; elevator machinery room
+62,"Heating room or area, water heater area"
+63,"Switchgear area, transformer vault"
+64,Incinerator area
+65,"Maintenance shop or area, paint shop or area"
+66,"Cell, test"
+67,"Enclosure, pressurized air"
+68,Enclosure with enriched oxygen atmosphere
+60,"Equipment or service area, other"
+7,Structural Areas
+71,"Substructure area or space, crawl space"
+72,"Exterior balcony, unenclosed porch"
+73,"Ceiling and floor assembly, crawl space between stories"
+74,"Attic: vacant, crawl space above top story"
+75,"Wall assembly, concealed wall space"
+76,Wall surface: exterior
+77,Roof surface: exterior
+78,Awning
+70,"Structural area, other"
+8,"Transportation, Vehicle Areas"
+81,Operator/passenger area of transportation equipment
+82,Cargo/trunk area?all vehicles
+83,"Engine area, running gear, wheel area"
+84,"Fuel tank, fuel line"
+85,Separate operator/control area of transportation equipment
+86,"Exterior, exposed surface"
+80,"Vehicle area, other"
+9,Other Area of Origin
+91,Railroad right-of-way: on or near
+92,"Highway, parking lot, street: on or near"
+93,"Courtyard, patio, terrace"
+94,"Open area, outside; included are farmland, field"
+95,"Wildland, woods"
+96,Construction/renovation area
+97,Multiple areas
+98,Vacant structural area
+90,"Outside area, other"
+00,Other area of fire origin
+UU,Undetermined
+,
+,HEAT SOURCE
+1,Operating Equipment
+11,"Spark, ember, or flame from operating equipment"
+12,Radiated or conducted heat from operating equipment
+13,Electrical arcing
+10,"Heat from powered equipment, other"
+4,Hot or Smoldering Object
+41,"Heat, spark from friction"
+42,"Molten, hot material"
+43,Hot ember or ash
+40,"Hot or smoldering object, other"
+5,"Explosives, Fireworks"
+51,Munitions
+53,"Blasting agent, primer cord, black powder fuse"
+54,Fireworks
+55,Model and amateur rockets
+56,Incendiary device
+50,"Explosive, fireworks, other"
+6,Other Open Flame or Smoking Materials
+61,Cigarette
+62,Pipe or cigar
+63,Heat from undetermined smoking material
+64,Match
+65,"Lighter: cigarette, cigar"
+66,Candle
+67,Warning or road flare; fuse
+68,Backfire from internal combustion engine
+69,Flame/torch used for lighting
+60,"Heat from other open flame or smoking materials, other"
+7,"Chemical, Natural Heat Sources"
+71,Sunlight
+72,"Spontaneous combustion, chemical reaction"
+73,Lightning discharge
+74,Other static discharge
+70,"Chemical, natural heat source, other"
+8,Heat Spread from Another Fire
+81,"Heat from direct flame, convection currents"
+82,Radiated heat from another fire
+83,"Flying brand, ember, spark"
+84,Conducted heat from another fire
+80,"Heat spread from another fire, other"
+9,Other Heat Sources
+97,Multiple heat sources including multiple ignitions
+00,Heat source: other
+UU,Undetermined
+,
+,ITEM FIRST IGNITED
+1,"Structural Component, Finish"
+10,"Structural component or finish, other"
+11,"Exterior roof covering, surface, finish"
+12,"Exterior sidewall covering, surface, finish"
+13,"Exterior trim, including doors"
+14,"Floor covering or rug/carpet/mat, surface"
+15,"Interior wall covering excluding drapes, etc."
+16,Interior ceiling covering or finish
+17,Structural member or framing
+18,"Thermal, acoustical insulation within wall, partition or floor/ceiling space"
+2,"Furniture, Utensils, including built-in furniture"
+20,"Furniture, utensils, other"
+21,"Upholstered sofa, chair, vehicle seats"
+22,"Non-upholstered chair, bench"
+23,Cabinetry (including built-in)
+24,Ironing board
+25,Appliance housing or casing
+26,Household utensils
+3,"Soft Goods, Wearing Apparel"
+30,"Soft goods, wearing apparel, other"
+31,"Mattress, pillow"
+32,"Bedding; blanket, sheet, comforter"
+33,Linen; other than bedding
+34,Wearing apparel not on a person
+35,Wearing apparel on a person
+36,"Curtain, blind, drapery, tapestry"
+37,"Goods not made up, including fabrics and yard goods"
+38,Luggage
+4,"Adornment, Recreational Material, Signs"
+40,"Adornment, recreational material, signs, other"
+41,Christmas tree
+42,Decoration
+43,"Sign, including outdoor signs such as billboards"
+44,"Chips, including wood chips"
+45,"Toy, game"
+46,"Awning, canopy"
+47,"Tarpaulin, tent"
+5,Storage Supplies
+50,"Storage supplies, other"
+51,"Box, carton, bag, basket, barrel"
+52,Material being used to make a product
+53,"Pallet, skid (empty)"
+54,"Cord, rope, twine, yarn"
+55,"Packing, wrapping material"
+56,Baled goods or material
+57,Bulk storage
+58,"Palletized material, material stored on pallets."
+59,"Rolled, wound material (paper and fabrics)"
+6,"Liquids, Piping, Filters"
+60,"Liquids, piping, filters, other"
+61,"Atomized liquid, vaporized liquid, aerosol."
+62,Flammable liquid/gas - in/from engine or burner
+63,Flammable liquid/gas - in/from final container
+64,Flammable liquid/gas in container or pipe
+65,Flammable liquid/gas - uncontained
+66,"Pipe, duct, conduit, hose"
+67,"Pipe, duct, conduit, hose covering"
+68,"Filter, including evaporative cooler pads"
+7,Organic Materials
+70,"Organic materials, other"
+71,"Agricultural crop, including fruits and vegetables"
+72,"Light vegetation - not crop, including grass"
+73,"Heavy vegetation - not crop, including trees"
+74,"Animal, living or dead"
+75,"Human, living or dead"
+76,"Cooking materials, including edible materials"
+77,"Feathers or fur, not on bird or animal"
+8,General Materials
+80,"General materials, other (conversion only)"
+81,"Electrical wire, cable insulation"
+82,"Transformer, including transformer fluids"
+83,"Conveyor belt, drive belt, V-belt"
+84,Tire
+85,Railroad ties
+86,"Fence, pole"
+87,Fertilizer
+88,"Pyrotechnics, explosives"
+9,General Materials Continued
+90,General materials continued (conversion only)
+91,Book
+92,"Magazine, newspaper, writing paper"
+93,Adhesive
+94,"Dust, fiber, lint, including sawdust and excelsior"
+95,"Film, residue, including paint and resin"
+96,"Rubbish, trash, waste"
+97,Oily rags
+99,Multiple items first ignited
+00,"Item first ignited, other"
+UU,Undetermined
+,
+,TYPE OF MATERIAL FIRST IGNITED
+11,Natural gas
+12,LP gas
+13,Anesthetic gas
+14,Acetylene gas
+15,Hydrogen
+10,"Flammable gas, other"
+2,"Flammable, Combustible Liquid"
+21,"Ether, pentane-type flammable liquid"
+22,JP-4 jet fuel and methyl ethyl ketone type flammable
+23,Gasoline
+24,"Turpentine, butyl-alcohol-type flammable liquid"
+25,"Kerosene, No.1 and 2 fuel oil, diesel fuel"
+26,"Cottonseed oil, creosote-oil-type combustible"
+27,"Cooking oil, transformer or lubricating oil"
+28,Ethanol
+20,"Flammable or combustible liquid, other"
+3,Volatile Solid or Chemical
+31,"Fat, grease, butter, margarine, lard"
+32,Petroleum jelly and non-food grease
+33,"Polish, paraffin, wax"
+34,"Adhesive, resin, tar, glue, asphalt, pitch"
+35,"Paint, varnish?applied"
+36,"Combustible metal, included are magnesium"
+37,"Solid chemical, included are explosives"
+38,Radioactive material
+30,"Volatile solid or chemical, other"
+4,Plastics
+41,Plastic
+5,Natural Product
+51,"Rubber, excluding synthetic rubbers"
+52,Cork
+53,Leather
+54,"Hay, straw"
+55,"Grain, natural fiber (preprocess)"
+56,"Coal, coke, briquettes, peat"
+57,"Food, starch, excluding fat and grease (Code 31)"
+58,Tobacco
+50,"Natural product, other"
+6,Wood or Paper - Processed
+61,"Wood chips, sawdust, shavings"
+62,"Round timber, including round posts, poles"
+63,"Sawn wood, including all finished lumber"
+64,Plywood
+65,"Fiberboard, particleboard, and hardboard"
+66,"Wood pulp, wood fiber"
+67,"Paper, including cellulose, waxed paper"
+68,Cardboard
+60,"Wood or paper, processed, other"
+7,"Fabric, Textiles, Fur"
+71,"Fabric, fiber, cotton, blends, rayon, wool"
+74,"Fur, silk, other fabric."
+75,Wig
+76,Human hair
+77,Plastic-coated fabric
+70,"Fabric, textile, fur, other"
+8,Material Compounded with Oil
+81,Linoleum
+82,Oilcloth
+86,Asphalt-treated material
+80,"Material compounded with oil, other"
+9,Other Material
+99,Multiple types of material
+00,"Type of material first ignited, other"
+UU,Undetermined
+,
+,CAUSE OF IGNITION
+1,Intentional
+2,Unintentional
+3,Failure of equipment or heat source
+4,Act of nature
+5,Cause under investigation
+0,"Cause, other (System generated code only, not used for data entry)"
+U,Cause undetermined after investigation
+,
+,FACTORS CONTRIBUTING TO IGNITION
+1,Misuse of Material or Product
+10,"Misuse of material or product, other"
+11,Abandoned or discarded materials or products
+12,Heat source too close to combustibles.
+13,"Cutting, welding too close to combustible"
+14,Flammable liquid or gas spilled
+15,Improper fueling technique
+16,Flammable liquid used to kindle fire
+17,"Washing part, painting with flammable liquid"
+18,Improper container or storage procedure
+19,Playing with heat source
+2,"Mechanical Failure, Malfunction"
+20,"Mechanical failure, malfunction, other"
+21,Automatic control failure
+22,Manual control failure
+23,Leak or break
+25,Worn out
+26,Backfire
+27,Improper fuel used
+3,"Electrical Failure, Malfunction"
+30,"Electrical failure, malfunction, other"
+31,Water-caused short-circuit arc
+32,Short-circuit arc from mechanical damage
+33,"Short-circuit arc from defective, worn insulation"
+34,Unspecified short-circuit arc
+35,"Arc from faulty contact, broken conductor"
+36,"Arc, spark from operating equipment"
+37,Fluorescent light ballast
+4,"Design, Manufacturing, Installation Deficiency"
+40,"Design, manufacture, installation deficiency, other"
+41,Design deficiency
+42,Construction deficiency
+43,Installation deficiency
+44,Manufacturing deficiency
+5,Operational Deficiency
+50,"Operational deficiency, other"
+51,"Collision, knock down, run over, turn over"
+52,"Accidentally turned on, not turned off"
+53,Equipment unattended
+54,Equipment overloaded
+55,Failure to clean
+56,Improper startup/shutdown procedure
+57,Equipment not used for purpose intended
+58,Equipment not operated properly
+6,Natural Condition
+60,"Natural condition, other"
+61,High wind
+62,Storm
+63,High water including floods
+64,Earthquake
+65,Volcanic action
+66,Animal
+7,Fire Spread or Control
+70,"Fire spread or control, other"
+71,Exposure fire
+72,Rekindle
+73,Outside/open fire for debris or waste disposal
+74,Outside/open fire for warming or cooking
+75,Agriculture or land management burns
+00,"Factors contributing to ignition, other"
+NN,None
+UU,Undetermined
+,
+,HUMAN FACTORS CONTRIBUTING TO IGNITION
+1,Asleep
+2,Possibly impaired by alcohol or drugs
+3,Unattended or unsupervised person
+4,Possibly mentally disabled
+5,Physically disabled
+6,Multiple persons involved
+7,Age was a factor
+N,None
+,AGE FACTOR GENDER
+1,Male
+2,Female
+,
+ ,EQUIPMENT INVOLVED IN IGNITION
+1,"Heating, Ventilation, Air Conditioning"
+100,"Heating, ventilation and air conditioning, other"
+111,Air conditioner
+112,Heat pump
+113,Fan
+114,"Humidifier, non-heat producing"
+115,Ionizer
+116,"Dehumidifier, portable"
+117,"Evaporative cooler, cooling tower."
+120,"Fireplace, chimney, other"
+121,"Fireplace, masonry"
+122,"Fireplace, factory-built"
+123,"Fireplace, insert/stove"
+124,"Stove, heating"
+125,"Chimney connector, vent connector"
+126,"Chimney: brick, stone, masonry"
+127,"Chimney: metal, including stovepipe, flue"
+131,"Furnace, local heating unit, built-in"
+132,"Furnace, central heating unit"
+133,"Boiler (power, process, heating)"
+141,"Heater, excluding catalytic and oil-filled heaters"
+142,"Heater, catalytic"
+143,"Heater, oil filled"
+144,Heat lamp
+145,Heat tape
+151,Water heater
+152,"Steam line, heat pipe, hot air duct"
+2,"Electrical Distribution, Lighting & Power Transfer"
+200,"Electrical distribution, power transfer, other"
+210,"Electrical wiring, other"
+211,Electrical power (utility) line
+212,Electrical service supply wires from utility
+213,"Electric meter, meter box"
+214,Electrical wiring from meter box to circuit breaker
+215,"Panel board, switchboard, circuit breaker board"
+216,Electrical branch circuit
+217,"Outlet, receptacle"
+218,Wall-type switch
+219,"Ground-fault interrupter (GFI), portable, plug-in"
+221,"Transformer, distribution-type"
+222,"Overcurrent, disconnect equipment"
+223,"Transformer, low voltage"
+224,Generator
+225,Inverter
+226,Uninterrupted power supply (UPS)
+227,Surge protector
+228,"Battery charger, rectifier"
+229,Battery
+230,"Lamp, lighting, other"
+231,"Lamp: tabletop, floor, desk"
+232,"Lantern, flashlight"
+233,Incandescent lighting fixture
+234,"Fluorescent lighting fixture, ballast"
+235,Halogen lighting fixture or lamp
+236,"Sodium, mercury vapor lighting fixtures or lamps;"
+237,"Portable or movable work light, trouble light"
+238,Light bulb
+241,Night light
+242,"Decorative lights, line voltage"
+243,"Decorative or landscape lighting, low voltage"
+244,Sign
+251,"Fence, electric"
+252,Traffic control device
+253,"Lightning rod, arrester/grounding device"
+260,"Cord, plug, other"
+261,"Power cord, plug; detachable from appliance"
+262,"Power cord, plug; permanently attached"
+263,Extension cord
+3,"Shop Tools, Industrial Equipment"
+300,"Shop tools and industrial equipment, other"
+310,"Power tools, other"
+311,Power saw
+312,Power lathe
+313,"Power shaper, router, jointer, planer"
+314,Power cutting tool
+315,"Power drill, screwdriver"
+316,"Power sander, grinder, buffer, polisher"
+317,"Power hammer, including jackhammers"
+318,"Power nail gun, stud driver, stapler"
+320,"Painting tools, other"
+321,Paint dipper
+322,Paint flow coating machine
+323,Paint mixing machine
+324,Paint sprayer
+325,"Coating machine, including asphalt-saturating"
+331,Welding torch.
+332,Cutting torch
+333,Burners
+334,Soldering equipment
+340,"Hydraulic equipment, other"
+341,Air compressor
+342,Gas compressor
+343,Atomizing equipment
+344,Pump
+345,Wet/dry vacuum (shop vacuum)
+346,"Hoist, lift, crane"
+347,Powered jacking equipment
+348,Drilling machinery or equipment
+351,Heat-treating equipment
+352,Incinerator
+353,"Industrial furnace, oven, kiln"
+354,"Tarpot, tar kettle"
+355,"Casting, molding, forging equipment"
+356,Distilling equipment
+357,"Digester, reactor"
+358,"Extractor, waste recovery machine"
+361,Conveyor
+362,"Power transfer equipment: ropes, cables, blocks, belts"
+363,Power takeoff
+364,Powered valves.
+365,Bearing or brake
+371,"Picking, carding, weaving machine"
+372,Testing equipment
+373,Gas regulator
+374,"Motor, separate"
+375,Internal combustion engine (nonvehicular)
+376,Printing press
+377,Car washing equipment
+4,Commercial and Medical Equipment
+400,"Commercial and medical equipment, other"
+410,"Medical equipment, other"
+411,"Dental, medical, or other powered bed or chair"
+412,"Dental equipment, other"
+413,Dialysis equipment
+414,Medical imaging equipment
+415,Medical monitoring equipment
+416,Oxygen administration equipment
+417,"Radiological equipment, x-ray, radiation therapy"
+418,Sterilizer: medical
+419,Therapeutic equipment
+421,Transmitter
+422,"Telephone switching gear, including PBX"
+423,TV monitor array
+424,Studio-type TV camera
+425,Studio-type sound recording/modulating equipment
+426,Radar equipment
+431,Amusement ride equipment
+432,Ski lift
+433,Elevator or lift
+434,Escalator
+441,"Microfilm, microfiche viewing equipment"
+442,Photo processing equipment
+443,Vending machine
+444,Nonvideo arcade game
+445,"Water fountain, water cooler"
+446,Telescope
+450,"Laboratory equipment, other"
+451,Electron microscope
+5,"Garden Tools, Agricultural Equipment"
+500,"Gardening tools and agricultural equipment, other"
+511,"Combine, threshing machine"
+512,Hay processing equipment
+513,Farm elevator or conveyor
+514,"Silo loader, unloader, screw/sweep auger"
+515,"Feed grinder, mixer, blender"
+516,Milking machine
+517,Pasteurizer
+518,Cream separator
+521,Sprayer: farm or garden
+522,Chain saw
+523,Weed burner
+524,Lawn mower
+525,"Lawn, landscape trimmer, edger"
+531,Lawn vacuum
+532,Leaf blower
+533,"Mulcher, grinder, chipper"
+534,"Snow blower, thrower"
+535,Log splitter
+536,Post hole auger
+537,"Post driver, pile driver"
+538,"Tiller, cultivator"
+6,Kitchen and Cooking Equipment
+600,"Kitchen and cooking equipment, other"
+611,"Blender, juicer, food processor, mixer"
+612,Coffee grinder
+621,Can opener
+622,Knife
+623,Knife sharpener
+631,Coffee maker or teapot
+632,"Food warmer, hot plate"
+633,Kettle
+634,Popcorn popper
+635,Pressure cooker or canner
+636,Slow cooker
+637,"Toaster, toaster oven, countertop broiler"
+638,"Waffle iron, griddle"
+639,"Wok, frying pan, skillet"
+641,Bread-making machine
+642,Deep fryer
+643,"Grill, hibachi, barbecue"
+644,Microwave oven
+645,"Oven, rotisserie"
+646,"Range, stove with/without oven or cooking surface"
+647,"Steam table, warming drawer/table"
+651,Dishwasher
+652,Freezer when separate from refrigerator
+653,Garbage disposer
+654,Grease hood/duct exhaust fan
+655,Ice maker (separate from refrigerator)
+656,"Refrigerator, refrigerator/freezer"
+7,Electronic and Other Electrical Equipment
+700,"Electronic equipment, other"
+710,"Computer device, other"
+711,Computer
+712,Computer storage device: external
+713,"Computer modem, external"
+714,Computer monitor
+715,Computer printer
+716,"Computer projection device, LCD panel, projector"
+720,"Office equipment, other"
+721,"Adding machine, calculator"
+722,Telephone or answering machine
+723,Cash register
+724,Copier
+725,Fax machine
+726,Paper shredder
+727,"Postage, shipping meter equipment"
+728,Typewriter
+730,"Musical instrument, other"
+731,Guitar
+732,"Piano, organ"
+733,Musical synthesizer or keyboard
+740,"Sound recording or receiving equipment, other"
+741,CD player (audio)
+742,Laser disk player
+743,Radio
+744,"Radio, two way"
+745,"Record player, phonograph, turntable"
+747,"Speakers, audio; separate components"
+748,Stereo equipment
+749,Tape recorder or player
+750,"Video equipment, other"
+751,Cable converter box
+752,"Projector: film, slide, overhead"
+753,Television
+754,VCR or VCR-TV combination
+755,Video game - electronic
+756,"Camcorder, video camera"
+757,Photographic camera and equipment
+8,Personal and Household Equipment
+800,"Personal and household equipment, other"
+811,Clothes dryer
+812,Trash compactor
+813,Washer/dryer combination (within one frame)
+814,Washing machine - clothes
+821,"Hot tub, whirlpool, spa"
+822,Swimming pool equipment
+830,"Floor care equipment, other"
+831,"Broom, electric"
+832,"Carpet cleaning equipment, including rug shampooer"
+833,"Floor buffer, waxer, cleaner"
+834,Vacuum cleaner
+841,"Comb, hair brush"
+842,Curling iron
+843,Electrolysis equipment
+844,Hair curler warmer
+845,Hair dryer
+846,"Makeup mirror, lighted"
+847,"Razor, shaver"
+848,"Suntan equipment, sunlamp"
+849,Toothbrush
+850,"Portable appliance designed to produce heat, other"
+851,Baby bottle warmer
+852,Blanket - electric
+853,Heating pad
+854,Clothes steamer
+855,Clothes iron
+861,Automatic door opener - not garage
+862,Burglar alarm
+863,Garage door opener
+864,Gas detector
+865,Intercom
+866,"Smoke or heat detector, fire alarm"
+868,Thermostat
+871,Ashtray
+872,"Charcoal lighter, utility lighter"
+873,"Cigarette lighter, pipe lighter"
+874,Fire-extinguishing equipment
+875,Insect trap
+876,Timer
+877,Novelty lighter
+881,Model vehicles.
+882,"Toy, powered"
+883,Woodburning kit
+891,Clock
+892,Gun
+893,Jewelry-cleaning machine
+894,Scissors
+895,Sewing machine
+896,Shoe polisher
+897,"Sterilizer, non-medical"
+000,Other equipment involved in ignition
+NNN,None
+UUU,Undetermined
+,
+,EQUIPMENT POWER SOURCE
+1,Electrical
+11,Electrical line voltage (>=  50 volts)
+12,Batteries and low voltage (< 50 volts)
+10,"Electrical, other"
+2,Gas Fuels
+21,Natural gas or other lighter-than-air gas
+22,LP gas or other heavier-than-air gas
+20,"Gas fuels, other"
+3,Liquid Fuels
+31,Gasoline
+32,Alcohol
+33,"Kerosene, diesel fuel, No.1 and 2 fuel oil"
+34,"No.4, 5 & 6 fuel oils"
+30,"Liquid fuel, other"
+4,Solid Fuels
+41,"Wood, paper"
+42,"Coal, charcoal"
+43,Chemicals
+40,"Solid fuel, other"
+5,Other Power Sources
+51,Compressed air
+52,Steam
+53,Water
+54,Wind
+55,Solar
+56,Geothermal
+57,Nuclear
+58,Fluid/hydraulic power source
+00,"Power source, other"
+UU,Undetermined
+,
+ ,EQUIPMENT PORTABILITY
+1,Portable
+2,Stationary
+,
+,FIRE SUPPRESSION FACTORS
+1,Building Construction or Design
+100,"Building construction or design, other"
+112,Roof collapse
+113,Roof assembly combustible
+115,Solar panels
+121,Ceiling collapse
+125,Holes or openings in walls or ceilings
+131,Wall collapse
+132,Difficult to ventilate
+134,Combustible interior finish
+137,Balloon construction
+138,Internal arrangement of partitions
+139,Internal arrangement of stock or contents
+141,Floor collapse
+151,Lack of fire barrier walls or doors
+153,Transoms
+161,Attic undivided
+166,Insulation combustible
+173,Stairwell not enclosed
+174,Elevator shaft
+175,Dumbwaiter
+176,Ducts: vertical
+177,"Chute: rubbish, garbage, laundry"
+181,Supports unprotected
+182,Composite plywood I-beam construction
+183,Composite roof/floor sheathing construction
+185,Wood truss construction
+186,Metal truss construction
+187,"Fixed burglar protection assemblies (bars, grills on windows or doors)"
+188,Quick release failure of bars on windows or doors
+192,Previously damaged by fire
+2,Act or Omission
+200,"Act or omission, other"
+213,Doors left open or outside door unsecured
+214,Fire doors blocked or did not close properly
+218,"Violation of fire, building or life safety code"
+222,Illegal and clandestine drug operation
+232,"Intoxication, drugs or alcohol"
+253,"Riot or civil disturbance, including hostile acts"
+254,Person(s) interfered with operations
+283,Accelerant used
+3,On-site materials
+300,"On-site materials, other"
+311,Aisles blocked or improper width
+312,Significant/unusual fuel load structure components
+313,Significant/unusual fuel load from contents
+314,Significant/unusual fuel load outside from natural
+315,Significant/unusual fuel load from man-made condition.
+316,"Storage, improper"
+321,Radiological hazard onsite
+322,Biological hazard onsite
+323,Cryogenic hazard onsite
+324,"Hazardous chemical, corrosive material, or oxidizer"
+325,Flammable/combustible liquid hazard
+327,Explosives hazard present
+331,"Decorations, included are crepe paper, garland"
+341,Natural or other lighter-than-air gas present
+342,Liquefied Petroleum (LPG) gas present
+361,Combustible storage > 12 feet
+362,High rack storage
+4,Delays
+400,"Delays, other"
+411,Delayed detection of fire
+412,Delayed reporting of fire
+413,Alarm system malfunction
+414,Alarm system shut off for valid reason
+415,Alarm system inappropriately shut off
+421,Unable to contact fire department
+424,Information incomplete or incorrect
+425,Communications problem
+431,Blocked  or obstructed roadway
+434,Poor or no access for fire department apparatus
+435,Traffic delay
+436,Trouble finding location
+437,"Size, height, or other building characteristic"
+438,Power lines down/arcing
+443,Poor access for firefighters
+444,Secured area
+445,Guard dogs
+446,"Aggressive animals, excluding guard dogs"
+447,Suppression delayed due to evaluation of HazMat
+448,Locked or jammed doors
+451,Apparatus failure before arrival at incident
+452,Hydrants inoperative
+461,Airspace restriction
+462,Military activity
+481,Closest apparatus unavailable
+5,Protective Equipment
+500,"Protective equipment, other"
+510,Automatic fire suppression system problem.
+520,"Automatic sprinkler, standpipe connection problem"
+531,Water supply inadequate: private
+532,Water supply inadequate: public
+543,Electrical power outage
+561,Failure of rated fire protection assembly
+562,Protective equipment negated illegally or irresponsibly
+6,Egress/Exit
+600,"Egress/exit problem, other"
+611,Occupancy load above legal limit
+612,Evacuation activity impeded FD access
+613,Window type impeded egress
+614,Windowless wall
+621,Young occupants
+622,Elderly occupants
+623,Physically disabled occupants
+624,Mentally disabled occupants
+625,Physically restrained/confined occupants
+626,Medically disabled occupants
+641,Special Event
+642,Public Gathering
+7,Natural Conditions
+700,"Natural conditions, other"
+711,Drought or low fuel moisture
+712,"Humidity, low"
+713,"Humidity, high"
+714,"Temperature, low"
+715,"Temperature, high"
+721,Fog
+722,Flooding
+723,Ice
+724,Rain
+725,Snow
+732,"Wind, including hurricanes or tornadoes"
+741,Earthquake
+760,Unusual vegetation fuel loading
+771,Threatened or endangered species
+772,Timber sale activity
+773,Fire restriction
+774,Historic disturbance
+775,Urban-wildland interface area
+000,"Fire suppression factor, other"
+NNN,None
+UUU,Undetermined (conversion only)
+,
+,MOBILE PROPERTY INVOLVED
+1,"Not involved in ignition, but burned"
+2,"Involved in ignition, but did not itself burn"
+3,Involved in ignition and burned
+N,None
+,
+,MOBILE PROPERTY TYPE
+1,Passenger Road Vehicles
+11,"Automobile, passenger car, ambulance, race car"
+12,"Bus, school bus, trackless trolley"
+13,Off-road recreational vehicle
+14,"Motor home, camper, bookmobile."
+15,"Trailer - travel, designed to be towed"
+16,"Trailer - camping, collapsible"
+17,Mobile home
+18,"Motorcycle, trail bike"
+10,"Passenger or road vehicles, other"
+2,Freight Road Vehicles
+21,"General use truck, dump truck, fire apparatus"
+22,"Pickup truck, hauling rig (non-motorized)"
+23,"Trailer - semi, designed for freight"
+24,Tank truck - nonflammable cargo
+25,Tank truck - flammable or combustible liquid
+26,Tank truck - compressed gas or LP-gas
+27,"Garbage, waste, refuse truck"
+20,"Freight road transport vehicle, other"
+3,Rail Transport Vehicles
+31,"Diner car, passenger car"
+32,"Box, freight, or hopper car"
+33,Tank car
+34,Container or piggyback car
+35,Engine/locomotive
+36,"Rapid transit car, trolley - self-powered"
+37,Maintenance equipment car
+30,"Rail transport vehicle, other"
+4,Water Vessels
+41,Boat less than 65 ft in length overall
+42,"Boat or ship >= 65 ft but < 1,000 tons."
+43,"Cruise liner or passenger ship >= 1,000 tons"
+44,Tank ship
+45,Personal water craft
+46,"Cargo or military ship > 1,000 tons"
+47,Non-self-propelled vessel
+48,Commercial fishing or processing vessel
+49,Sailboats
+40,"Water transport vessel, other"
+5,Air transport vehicles
+51,"Personal aircraft less than 12,500 lb. gross wt."
+52,"Personal aircraft >= 12,500 lb. gross wt."
+53,"Commercial aircraft: propeller, fixed wing"
+54,"Commercial aircraft: turbine powered, fixed-wing"
+55,"Helicopters, nonmilitary"
+56,Military fixed-wing aircraft
+57,Military non-fixed-wing aircraft
+58,Balloon vehicles
+50,"Air transport vehicles, other"
+6,"Industrial, agricultural, construction vehicles"
+61,Construction vehicle
+63,"Loader - industrial, fork lift, tow motor, stacker"
+64,Crane
+65,"Agricultural vehicle, baler, chopper (farm use)"
+67,Timber harvest vehicle
+60,"Industrial, construction, agricultural vehicles, other"
+7,"Mobile Property, Miscellaneous"
+71,"Home, garden vehicle"
+73,"Shipping container, mechanically moved"
+74,Armored vehicle
+75,"Missile, rocket, space vehicle"
+76,Aerial tramway vehicle
+00,"Mobile property, other"
+NN,None
+UU,Undetermined (conversion only)
+,
+,MOBILE PROPERTY MAKE
+ AC,Acura
+AG,Agco
+AR,Alfa Romeo
+AL,Allis Chalmers
+AV,Antique Vehicle
+AN,Ariens
+AM,Aston Martin
+AT,ATK
+AU,Audi
+AY,Avery
+BS,Belarus
+BE,Beta
+BM,BMW
+BO,Bobcat
+BR,Briggs
+BL,Buell
+BU,Buick
+CD,Cadillac
+CA,Case
+CB,Case - David Brown
+CI,Case IH
+CP,Caterpillar
+CE,Century
+CH,Chevrolet
+CR,Chrysler
+CV,Classic Vehicle
+CO,Continental
+CC,Crane Carrier (CCC)
+CU,Cub Cadet
+DA,Daihatsu
+DE,Demco
+DR,Diamond Reo
+DI,Dixon
+DO,Dodge
+DU,Ducati
+DT,Duetz
+DS,Duetz-Allis
+DF,Duetz-Fahr
+ER,Eager
+EA,Eagle
+EU,Euclid
+FK,Farm King
+FA,Farmall
+FM,Farmtrac
+FE,Ferrari
+FT,Fetrel
+FO,Ford
+FR,Freightliner
+FG,Frigstad
+FW,FWD
+GH,Gehl
+GE,Geo
+GI,Giehl
+GL,Gleaner
+GM,GMC (General Motors)
+GV,GVM
+HD,Harley Davidson
+HV,Harvester
+HB,Haybuster
+HE,Hesston
+HI,Hino
+HO,Honda
+HG,Hough
+HS,Husky
+HU,Husqverna
+HX,Hydrax
+HY,Hyundai
+IF,Infiniti
+IN,International
+IL,International Farmall
+IH,International Harvester
+IS,Isuzu
+IT,Italjet
+IV,Iveco
+JA,Jaguar
+JE,Jeep
+JD,John Deere
+KA,Kawasaki
+KE,Kenworth
+KI,Kia
+KZ,Kinze
+KO,Kioti
+KN,Knight
+KM,Komatsu
+KR,Krause
+KT,KTM
+KU,Kubota
+LC,Land Chief
+LR,Land Rover
+LT,Landtrac
+LE,Lexus
+LI,Lincoln
+LN,Long
+LO,Lotus
+MN,MacDon
+MK,Mack
+ML,Maely
+MI,Mahindra
+MA,Maico
+MH,Marmon
+MS,Maserati
+MY,Massey Ferguson
+MV,Massey Harris-Ferguson
+MZ,Mazda
+MJ,McKee
+ME,Melroe
+MB,Mercedes Benz
+MC,Mercury
+MR,Merkur
+MF,MHF
+MT,Mitsubishi
+MO,Montesa
+MW,Montgomery Ward
+MG,Moto Guzzi
+MM,Moto Morini
+MD,MTD
+MU,Murray
+NA,Navistar
+NH,New Holland
+NE,New Idea
+NI,Nissan
+OL,Oldsmobile
+OV,Oliver
+OS,Oshkosh
+OW,Owatona
+PT,Peterbilt
+PU,Peugeot
+PI,Pierce
+PL,Plymouth
+PN,Pontiac
+PR,Porsche
+RN,Range Rover
+RD,Red Devil
+RG,Rogue (Ottowa)
+RR,Rolls Royce
+SB,Saab
+SA,Saturn
+SG,Scagg
+SC,Scania
+SE,Sears Craftsman
+SD,Simon Duplex
+SI,Simplicity
+SN,Snapper
+SR,Steiger
+ST,Sterling
+SU,Subaru
+SZ,Suzuki
+TT,Toro
+TO,Toyota
+TL,Trelan
+TR,Triumph
+TJ,Trojan
+TB,Troy-Bilt
+UD,UD
+UR,Ursus
+UT,Utilmaster
+VR,Vermeer
+VS,Versatile
+VE,Vespa
+VO,Volkswagen
+VL,Volvo
+VG,Volvo GMC
+WK,Walker
+WL,Walter
+WS,Western Star
+WW,Westward
+WH,White
+WG,White GMC
+WD,Woods
+YA,Yamaha
+YM,Yardman
+YU,Yugo
+ZT,Zetor
+OO,Other Make
+,End of Fire Module; Begin Structure Module
+,STRUCTURE TYPE
+1,Enclosed building
+2,Fixed portable or mobile structure
+3,Open structure
+4,Air-supported structure
+5,Tent
+6,Open platform
+7,Underground structure work area
+8,Connective structure
+0,"Structure type, other"
+,
+,BUILDING STATUS
+1,Under construction
+2,In normal use
+3,"Idle, not routinely used"
+4,Under major renovation
+5,Vacant and secured
+6,Vacant and unsecured
+7,Being demolished
+0,"Building status, other"
+U,Undetermined
+,
+,FIRE SPREAD
+1,Confined to object of origin
+2,Confined to room of origin
+3,Confined to floor of origin
+4,Confined to building of origin
+5,Beyond building of origin
+,
+,ITEM CONTRIBUTING MOST TO FLAME SPREAD
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for ITEM FIRST IGNITED- D3 in the Fire Module with the exception of  ?99 Multiple items first ignited? which is excluded from this code-set. Please see the codes listed for that data element.
+,
+,TYPE OF MATERIAL CONTRIBUTING MOST TO FLAME SPREAD
+PLEASE NOTE:,"The code set table used for this data element is the same set that is used for TYPE OF MATERIAL FIRST IGNITED- D4 in the Fire Module, with the exception of  ?99 Multiple type of material? which is excluded from this code-set. Please see the codes listed for that data element."
+,
+,PRESENCE OF DETECTORS
+ L1,Presence of Detectors
+1,Present
+N,None present
+U,Undetermined
+L2,Detector Type
+1,Smoke
+2,Heat
+3,Combination smoke and heat in a single unit
+4,"Sprinkler, water flow detection"
+5,More than one type present
+0,"Detector type, other"
+U,Undetermined
+L3,Detector Power Supply
+1,Battery only
+2,Hardwire only
+3,Plug-in
+4,Hardwire with battery backup
+5,Plug-in with battery backup
+6,Mechanical
+7,Multiple detectors and power supplies
+0,"Detector power supply, other"
+U,Undetermined
+L4,Detector Operation
+1,Fire too small to activate detector
+2,Detector operated
+3,Detector failed to operate
+U,Undetermined
+L5,Detector Effectiveness
+1,"Detector alerted occupants, occupants responded"
+2,"Detector alerted occupants, occupants failed to respond"
+3,There were no occupants
+4,Detector failed to alert occupants
+U,Undetermined
+L6,Detector Failure Reason
+1,"Power failure, hardwired det. shut off, disconnect"
+2,Improper installation or placement of detector
+3,Defective detector
+4,"Lack of maintenance, includes not cleaning"
+5,Battery missing or disconnected
+6,Battery discharged or dead
+0,"Detector failure reason, other"
+U,Undetermined
+,
+,PRESENCE OF AUTOMATIC EXTINGUISHING SYSTEM
+ M1,Automatic Extinguishing System Presence
+1,Present
+2,Partial system present
+N,None Present
+U,Undetermined
+M2,Type of Automatic Extinguishing System
+1,Wet-pipe sprinkler system
+2,Dry-pipe sprinkler system
+3,Other sprinkler system
+4,Dry chemical system
+5,Foam system
+6,Halogen-type system
+7,Carbon dioxide system
+0,"Special hazard system, other"
+U,Undetermined
+M3,Operation of Automatic Extinguishing System
+1,System operated and was effective
+2,System operated and was not effective
+3,Fire too small to activate system
+4,System did not operate
+0,"Operation of AES, other"
+U,Undetermined
+M5,Reason for Automatic Extinguishing System Failure
+1,System shut off
+2,Not enough agent discharged to control the fire
+3,"Agent discharged, but did not reach the fire"
+4,Inappropriate system for the type of fire
+5,Fire not in area protected by the system
+6,System components damaged
+7,"Lack of maintenance, including corrosion or heads painted"
+8,Manual intervention defeated the system
+0,"Reason system not effective, other"
+U,Undetermined
+,End Structure Module; Begin Civilian Fire Casualty Module
+,GENDER
+1,Male
+2,Female
+,
+,RACE
+1,White
+2,Black or African American
+3,American Indian or Alaska native
+4,Asian
+5,Native Hawaiian or other Pacific Islander
+0,"Other, includes multiracial"
+U,Undetermined
+,
+,ETHNICITY
+1,Hispanic or Latino
+0,Non Hispanic or Latino
+,
+,AFFILIATION
+1,Civilian
+2,"EMS, not fire department"
+3,Police
+0,Other
+U,Undetermined (conversion only)
+,
+,SEVERITY
+1,Minor
+2,Moderate
+3,Severe
+4,Life threatening
+5,Death
+U,Undetermined
+,
+,CAUSE OF INJURY
+1,Exposed to fire products
+2,Exposed to hazardous materials or toxic fumes other than smoke
+3,Jumped in escape attempt
+4,"Fell, slipped, or tripped"
+5,Caught or trapped
+6,Structural collapse
+7,Struck by or contact with object
+8,Overexertion or strain
+9,Multiple causes
+0,"Cause of injury, other"
+U,Undetermined
+N,None (conversion only)
+,
+,HUMAN FACTORS CONTRIBUTING TO INJURY
+1,"Asleep, no known impairment"
+2,Unconscious
+3,Possibly impaired by alcohol
+4,Possibly impaired by other drug or chemical
+5,Possibly mentally disabled
+6,Physically disabled
+7,Physically restrained
+8,Unattended or unsupervised person
+N,None
+,
+,FACTORS CONTRIBUTING TO INJURY
+1,Egress Problem
+11,"Crowd situation, limited exits"
+12,Mechanical obstacles to exit
+13,Locked exit or other problem with exit
+14,Problem with quick release burglar or security bar
+15,"Burglar or security bar, intrusion barrier"
+16,Window type or size impeded egress
+10,"Egress problem, other"
+2,Fire Pattern
+21,Exits blocked by flame
+22,Exits blocked by smoke
+23,Vision blocked or impaired by smoke
+24,Trapped above fire
+25,Trapped below fire
+20,"Fire pattern, other"
+3,Escape
+31,Unfamiliar with exits
+32,Excessive travel distance to nearest clear exit
+33,Chose inappropriate exit route
+34,Re-entered building
+35,Clothing caught fire while escaping
+30,"Escape, other"
+4,Collapse
+41,Roof collapse
+42,Wall collapse
+43,Floor collapse
+40,"Collapse, other"
+5,Vehicle-Related Factors
+51,Trapped in/by vehicle
+52,"Vehicle collision, rollover"
+50,"Vehicle-related, other"
+6,Equipment-Related Factors
+61,Unvented heating equipment
+62,Improper use of heating equipment
+63,Improper use of cooking equipment
+60,"Equipment-related factors, other"
+9,Other Special Factors
+91,"Clothing burned, not while escaping"
+92,Overexertion
+00,"Factor contributing to injury, other"
+NN,None
+UU,Undetermined (conversion only)
+,
+,ACTIVITY WHEN INJURED
+1,Escaping
+2,Rescue attempt
+3,Fire control
+4,Returning to vicinity of fire before control of fire
+5,Returning to vicinity of fire after control of fire
+6,Sleeping 
+7,Unable to act
+8,Irrational act
+0,"Activity, other"
+U,Undetermined
+,
+,LOCATION AT TIME OF INCIDENT
+1,In area of origin and not involved in starting the fire
+2,Not in area and not involved in starting the fire
+3,"Not in area of origin, but involved in starting the fire"
+4,In area of ignition and involved in starting the fire
+0,Other location
+U,Undetermined
+,
+,GENERAL LOCATION AT TIME OF INJURY
+1,"In area of fire origin, whether that is inside or outside of building"
+2,"In building of origin, but not in area of origin"
+3,"Outside, not in area of origin"
+U,Undetermined
+,
+,SPECIFIC LOCATION AT TIME OF INJURY
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for AREA OF FIRE ORIGIN- D1 in the Fire Module. Please see the codes listed for that data element.
+,
+,PRIMARY APPARENT SYMPTOM
+01,Smoke inhalation
+02,Hazardous fumes inhalation
+03,Breathing difficulty or shortness of breath
+11,Burns and smoke inhalation
+12,"Burns only, thermal"
+13,"Burn, scald"
+14,"Burn, chemical"
+15,"Burn, electric"
+21,Cut or laceration
+22,Stab wound/puncture wound: penetrating
+23,Gunshot wound; projectile wound
+24,"Contusion/bruise, minor trauma"
+25,Abrasion
+31,Dislocation
+32,Fracture
+33,Strain or sprain
+34,Swelling
+35,Crushing
+36,Amputation
+41,Cardiac symptoms
+42,Cardiac arrest
+43,Stroke
+44,Respiratory arrest
+51,Chills
+52,Fever
+53,Nausea
+54,Vomiting
+55,"Numbness or tingling, paresthesia"
+56,Paralysis
+57,Frostbite
+50,"Sickness, other"
+61,Miscarriage
+63,"Eye trauma, avulsion"
+64,Drowning
+65,Foreign body obstruction
+66,Electric shock
+67,Poison
+71,Convulsion or seizure
+72,Internal trauma
+73,"Hemorrhaging, bleeding internally"
+81,Disorientation
+82,Dizziness/fainting/weakness
+83,"Exhaustion/fatigue, including heat exhaustion"
+84,Heat stroke
+85,Dehydration
+91,"Allergic reaction, including anaphylactic shock"
+92,Drug overdose
+93,Alcohol impairment
+94,Emotional/psychological stress
+95,Mental disorder
+96,Shock
+97,Unconscious
+98,Pain only
+00,"Primary apparent symptom, other"
+NN,None
+UU,Undetermined
+,
+,PRIMARY AREA OF BODY INJURED
+1,Head
+2,Neck or shoulder
+3,"Thorax, includes chest and back, excludes spine"
+4,Abdomen
+5,Spine
+6,Upper extremities
+7,Lower extremities
+8,Internal
+9,Multiple body parts
+0,Other area (conversion only)
+U,Undetermined (conversion only)
+,
+,DISPOSITION
+1,Transported to emergency care facility
+,End of Civilian Fire Casualty Module; Begin Fire Service Casualty Module
+,GENDER
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for GENDER - B in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,AFFILIATION
+1,Career
+2,Volunteer
+,
+,USUAL ASSIGNMENT
+1,"Fire suppression, included are HazMat, rescue, IC"
+2,EMS
+3,Prevention or inspection
+4,Training
+5,Maintenance
+6,Communications
+7,Administration
+8,Fire investigation
+0,Other assignment
+U,Undetermined (Conversion only)
+,
+,PHYSICAL CONDITION JUST PRIOR TO INJURY
+1,Rested
+2,Fatigued
+4,Ill or injured
+0,"Physical condition, other"
+U,Undetermined
+,
+,SEVERITY
+1,"Report only, including exposure"
+2,First aid only
+3,"Treated by physician, not a lost-time injury"
+4,"Moderate severity, lost-time injury"
+5,"Severe, lost-time injury"
+6,"Life threatening, lost-time injury"
+7,Death
+U,Undetermined (Conversion only)
+,
+,TAKEN TO
+1,Hospital
+4,Doctor's office
+5,Morgue or funeral home
+6,Residence
+7,Station or quarters
+0,"Taken to, other"
+N,Not transported
+U,Undetermined (Conversion only)
+,
+,ACTIVITY AT TIME OF INJURY
+1,Driving or Riding Vehicle
+11,Boarding fire department vehicle
+12,Driving fire department vehicle
+13,Tillering fire department vehicle
+14,Riding fire department vehicle
+15,Exiting fire department vehicle
+16,Driving/riding non-fire department vehicle
+17,Boarding/exiting non-fire department vehicle
+10,"Driving or riding vehicle, other"
+2,Operating Fire Department Apparatus
+21,Operating engine or pumper
+22,Operating aerial ladder or elevating platform
+23,Operating EMS vehicle
+24,Operating HazMat vehicle
+25,Operating rescue vehicle
+20,"Operating fire department apparatus, other"
+3,Extinguishing Fire or Neutralizing Incident
+31,Handling charged hose lines
+32,Using hand extinguishers
+33,Operating master steam device
+34,Using hand tools in extinguishment activity
+35,Removing power lines
+36,Removing flammable liquids/chemicals
+37,"Shutting off utilities, gas lines, etc."
+30,"Extinguishing fire/neutralizing incident, other"
+4,Suppression Support
+41,Forcible entry
+42,Ventilation with power tools
+43,Ventilation with hand tools
+44,Salvage
+45,Overhaul
+40,"Suppression support, other"
+5,Access or Egress
+51,Carrying ground ladder
+52,Raising ground ladder
+53,Lowering ground ladder
+54,Climbing ladder
+55,Scaling
+56,Escaping fire/hazard
+57,Moving/lifting patient with carrying device
+58,Moving/lifting patient without carrying device
+50,"Access/egress, other"
+6,EMS / Rescue
+61,Searching for victim
+62,Rescuing fire victim
+63,Rescuing non-fire victim
+64,Water rescue
+65,Providing EMS care
+66,Diving operations
+67,Extraction with power tools
+68,Extraction with hand tools
+60,"EMS/rescue, other"
+7,Other Incident Scene Activity
+71,Directing traffic
+72,Catching hydrant
+73,Laying hose
+74,Moving tools or equipment around scene
+75,"Picking up tools, equipment, or hose on scene"
+76,Setting up lighting
+77,Operating portable pump
+70,"Other incident scene activity, other"
+8,Station Activity
+81,"Moving about station, alarm sounding"
+82,"Moving about station, normal activity"
+83,Station maintenance
+84,Vehicle maintenance
+85,Equipment maintenance
+86,"Physical fitness activity, supervised"
+87,"Physical fitness activity, unsupervised"
+88,Training activity or drill
+80,"Station activity, other"
+9,Other Activity
+91,"Incident investigation, during incident"
+92,"Incident investigation, after incident"
+93,Inspection activity
+94,Administrative work
+95,Communications work
+00,"Activity, other"
+UU,Undetermined
+,
+,PRIMARY APPARENT SYMPTOM
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for PRIMARY APPARENT SYMPTOM - N in the Civilian Fire Casualty Module.
+,
+,PRIMARY PART OF BODY INJURED
+1,Head
+11,Ear
+12,Eye
+13,Nose
+14,"Mouth, included are lips, teeth, and interior"
+10,"Head, other"
+2,Neck and Shoulders
+21,Neck
+22,Throat
+23,Shoulder
+3,Thorax
+31,"Back, except spine"
+32,Chest
+30,"Thorax, other (conversion only)"
+4,Abdominal area
+41,Abdomen
+42,Pelvis or groin
+43,"Hip, lower back, or buttocks"
+5,Spine
+51,Spine
+6,Upper extremities
+61,"Arm, upper, not including elbow or shoulder"
+62,"Arm, lower, not including elbow or wrist"
+63,Elbow
+64,Wrist
+65,Hand and fingers
+60,"Upper extremities, other (conversion only)"
+7,Lower Extremities
+71,"Leg, upper"
+72,"Leg, lower"
+73,Knee
+74,Ankle
+75,Foot and toes
+8,Internal
+81,Trachea and lungs
+82,Heart
+83,Stomach
+84,Intestinal tract
+85,Genito-urinary
+80,"Internal, other"
+9,Multiple Parts
+91,"Multiple body parts, upper body"
+92,"Multiple body parts, lower body"
+93,"Multiple body parts, whole body"
+00,"Part of body, other"
+NN,None
+UU,Undetermined
+,
+,CAUSE OF FIREFIGHTER INJURY
+1,Fall
+2,Jump
+3,Slip/trip
+4,Exposure to hazard
+5,Struck or assaulted by person/animal/object
+6,Contact with object (firefighter moved into/onto)
+7,Overexertion/strain
+0,"Cause of injury, other"
+U,Undetermined
+,
+,FACTOR CONTRIBUTING TO INJURY
+1,Collapse or Falling Object
+11,Roof collapse
+12,Wall collapse
+13,Floor collapse
+14,Ceiling collapse
+15,Stair collapse
+16,Falling objects
+17,Cave-in (earth)
+10,"Collapse or falling object, other"
+2,Fire Development
+21,"Fire progress, including smoky conditions"
+22,Backdraft
+23,Flashover
+24,Explosion
+20,"Fire development, other"
+3,"Lost, Caught, Trapped, Confined"
+31,Person physically caught or trapped
+32,Lost in building
+33,Operating in confined structural areas
+34,Operating under water or ice
+30,"Lost, caught, trapped, or confined, other"
+4,Holes
+41,Unguarded hole in structure
+42,Hole burned through roof
+43,Hole burned through floor
+40,"Holes, other"
+5,Slippery or Uneven Surfaces
+51,Icy surface
+52,"Wet surface, included are water/soap/foam, etc."
+53,Loose material on surface
+54,"Uneven surface, included are holes in the ground"
+50,"Slippery or uneven surfaces, other"
+6,Vehicle or Apparatus
+61,Vehicle left road or overturned
+62,Vehicle collided with another vehicle
+63,Vehicle collided with nonvehicular object
+64,Vehicle stopped too fast
+65,Seat belt not fastened
+66,Firefighter standing on apparatus
+60,"Vehicle or apparatus, other"
+9,Other Contributing Factors
+91,"Civil unrest, including riots/civil disturbances"
+92,Hostile acts
+00,"Contributing factor, other"
+NN,None
+UU,Undetermined
+,
+,OBJECT INVOLVED IN INJURY
+11,Coupling
+12,"Hose, not charged"
+13,"Hose, charged"
+14,Water from master stream
+15,Water from hose line
+16,"Water, not from a hose"
+17,Steam
+18,"Extinguishing agent, not water"
+21,Ladder: aerial
+22,Ladder: ground
+23,Tools/equipment
+24,"Knife, scissors"
+25,Syringe
+26,FD vehicle/apparatus
+27,"FD vehicle door, including apparatus compartments"
+28,Station sliding pole
+31,Curb
+32,Door in building
+33,Fire escape
+34,Ledge
+35,Stairs
+36,"Wall, including other vertical surfaces"
+37,Window
+38,Roof
+39,Floor or ceiling
+30,"Structural component, other"
+41,Asbestos
+42,"Dirt, stones, or debris"
+43,Glass
+45,Nails
+46,Splinters
+47,Embers
+48,Hot tar
+49,Hot metal
+51,Biological agents
+52,Chemicals
+53,"Fumes, gases, or smoke"
+54,Poisonous plants
+55,Insects
+56,Radioactive materials
+61,Electricity
+62,Extreme weather
+63,"Utility flames, flares, torches"
+64,Heat or flame
+90,"Person, other"
+91,Person: victim
+92,Property and structure contents
+93,Animal
+94,Non-fire department vehicle
+95,"Gun, including all other projectile weapons"
+00,"Object involved, other"
+NN,None
+UU,Undetermined
+,
+,WHERE INJURY OCCURRED
+1,Enroute to fire department location
+2,At fire department location
+3,Enroute to incident or assignment
+4,Enroute to medical facility
+5,"At scene, in structure"
+6,"At scene, outside structure"
+7,At medical facility
+8,Returning from incident or assignment
+9,Returning from medical facility
+0,"Location, other"
+U,Undetermined
+,
+,INJURY RELATIONSHIP TO STRUCTURE
+1,Inside or on structure
+2,Outside of structure
+,
+,
+,SPECIFIC LOCATION WHERE INJURY OCCURRED
+22,Outside at grade
+23,On roof
+24,On aerial ladder or in basket
+25,On ground ladder
+26,On vertical surface or ledge
+27,On fire escape or outside stairway
+28,On steep grade
+31,In open pit
+32,In ditch or trench
+33,In quarry or mine
+34,In ravine
+35,In well
+36,In water
+45,In attic or other confined structural space
+49,"In structure, excluding attic, roof, or wall"
+53,In tunnel
+54,In sewer
+61,In motor vehicle
+63,In rail vehicle
+64,"In boat, ship, or barge"
+65,In aircraft
+00,"Specific location, other"
+UU,Undetermined
+,
+,VEHICLE TYPE
+1,Suppression vehicle
+2,EMS vehicle
+3,Other fire department vehicle
+4,Non-fire department vehicle (includes POV)
+U,Vehicle type undetermined (conversion only)
+N,None
+,
+,EQUIPMENT FAILED?
+Y,Yes
+N,No
+,
+,PROTECTIVE EQUIPMENT ITEM
+1,Head or Face Protection
+11,Helmet
+12,Full face protector
+13,Partial face protector
+14,Goggles/eye protection
+15,Hood
+16,Ear protector
+17,Neck protector
+10,"Head or face protection, other"
+2,"Coat, Shirt, or Trousers"
+21,Protective coat
+22,Protective trousers
+23,Uniform shirt
+24,Uniform T-shirt
+25,Uniform trousers
+26,Uniform coat or jacket
+27,Coveralls
+28,Apron or gown
+20,"Coat, shirt, or trousers, other"
+3,Boots or Shoes
+31,Knee-length boots w/steel baseplate & steel toes
+32,Knee-length boots with steel toes only
+33,3/4-length boots w/steel baseplate & steel toes
+34,3/4-length boots with steel toes only
+35,Boots without steel baseplate or steel toes
+36,Safety shoes with steel baseplate and steel toes
+37,Safety shoes with steel toes only
+38,Non-safety shoes
+30,"Boots or shoes, other"
+4,Respiratory Protection
+41,Self-contained breathing apparatus (SCBA) demand
+42,Self-contained breathing apparatus (SCBA) positive
+43,Self-contained breathing apparatus (SCBA) closed
+44,Non-self-contained breathing apparatus
+45,Cartridge respirator
+46,Dust or particle mask
+40,"Respiratory protection, other"
+5,Hand Protection
+51,Firefighter gloves with wristlets
+52,Firefighter gloves without wristlets
+53,Work gloves
+54,HazMat gloves
+55,Medical gloves
+50,"Hand protection, other"
+6,Special Equipment
+61,Proximity suit for entry
+62,Proximity suit for non-entry
+63,"Totally encapsulated, reusable chemical suit"
+64,"Totally encapsulated, disposable chemical suit"
+65,"Partially encapsulated, reusable chemical suit"
+66,"Partially encapsulated, disposable chemical suit"
+67,Flash protection suit
+68,Flight or jump suit
+69,Brush suit
+7,Special Equipment Continued
+70,"Special equipment, other"
+71,Exposure suit
+72,Self-contained underwater breathing apparatus (SCUBA)
+73,Life preserver
+74,Life belt or ladder belt
+75,Personal alert safety system (PASS)
+76,Radio distress device
+77,Personal lighting
+78,Fire shelter or tent
+79,Vehicle safety belt
+00,"Protective equipment, other"
+UU,Undetermined (conversion only)
+NN,None (conversion only)
+,
+,PROTECTIVE EQUIPMENT PROBLEM 
+11,Burned
+12,Melted
+21,"Fractured, cracked, or broke"
+22,Punctured
+23,Scratched
+24,Knocked off
+25,Cut or ripped
+31,Trapped steam or hazardous gas
+32,Insufficient insulation
+33,Object fell in or onto equipment item
+41,Failed under impact
+42,Face piece or hose detached
+43,Exhalation valve inoperative or damaged
+44,Harness detached or separated
+45,Regulator failed to operate
+46,Regulator damaged by contact
+47,Problem with admissions valve
+48,Alarm failed to operate
+49,Alarm damaged by contact
+51,Supply cylinder or valve failed to operate
+52,Supply cylinder or valve damaged by contact
+53,Supply cylinder contained insufficient air
+94,Did not fit properly
+95,Not properly serviced or stored prior to use
+96,Not used for designed purpose
+97,Not used as recommended by manufacturer
+00,"Protective equipment problem, other"
+UU,Undetermined
+,
+,End of Fire Service Casualty Module; Begin EMS Module
+,PROVIDER IMPRESSION/ASSESSMENT
+10,Abdominal pain
+11,Airway obstruction
+12,"Allergic reaction, excludes stings & venomous bite"
+13,Altered level of consciousness
+14,"Behavioral - mental status, psychiatric disorder"
+15,Burns
+16,Cardiac arrest
+17,Cardiac dysrhythmia
+18,Chest pain
+19,Diabetic symptom
+20,Do not resuscitate
+21,Electrocution
+22,General illness
+23,Hemorrhaging/bleeding
+24,Hyperthermia
+25,Hypothermia
+26,Hypovolemia
+27,"Inhalation injury, toxic gases"
+28,Obvious death
+29,Overdose/poisoning
+30,Pregnancy/OB
+31,Respiratory arrest
+32,Respiratory distress
+33,Seizure
+34,Apparent sexual assault
+35,Sting/bite
+36,Stroke/CVA
+37,"Syncope, fainting"
+38,Trauma
+00,"Impression/assessment, other"
+NN,None/no patient or refused treatment
+,
+,GENDER
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for GENDER - B in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,
+,RACE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for RACE - E1 in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,ETHNICITY
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for ETHNICITY ? E2 in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,HUMAN FACTORS CONTRIBUTING TO INJURY
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for HUMAN FACTORS CONTRIBUTING TO INJURY ? J in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,OTHER FACTORS
+1,Accidental
+2,Self-inflicted
+3,"Inflicted, not self-inflicted"
+N,None
+,
+,BODY SITE OF INJURY
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for PRIMARY AREA OF BODY INJURED ? O in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,INJURY TYPE
+10,Amputation
+11,Blunt Injury
+12,Burn
+13,Crush
+14,Dislocate/fracture
+15,Gunshot
+16,Laceration
+17,Pain without swelling
+18,Puncture/stab
+19,Soft tissue swelling
+00,"Injury type, other"
+,
+,CAUSE OF ILLNESS/INJURY
+10,Chemical exposure
+11,Drug poisoning
+12,Fall
+13,Aircraft related
+14,"Bite, includes animal bites"
+15,Bicycle accident
+16,Building collapse/construction accident
+17,Drowning
+18,Electrical shock
+19,Cold
+20,Heat
+21,Explosives
+22,Fire and flames
+23,Firearm
+25,Fireworks
+26,Lightning
+27,Machinery
+28,Mechanical suffocation
+29,Motor vehicle accident
+30,"Motor vehicle accident, pedestrian"
+31,Non-traffic vehicle (off-road) accident
+32,Physical assault/abuse
+33,Scalds/other thermal
+34,Smoke inhalation
+35,Stabbing assault
+36,Venomous sting
+37,Water transport
+00,"Cause, other"
+UU,Unknown
+,
+,PROCEDURES USED
+01,Airway insertion
+02,Anti-shock trousers
+03,Assisted ventilation
+04,Bleeding control
+05,Burn care
+06,Cardiac pacing
+07,"Cardioversion (defib), manual"
+08,Chest/abdominal thrust
+09,CPR
+10,Cricothyroidotomy
+11,Defibrillation by AED
+12,EKG monitoring
+13,Extrication
+14,Intubation (EGTA)
+15,Intubation (ET)
+16,IO/IV therapy
+17,Medications therapy
+18,Oxygen therapy
+19,Obstetrical care/delivery
+20,Prearrival instructions
+21,Restrained patient
+22,Spinal immobilization
+23,Splinted extremities
+24,Suction/aspirate
+00,"Procedures used, other"
+NN,No treatment
+ , 
+,SAFETY EQUIPMENT
+1,"Safety, seat belts"
+2,Child safety seat
+3,Airbag
+4,Helmet
+5,Protective clothing
+6,Flotation device
+N,None
+0,"Safety equipment, other"
+U,Undetermined
+,
+,CARDIAC ARREST
+1,Pre-arrival arrest
+2,Post arrival arrest
+,
+,PRE-ARRIVAL DETAILS
+1,Witnessed
+2,Bystander CPR
+,
+,INITIAL ARREST RHYTHM 
+1,V-Fib/V-Tach
+0,"Initial arrest rhythm, other"
+U,Undetermined
+,
+,INITIAL LEVEL OF PROVIDER
+1,First responder
+2,EMT-B (Basic)
+3,EMT-I (Intermediate)
+4,EMT-P (Paramedic)
+0,Other health care provider
+N,No training
+,
+,HIGHEST LEVEL OF CARE PROVIDED ON SCENE
+1,First responder
+2,EMT-B (Basic)
+3,EMT-I (Intermediate)
+4,EMT-P (Paramedic)
+0,Other health care provider
+N,No care provided
+,
+,PATIENT STATUS
+1,Improved
+2,Remained same
+3,Worsened
+,
+,PULSE ON TRANSFER
+1,Pulse on transfer
+2,No pulse on transfer
+,
+,EMS DISPOSITION
+1,FD transport to emergency care facility (ECF)
+2,Non-FD transport
+3,Non-FD transport with FD attendant
+4,Non-emergency transfer
+0,Other
+N,Not transported under EMS
+,
+,End EMS Module; Begin HazMat Module
+,DOT HAZARD CLASSIFICATION
+10,"Class 1 ? Explosives, other (conversion only)"
+11,Division 1.1 Explosives with mass explosion hazard
+12,Division 1.2 Explosives with projectile hazard
+13,Division 1.3 Explosives w/predominant fire hazard
+14,Division 1.4 Explosives with no significant blast
+15,Division 1.5 Very insensitive explosives; blasting
+16,Division 1.6 Extremely insensitive detonating arti
+20,"Class 2 ? Gases, other (conversion only)"
+21,Division 2.1 Flammable gases
+22,Division 2.2 Non-flammable
+23,Division 2.3 Gases toxic by inhalation
+24,Division 2.4 Corrosive gases (Canada)
+30,Class 3 - Flammable/Combustible Liquids
+40,"Class 4 - Flammable Solids, other (conversion only)"
+41,Division 4.1 Flammable solids
+42,Division 4.2 Spontaneously combustible materials
+43,Division 4.3 Dangerous-when-wet materials
+50,"Class 5 - Oxidizers and Organic peroxides, other (conversion only)"
+51,Division 5.1 Oxidizers
+52,Division 5.2 Organic peroxides
+60,"Class 6 - Toxic, Infectious material or sub., other (conversion only)"
+61,Division 6.1 Toxic materials
+62,Division 6.2 Infectious substances
+70,Class 7 - Radioactive materials
+80,Class 8 - Corrosive materials
+90,"Class 9 - Miscellaneous dangerous goods, other (conversion only)"
+91,Division 9.1 Miscellaneous dangerous goods- Canada
+92,Division 9.2 Environmentally hazardous substances
+93,Division 9.3 Dangerous wastes (Canada)
+UU,Undetermined
+,
+ ,CONTAINER TYPE
+1,Portable Container
+10,"Portable container, other"
+11,Drum
+12,Cylinder
+13,Can or bottle
+14,Carboy
+15,Box or carton
+16,Bag or sack
+17,Cask
+18,Hose
+2,Fixed Container
+20,"Fixed container, other"
+21,Tank or silo
+22,Pipe or pipeline
+23,Bin
+24,Machinery or process equipment
+28,Hose
+3,Natural Containment
+30,"Natural container, other"
+31,Sump or pit
+32,Pond or surface impoundment
+33,Well
+34,Dump site or landfill
+4,Mobile Container
+40,"Mobile container, other"
+41,Vehicle fuel tank and associated piping
+42,Product tank on or towed by vehicle
+43,Piping associated with mobile product tank loading or offloading
+48,Hose
+9,Other Containers
+91,Rigid Intermediate Bulk Container (RIBC)
+00,"Container type, other"
+NN,None
+UU,Undetermined
+,
+,UNITS: CAPACITY
+1,Volume Units
+11,Ounces (liquid)
+12,Gallons
+13,Barrels (42 gal)
+14,Liters
+15,Cubic feet
+16,Cubic meters
+2,Weight Units
+21,Ounces (weight).
+22,Pounds
+23,Grams
+24,Kilograms
+3,Micro Units
+31,Parts per billion
+32,Parts per million
+33,Micro Roentgen
+34,Milli Roentgen
+35,Roentgen
+36,RAD
+37,REM
+38,Curie
+,
+,UNITS: RELEASED
+1,Volume Units
+11,Ounces (liquid)
+12,Gallons
+13,Barrels (42 gal)
+14,Liters
+15,Cubic feet
+16,Cubic meters
+2,Weight Units
+21,Ounces (weight).
+22,Pounds
+23,Grams
+24,Kilograms
+3,Micro Units
+31,Parts per billion
+32,Parts per million
+33,Micro Roentgen
+34,Milli Roentgen
+35,Roentgen
+36,RAD
+37,REM
+38,Curie
+,
+,PHYSICAL STATE WHEN RELEASED
+1,Solid
+2,Liquid
+3,Gas
+U,Undetermined
+,
+,RELEASED INTO
+1,Air
+2,Water
+3,Ground
+4,Water and ground
+5,Air and ground
+6,Water and air
+7,"Air, water, and ground"
+8,"Confined, no environmental impact"
+U,Undetermined (conversion only)
+,
+ ,RELEASED FROM
+1,Inside or on structure
+2,Outside of structure
+,
+,POPULATION DENSITY
+1,Urban center - Densely populated
+2,Suburban - Predominantly single-family residential
+3,Rural - Scattered small communities and farms
+,
+,AREA AFFECTED
+1,Square feet
+2,Blocks
+3,Square miles
+,
+,AREA EVACUATED
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for AREA AFFECTED ? G1 in the Hazmat Module. Please see the codes listed for that data element.
+,
+,HAZMAT ACTIONS TAKEN
+1,Hazardous Condition
+11,"Identify, analyze hazardous materials"
+12,"HazMat detection, monitoring, sampling, & analysis"
+13,HazMat spill control and confinement
+14,HazMat leak control and containment
+15,Remove hazard or hazardous materials
+16,Decontaminate persons or equipment
+2,Isolation and Evacuation
+21,Determine materials to be non-hazardous
+22,Isolate area & establish hazard control zones
+23,Provide apparatus
+24,Provide equipment
+25,Provide water
+26,Control crowd
+27,Control traffic
+28,Protect-in-place operations
+3,"Information, Investigation & Enforcement"
+31,Refer to proper authority
+32,Notify other agencies
+33,Provide information to public or media
+34,Investigate
+35,Standby
+00,"Action taken, other"
+,
+,RELEASE/IGNITION SEQUENCE
+1,Ignition
+2,Release
+U,Undetermined
+,
+,CAUSE OF RELEASE
+1,Intentional
+2,Unintentional release
+3,Container or containment failure
+4,Act of nature
+5,Cause under investigation
+U,Cause undetermined after investigation
+,
+,FACTORS CONTRIBUTING TO RELEASE
+3,Failure to Control Hazardous Material
+31,Abandoned or discarded hazardous material
+32,Failure to maintain proper temperature
+33,Fell asleep and lost control of operations
+34,Inadequate control of hazardous materials
+37,Person possibly impaired by drugs or alcohol
+38,Person otherwise impaired or unconscious
+30,"Failure to control hazardous materials, other"
+4,Misuse of Hazardous Materials
+42,Improper mixing technique
+43,Hazardous materials used improperly
+45,Improper container
+46,Improper movement of hazardous materials container
+47,Improper storage procedures
+48,Children playing with hazardous materials
+49,Criminal activity
+40,"Misuse of hazardous materials, other"
+5,"Mechanical Failure, Malfunction"
+51,Automatic control failure
+52,Manual control failure
+53,"Short circuit, ground fault"
+54,"Other part failure, leak, or break"
+55,Other electrical failure
+56,"Lack of maintenance, worn out"
+50,"Mechanical failure, malfunction, other"
+6,"Design, Construction, Installation Deficiency"
+61,Design deficiency
+62,Construction deficiency
+64,Installation deficiency
+60,"Design/construction/installation deficiency, other"
+7,Operational Deficiency
+71,"Collision, overturn, knockdown"
+72,"Accidentally turned on, not turned off"
+73,Equipment unattended
+74,Equipment overload
+75,Failure to clean equipment
+76,"Improper startup, shutdown procedures"
+77,Equipment used for purpose not intended
+78,Equipment not being operated properly
+70,"Operational deficiency, other"
+8,Natural Condition
+81,High wind
+82,Earthquake
+83,"High water, flood"
+84,Lightning
+85,Low humidity
+86,High humidity
+87,Low temperature
+88,High temperature
+80,"Natural condition, other"
+9,Special Release Factors
+91,Animal
+92,Secondary release following previous release
+93,Reaction with other chemical
+97,Failure to use ordinary care
+00,"Factors contributing to release, other"
+UU,Undetermined
+,
+,FACTORS AFFECTING MITIGATION
+1,Site Factors
+11,Released into water table
+12,Released into sewer system
+13,Released into wildland/wetland area
+14,Released in residential area
+15,Released in occupied building
+16,Air release in confined area
+17,"Released, slick on waterway"
+18,Released on major roadway
+10,"Site factors, other"
+2,Release Factors
+21,Release of extremely dangerous agent
+22,Threatened release of extremely dangerous agent
+23,Combination of release and fire impeded mitigation
+24,"Multiple chemicals released, unknown effects"
+25,"Release of unidentified chemicals, unknown effects"
+20,"Release factors, other"
+3,Impediment or Delay Factors
+31,Access to release area
+32,HazMat apparatus unavailable
+33,HazMat apparatus failure
+34,Traffic delay
+35,Trouble finding location
+36,Communications delay
+37,HazMat-trained crew unavailable or delayed
+30,"Impediment or delay factors, other"
+4,Natural Conditions
+41,High wind
+42,Storm
+43,"High water, including floods"
+44,Earthquake
+45,Extreme high temperature
+46,Extreme low temperature
+47,Ice or snow conditions
+48,Lightning
+49,Animal
+40,"Natural conditions, other"
+00,"Factors affecting mitigation, other"
+NN,None
+,
+,EQUIPMENT INVOLVED IN RELEASE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for EQUIPMENT INVOLVED IN IGNITION- F1 in the Fire Module. Please see the codes listed for that data element.
+,
+,MOBILE PROPERTY TYPE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for MOBILE PROPERTY TYPE ? H2 in the Fire Module. Please see the codes listed for that data element.
+,
+,MOBILE PROPERTY MAKE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for MOBILE PROPERTY MAKE ? H2 in the Fire Module. Please see the codes listed for that data element.
+,
+,HAZMAT DISPOSITION
+1,Completed by fire service only
+2,Completed with fire service present
+3,Released to local agency
+4,Released to county agency
+5,Released to state agency
+6,Released to federal agency
+7,Released to private agency
+8,Released to property owner or manager
+,End HazMat Module; Begin Wildland Fire Module
+,SUBSECTION
+NENE,Northeast by Northeast
+NENW,Northeast by Northwest
+NESE,Northeast by Southeast
+NESW,Northeast by Southwest
+NWNE,Northwest by Northeast
+NWNW,Northwest by Northwest
+NWSE,Northwest by Southeast
+NWSW,Northwest by Southwest
+SENE,Southeast by Northeast
+SENW,Southeast by Northwest
+SESE,Southeast by Southeast
+SESW,Southeast by Southwest
+SWNE,Southwest by Northeast
+SWNW,Southwest by Northwest
+SWSE,Southwest by Southeast
+SWSW,Southwest by Southwest
+,
+,MERIDIAN
+01,First Principal
+02,Second Principal
+03,Third Principal
+04,Fourth Principal
+05,Fifth Principal
+06,Sixth Principal
+07,Black Hills
+08,Boise
+09,Chickasaw
+10,Choctaw
+11,Cimarron
+12,Copper River
+13,Fairbanks
+14,Gila and Salt River
+15,Humboldt
+16,Huntsville
+17,Indian
+18,Louisiana
+19,Michigan
+20,Principal
+21,Mt. Diablo
+22,Navajo
+23,New Mexico
+24,St. Helena
+25,St. Stephens
+26,Salt Lake
+27,San Bernardino
+28,Seward
+29,Tallahassee
+30,Uintah
+31,Ute
+32,Washington
+33,Willamette
+34,Wind River
+35,Ohio
+36,Great Miami River
+37,Muskingum River
+38,Ohio River
+39,First Scioto River
+40,Second Scioto River
+41,Third Scioto River
+42,Ellicotts Line
+43,12 Mile Square
+44,Kateel River
+45,Umiat
+UU,Undetermined
+,
+,AREA TYPE
+1,"Rural, including farms > 50 acres"
+2,"Urban, heavily populated areas"
+3,Rural/urban or suburban
+4,Urban-wildland interface area
+,
+,WILDLAND FIRE CAUSE
+1,Natural source
+2,Equipment
+3,Smoking
+4,Open/outdoor fire
+5,"Debris, vegetation burn"
+6,Structure (exposure)
+7,Incendiary
+8,Misuse of fire
+0,Other cause
+U,Undetermined
+,
+,HUMAN FACTORS CONTRIBUTING TO IGNITION
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for HUMAN FACTORS CONTRIBUTING TO IGNITION ? E3 in the Fire Module. Please see the codes listed for that data element.
+,
+,FACTORS CONTRIBUTING TO IGNITION
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for FACTORS CONTRIBUTING TO IGNITION ? E2 in the Fire Module. Please see the codes listed for that data element.
+,
+,FIRE SUPPRESSION FACTORS
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for FIRE SUPPRESSION FACTORS ? G in the Fire Module. Please see the codes listed for that data element.
+,
+,HEAT SOURCE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for HEAT SOURCE ? D2 in the Fire Module. Please see the codes listed for that data element.
+,
+,MOBILE PROPERTY TYPE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for MOBILE PROPERTY TYPE ? H2 in the Fire Module. Please see the codes listed for that data element.
+,
+,EQUIPMENT INVOLVED IN IGNITION
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for EQUIPMENT INVOLVED IN IGNITION- F1 in the Fire Module. Please see the codes listed for that data element.
+,
+,WEATHER TYPE
+10,"Clear, less than 1/10 cloud cover"
+11,"Scattered clouds, 1/10 to 5/10 cloud cover"
+12,"Broken clouds, 6/10 to 9/10 cloud cover"
+13,"Overcast, over 9/10 cloud cover"
+14,Foggy
+15,Drizzle or mist
+16,Rain
+17,Snow or sleet
+18,Shower
+19,Thunderstorm in progress
+00,"Weather type, other"
+,
+,WIND DIRECTION
+1,North
+2,Northeast
+3,East
+4,Southeast
+5,South
+6,Southwest
+7,West
+8,Northwest
+9,Shifting winds
+N,None/calm
+U,Undetermined
+,
+,FIRE DANGER RATING
+1,Low fire danger
+2,Moderate fire danger
+3,High fire danger
+4,Very high fire danger
+5,Extreme fire danger
+U,Undetermined
+,
+,PROPERTY MANAGEMENT
+ ,Private
+1,Tax paying
+2,Non-tax paying
+,Public
+3,"City, town, village or other locality"
+4,County or parish
+5,State or province
+6,Federal
+7,Foreign
+8,Military
+0,Other
+U,Undetermined
+,
+,FEDERAL AGENCY CODE
+PLEASE NOTE:,The code set table used for this data element is located in a new (separate) spreadsheet in Spec_Table.xls
+,
+,NFDRS FUEL MODEL AT ORIGIN
+01,A: Annual Grasses.
+02,B: Mature brush [6 ft.+]
+03,C: Open pine with grass
+04,D: Southern rough
+05,E: Hardwood litter
+06,F: Intermountain West brush
+07,"G: West Coast conifers; close, heavy down materials"
+08,H: Short needle conifers; normal down woody materials
+09,"I: Heavy slash, clear-cut conifers greater than 25 tons per acre"
+10,"J: Medium slash, heavily thinned conifers (less than 25 tons per acre)"
+11,K: Light slash (less than 15 tons per acre)
+12,L: Perennial grasses
+14,"N: Sawgrass, marsh needle-like grass"
+15,O: High pocosin
+16,P: Southern long-needle pine
+17,Q: Alaska black spruce
+18,R: Hardwood litter (summer)
+19,S: Tundra
+20,T: Sagebrush with grass
+21,U: Western long-needled pine
+UU,Undetermined
+,
+,PERSON RESPONSIBLE FOR FIRE
+1,Identified person caused fire
+2,Unknown person caused fire
+3,Fire not caused by person
+,
+,GENDER OF PERSON INVOLVED
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for GENDER - B in the Civilian Fire Casualty Module. Please see the codes listed for that data element.
+,
+,ACTIVITY OF PERSON INVOLVED
+01,Logging/timber harvest
+02,Management activities
+03,Construction/maintenance
+04,Social gathering
+05,Hunting
+06,Fishing
+07,Other recreation
+08,Camping
+09,Other permitted harvest
+10,Picnicking
+11,Non-permitted harvest
+12,Harvest of Illegal material
+13,Religious or ceremonial activity
+14,Oil/gas production
+15,Military operations
+16,Subsistence
+17,Mining
+18,Livestock grazing
+19,Target practice
+20,Blasting
+21,Fireworks use
+00,"Human activity, other"
+,
+,TYPE OF RIGHT-OF-WAY
+919,"Dump, sanitary landfill"
+921,"Bridge, trestle"
+922,Tunnel
+926,"Outbuilding, excluding garage"
+931,"Open land, field"
+935,Campsite with utilities
+936,Vacant lot
+938,Graded and cared-for plots of land
+940,Water area
+951,Railroad right-of-way
+952,Railroad yard
+960,"Street, other"
+961,Highway or divided highway
+962,"Residential street, road or residential driveway"
+963,Street or road in commercial area
+965,Vehicle parking area
+972,Aircraft runway
+973,Aircraft taxiway
+974,Aircraft loading area
+981,Construction site
+982,"Oil, gas field"
+983,"Pipeline, power line or other utility right-of-way"
+984,"Industrial plant yard, area"
+000,"Type of right-of-way, other"
+UUU,Undetermined
+NNN,None
+,
+,RELATIVE POSITION ON SLOPE
+0,Valley Bottom
+1,Lower Slope
+2,Mid Slope
+3,Upper Slope
+4,Ridge Top
+,
+,ASPECT
+0,Flat/None
+1,Northeast
+2,East
+3,Southeast
+4,South
+5,Southwest
+6,West
+7,Northwest
+8,North
+,End of Wildland Fire Module; Begin Apparatus or Resources Module
+,
+,APPARATUS OR RESOURCE TYPE
+1,Ground Fire Suppression
+10,"Ground fire suppression, other"
+11,Engine
+12,Truck or aerial
+13,Quint
+14,Tanker & pumper combination
+16,Brush truck
+17,ARFF (aircraft rescue & firefighting)
+2,Heavy Ground Equipment
+20,"Heavy ground equipment, other"
+21,Dozer or plow
+22,Tractor
+24,Tanker or tender
+4,Aircraft
+40,"Aircraft, other"
+41,"Aircraft, fixed-wing tanker"
+42,Helitanker
+43,Helicopter
+5,Marine Equipment
+50,"Marine equipment, other"
+51,Fire boat with pump
+52,"Boat, no pump"
+6,Support Equipment
+60,"Support apparatus, other"
+61,Breathing apparatus support
+62,Light and air unit
+7,Medical & Rescue Unit
+70,"Medical & rescue unit, other"
+71,Rescue unit
+72,Urban search & rescue unit
+73,High-angle rescue unit
+75,BLS unit
+76,ALS unit
+9,Other
+91,Mobile command post
+92,Chief officer car
+93,HazMat unit
+94,Type I hand crew
+95,Type II hand crew
+99,Privately owned vehicle
+00,Other apparatus/resource
+NN,None
+UU,Undetermined
+,
+,APPARATUS USE
+1,Suppression
+2,EMS
+0,Other
+,
+,ACTIONS TAKEN
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for ACTIONS TAKEN - F in the Basic Module. Please see the codes listed for that data element.
+,End of Apparatus or Resources Module; Begin Personnel Module
+,APPARATUS OR RESOURCE TYPE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for APPARATUS OR RESOURCE TYPE -  B in the Apparatus/Resources Module. Please see the codes listed for that data element.
+,
+,APPARATUS USE
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for APPARATUS OR RESOURCE TYPE - B in the Apparatus/Resources Module. Please see the codes listed for that data element.
+,
+,ACTIONS TAKEN
+PLEASE NOTE:,The code set table used for this data element is the same set that is used for ACTIONS TAKEN - F in the Basic Module. Please see the codes listed for that data element.
+,
+,End of Personnel Module; Begin Arson Module
+ ,CASE STATUS
+1,Investigation open
+2,Investigation closed
+3,Investigation inactive
+4,Investigation closed with arrest
+5,Closed with exceptional clearance
+,
+,AVAILABILITY OF MATERIAL FIRST IGNITED
+1,Transported to scene
+2,Available at scene
+U,Unknown
+,
+,SUSPECTED MOTIVATION FACTORS
+11,Extortion
+12,Labor unrest
+13,Insurance fraud
+14,Intimidation
+15,Void contract/lease
+16,Foreclosed property
+21,Personal
+22,Hate crime
+23,Institutional
+24,Societal
+31,Protest
+32,Civil unrest
+41,Fireplay/curiosity
+42,Vanity/recognition
+43,Thrills
+44,Attention/sympathy
+45,Sexual excitement
+51,Homicide
+52,Suicide
+53,Domestic violence
+54,Burglary
+61,Homicide concealment
+62,Burglary concealment
+63,Auto theft concealment
+64,Destroy records/evidence
+00,Other suspected motivation
+UU,Unknown
+,
+ ,APPARENT GROUP INVOLVEMENT
+1,Terrorist group
+2,Gang
+3,Anti-government group
+4,Outlaw motorcycle organization
+5,Organized crime
+6,Racial/ethnic hate group
+7,Religious hate group
+8,Sexual preference hate group
+N,"No group involvement, acted alone"
+0,Other group
+U,Unknown
+,
+,ENTRY METHOD
+11,Door ? open or unlocked
+12,Door ? forced or broken
+13,Window ? open or unlocked
+14,Window ? forced or broken
+15,Gate ? open or unlocked
+16,Gate ? forced or broken
+17,Locks ? pried
+18,Locks ? cut
+19,Floor entry
+21,Vent
+22,Attic/roof
+23,Key
+24,Help from inside
+25,Wall
+26,Crawl space
+27,Hid in/on premises
+00,Other entry method
+UU,Unknown
+,
+,EXTENT OF FIRE INVOLVEMENT ON ARRIVAL
+1,No flame or smoke showing
+2,Smoke only showing
+3,Flame and smoke showing
+4,Fire through roof
+5,Fully involved
+,
+ ,INCENDIARY DEVICES - CONTAINER
+11,"Bottle, glass"
+12,"Bottle, plastic"
+13,Jug
+14,Pressurized container
+15,Can (not gasoline or fuel can)
+16,Gasoline or fuel can
+17,Box
+00,Other container
+NN,No container
+UU,Unknown
+,
+,INCENDIARY DEVICES - IGNITION/DELAY DEVICE
+11,Wick or fuse
+12,Candle
+13,Cigarette and matchbook
+14,Electronic component
+15,Mechanical device
+16,Remote control
+17,Road flare/fuse
+18,Chemical component
+19,Trailer/streamer
+20,Open flame source
+00,Other delay device
+NN,No device
+UU,Unknown
+,
+,INCENDIARY DEVICES - FUEL
+11,Ordinary combustibles
+12,Flammable gas
+14,Ignitable liquid
+15,Ignitable solid
+16,Pyrotechnic material
+17,Explosive material
+00,Other material
+NN,None
+UU,Unknown
+,
+,OTHER INVESTIGATIVE INFORMATION
+1,Code violations
+2,Structure for sale
+3,Structure vacant
+4,Other crimes involved
+5,Illicit drug activity
+6,Change in insurance
+7,Financial problem
+8,Criminal/civil actions pending
+,
+ ,PROPERTY OWNERSHIP
+1,Private
+2,"City, town, village, local"
+3,County or parish
+4,State or province
+5,Federal
+6,Foreign
+7,Military
+0,Other
+,
+ ,INITIAL OBSERVATIONS
+1,Windows ajar
+2,Doors ajar
+3,Doors locked
+4,Doors unlocked
+5,Fire department forced entry
+6,Entry forced prior to FD arrival
+7,Security system was activated
+8,Security system was present but not activated
+,
+,LABORATORY USED
+1,Local
+2,State
+3,ATF
+4,FBI
+5,Other federal laboratory
+6,Private
+N,None
+,
+,GENDER 
+Please Note,"USE THE GENDER TABLE LISTED IN THE CIVILIAN FIRE CASUALTY MODULE, (BLOCK B)"
+,
+,RACE
+Please Note,"USE THE RACE TABLE LISTED IN THE CIVILIAN FIRE CASUALTY MODULE, (BLOCK E1)"
+,
+,ETHNICITY
+Please Note,"USE THE ETHNICITY TABLE LISTED IN THE CIVILIAN FIRE CASUALTY MODULE, (BLOCK E2)"
+,
+ ,FAMILY TYPE
+1,Single-parent family
+2,Foster parents
+3,Two-parent family
+4,"Extended family, including multigenerational"
+N,No family unit
+0,Other family type
+U,Unknown
+,
+,MOTIVATION/RISK FACTORS
+1,Mild curiosity about fire
+2,Moderate curiosity about fire
+3,Extreme curiosity about fire
+4,Diagnosed (or suspected) ADD/ADHD
+5,History of trouble outside school
+6,History of stealing or shoplifting
+7,History of physically assaulting others
+8,History of fireplay or firesetting
+9,Transiency
+0,Other
+U,Unknown
+,
+,DISPOSITION OF PERSON UNDER 18
+1,Handled within department
+2,Released to parent or guardian
+3,Referred to other authority
+4,Referred to treatment/counseling program
+5,"Arrested, charged as adult"
+6,Referred to firesetter intervention program
+0,Other
+U,Unknown
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
