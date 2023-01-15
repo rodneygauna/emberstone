@@ -1,9 +1,27 @@
-{% extends "base.html" %} {% block content %}
-<h1>Login</h1>
-<form method="post" action="{{ url_for('users.login') }}">
-  {{ form.hidden_tag() }}
-  <div>{{ form.email.label }} {{ form.email }}</div>
-  <div>{{ form.password.label }} {{ form.password }}</div>
-  <div>{{ form.submit }}</div>
+{%extends "base.html"%} {%block content%}
+<form method="post" action="{{url_for('users.login')}}">
+  {{form.hidden_tag()}}
+  <div class="row">
+    <div class="five columns">
+      <h2>Login</h2>
+      {{form.email.label}} {{form.email(class="u-full-width")}}
+      {{form.password.label}} {{form.password(class="u-full-width")}}
+      <div>{{form.submit(class="button-primary")}}</div>
+    </div>
+    <div class="seven columns">
+      <h2>News and Updates</h2>
+      <h3>News</h3>
+      <p>news goes heres</p>
+      <h3>Updates</h3>
+      <p>updates go here</p>
+      <h2>Start Using Emberstone</h2>
+      <p>
+        Emberstone is a free, open-source, and community-driven project.
+        <br />
+        <br />
+        <a href="#" class="button button-primary">Create New Department</a>
+      </p>
+    </div>
+  </div>
 </form>
-{% endblock content %}
+{%endblock content%}

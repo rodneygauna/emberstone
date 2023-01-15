@@ -3,12 +3,29 @@
 * Build off of Skeleton CSS Framework
 */
 
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --red: #ED4A2D;
+  --red-hover: #F48F7D;
+  --gray: #e1e1e1;
+}
+
+
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   position: relative;
   width: 100%;
   max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  position: relative;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -279,7 +296,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB;
+  color: -var(--red);
 }
 
 a:hover {
@@ -334,8 +351,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0;
+  background-color: var(--red);
+  border-color: var(--red);
 }
 
 .button.button-primary:hover,
@@ -349,8 +366,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB;
+  background-color: var(--red-hover);
+  border-color: var(--red-hover);
 }
 
 
@@ -556,6 +573,7 @@ hr {
   border-width: 0;
   border-top: 1px solid #E1E1E1;
 }
+
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
