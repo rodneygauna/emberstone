@@ -51,11 +51,9 @@ from . import models
 
 
 # Blueprint imports
-from emberstone.cli.commands import commands_bp
 from emberstone.core.views import core_bp
 from emberstone.users.views import users_bp
 
 # Register blueprints
-app.register_blueprint(commands_bp)
 app.register_blueprint(core_bp)
 app.register_blueprint(users_bp)
