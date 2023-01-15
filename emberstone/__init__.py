@@ -4,9 +4,10 @@ This file initializes the Flask app, the routes, and the database.
 
 # Imports
 import os
+import pymongo
+import bcrypt
 from dotenv import load_dotenv
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_mail import Mail
 
@@ -20,13 +21,12 @@ EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 # Flask initialization
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(basedir, 'database.db')
 app.config['SECRET_KEY'] = SECRET_KEY
 
 
 # Initialize the database
-db = SQLAlchemy(app)
+client = pymongo.MongoClient('mongodb://localhost:27017/')
+db = client.get_database('emberstone')
 
 
 # Initializes the login manager

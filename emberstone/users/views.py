@@ -8,10 +8,15 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 from emberstone.users.forms import LoginForm
 from emberstone.models import User
+from emberstone import db
 
 
 # Blueprint variable
 users_bp = Blueprint('users', __name__)
+
+
+# Database - Users variable
+users = db.users
 
 
 # Routes
@@ -19,29 +24,21 @@ users_bp = Blueprint('users', __name__)
 @users_bp.route('/login', methods=['GET', 'POST'])
 def login():
     '''Route: Login Page'''
-    # Check if user is already logged in
-    if current_user.is_authenticated:
-        return redirect(url_for('core.index'))
-
     # Login form
     form = LoginForm()
 
     # Validate form
-    if form.validate_on_submit and request.method == 'POST':
+    if form.validate_on_submit():
         # Query database for user
-        user = User.query.filter_by(email=form.email.data).first()
+        user = users.find_one({'email': form.username.data})
 
-        # Check if user exists and password is correct
-        if user and check_password_hash(user.password, form.password.data):
-            # Log user in
-            login_user(user, remember=True)
+        # Check if user exists
+        if user and form.password.data == user['password']:
+            user_obj = User(user['email'], user['password'])
+            login_user(user_obj, remember=form.remember.data)
 
-            # Redirect user to homepage
-            return redirect(url_for('core.index'))
-        else:
-            # Display error message
-            flash('Login Unsuccessful. Please check email and password',
-                  'danger')
+            # Redirect user to home page
+            return redirect(url_for('main.home'))
 
     return render_template('login.html',
                            title='Emberstone - Login',

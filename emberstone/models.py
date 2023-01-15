@@ -7,15 +7,21 @@ https://www.usfa.fema.gov/nfirs/documentation/
 # Imports
 from flask import redirect, url_for
 from flask_login import UserMixin
-from sqlalchemy.sql import func
 from . import db, login_manager
+
+
+# Database - Users variable
+users = db.users
 
 
 # LoginManager - User Loader
 @login_manager.user_loader
 def load_user(user_id):
     '''Queries the database for the user_id and returns the user object'''
-    return User.query.get(user_id)
+    user = users.find_one({'email': user_id})
+    if user:
+        return User(user['email'], user['password'])
+    return None
 
 
 @login_manager.unauthorized_handler
@@ -24,117 +30,24 @@ def unauthorized():
     return redirect(url_for('users.login'))
 
 
-# Fire department model
-class FireDepartment(db.Model):
-    '''SQL Table: Fire Departments'''
-    __tablename__ = 'fire_departments'
-    id = db.Column(db.Integer, primary_key=True)
-    # Data
-    nfirs_id = db.Column(db.String(5), unique=True)
-    name = db.Column(db.String(100), nullable=False)
-    street_number = db.Column(db.String(10))
-    street_prefix = db.Column(db.String(10))
-    street_name = db.Column(db.String(50))
-    street_type = db.Column(db.String(10))
-    street_suffix = db.Column(db.String(10))
-    city = db.Column(db.String(50))
-    state = db.Column(db.String(2))
-    zipcode = db.Column(db.Integer)
-    phone = db.Column(db.Integer)
-    fax = db.Column(db.Integer)
-    email = db.Column(db.String(100))
-    county_code = db.Column(db.String(3))
-    status = db.Column(db.String(10), nullable=False, default='Active')
-    # Timestamps
-    created_at = db.Column(db.DateTime(timezone=True),
-                           nullable=False, default=func.now())
-    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    updated_at = db.Column(db.DateTime(timezone=True))
-    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-
-    def __repr__(self):
-        return f"FireDepartment('{self.name}')"
-
-
-# Station model
-class FireStation(db.Model):
-    '''SQL Table: Fire Stations'''
-    __tablename__ = 'fire_stations'
-    id = db.Column(db.Integer, primary_key=True)
-    # FireDepartment Foreign Key
-    fire_department_id = db.Column(
-        db.Integer, db.ForeignKey('fire_departments.id'))
-    # Data
-    name = db.Column(db.String(100), nullable=False)
-    number = db.Column(db.String(10))
-    street_number = db.Column(db.String(10))
-    street_prefix = db.Column(db.String(10))
-    street_name = db.Column(db.String(50))
-    street_type = db.Column(db.String(10))
-    street_suffix = db.Column(db.String(10))
-    city = db.Column(db.String(50))
-    state = db.Column(db.String(2))
-    zipcode = db.Column(db.Integer)
-    phone = db.Column(db.Integer)
-    fax = db.Column(db.Integer)
-    email = db.Column(db.String(100))
-    county_code = db.Column(db.String(3))
-    status = db.Column(db.String(10), nullable=False, default='Active')
-    # Timestamps
-    created_at = db.Column(db.DateTime(timezone=True),
-                           nullable=False, default=func.now())
-    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    updated_at = db.Column(db.DateTime(timezone=True))
-    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    # Relationships
-    fire_department = db.relationship(
-        'FireDepartment', backref=db.backref('fire_stations', lazy=True))
-
-    def __repr__(self):
-        return f"FireStation('{self.name}')"
-
-
 # User model
-class User(db.Model, UserMixin):
+class User:
     '''SQL Table: Users'''
-    __tablename__ = 'users'
-    id = db.Column(db.Integer, primary_key=True)
-    # FireDepartment Foreign Key
-    fire_department_id = db.Column(
-        db.Integer, db.ForeignKey('fire_departments.id'))
-    # Data
-    firstname = db.Column(db.String(50), nullable=False)
-    lastname = db.Column(db.String(50), nullable=False)
-    middlename = db.Column(db.String(50))
-    suffix = db.Column(db.String(10))
-    prefix = db.Column(db.String(10))
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    street_number = db.Column(db.String(10))
-    street_prefix = db.Column(db.String(10))
-    street_name = db.Column(db.String(50))
-    street_type = db.Column(db.String(10))
-    street_suffix = db.Column(db.String(10))
-    city = db.Column(db.String(50))
-    state = db.Column(db.String(2))
-    zipcode = db.Column(db.Integer)
-    phone = db.Column(db.Integer)
-    fax = db.Column(db.Integer)
-    county_code = db.Column(db.String(3))
-    post_office_box = db.Column(db.String(10))
-    apartment_number = db.Column(db.String(10))
-    personnel_number = db.Column(db.String(10))
-    rank = db.Column(db.String(10))
-    password = db.Column(db.String(60), nullable=False)
-    status = db.Column(db.String(10), nullable=False, default='Active')
-    # Timestamps
-    created_at = db.Column(db.DateTime(timezone=True),
-                           nullable=False, default=func.now())
-    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    updated_at = db.Column(db.DateTime(timezone=True))
-    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    # Relationships
-    fire_department = db.relationship('FireDepartment', backref=db.backref(
-        'users', lazy='dynamic'), foreign_keys=[fire_department_id])
+    def __init__(self, email, password):
+        self.email = email
+        self.password = password
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return self.email
 
     def __repr__(self):
-        return f"User('{self.firstname} {self.lastname}')"
+        return f"User('{self.email}')"

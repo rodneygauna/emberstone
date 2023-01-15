@@ -4,7 +4,7 @@ User forms for emberstone
 
 # Imports
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, EmailField
+from wtforms import PasswordField, SubmitField, EmailField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 
@@ -14,12 +14,10 @@ class LoginForm(FlaskForm):
     email = EmailField('Email*',
                        validators=[DataRequired(),
                                    Email()],
-                       render_kw={'placeholder': 'Email',
-                                  'class': 'form-control'})
+                       render_kw={'placeholder': 'Email'})
     password = PasswordField('Password*',
                              validators=[DataRequired(),
                                          Length(min=6)],
-                             render_kw={'placeholder': 'Password',
-                                        'class': 'form-control'})
-    submit = SubmitField('Login',
-                         render_kw={'class': 'btn btn-primary'})
+                             render_kw={'placeholder': 'Password'})
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
