@@ -1,9 +1,10 @@
 {% extends "base.html" %} {% block content %}
-<h1>Login</h1>
-<form method="post" action="{{ url_for('users.login') }}">
+<h1>Register User</h1>
+<form method="post" action="{{ url_for('users.register') }}">
   {{ form.hidden_tag() }}
   <div>{{ form.email.label }} {{ form.email }}</div>
   <div>{{ form.password.label }} {{ form.password }}</div>
+  <div>{{ form.confirm_password.label }} {{form.confirm_password }}</div>
   <div>{{ form.submit }}</div>
 </form>
 {% endblock content %}

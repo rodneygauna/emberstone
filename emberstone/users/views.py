@@ -6,7 +6,8 @@ User views for emberstone
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
-from emberstone.users.forms import LoginForm
+import bcrypt
+from emberstone.users.forms import LoginForm, RegisterForm
 from emberstone.models import User
 from emberstone import db
 
@@ -30,15 +31,19 @@ def login():
     # Validate form
     if form.validate_on_submit():
         # Query database for user
-        user = users.find_one({'email': form.username.data})
+        user = users.find_one({'email': form.email.data})
 
         # Check if user exists
-        if user and form.password.data == user['password']:
+        user = users.find_one({'email': form.email.data})
+
+        if user and bcrypt.checkpw(form.password.data.encode('utf-8'),
+                                   user['password']):
             user_obj = User(user['email'], user['password'])
+            # remember user
             login_user(user_obj, remember=form.remember.data)
 
             # Redirect user to home page
-            return redirect(url_for('main.home'))
+            return redirect(url_for('core.index'))
 
     return render_template('login.html',
                            title='Emberstone - Login',
@@ -55,3 +60,26 @@ def logout():
 
     # Redirect user to login page
     return redirect(url_for('users.login'))
+
+
+# User Registration Page
+@users_bp.route('/register', methods=['GET', 'POST'])
+def register():
+    '''Route: User Registration Page'''
+    form = RegisterForm()
+    if form.validate_on_submit():
+        existing_user = users.find_one({'email': form.email.data})
+        if existing_user:
+            return render_template('register.html',
+                                   form=form,
+                                   # TODO: Fix this message
+                                   error='Error: Email already exists.')
+        else:
+            hashed_password = bcrypt.hashpw(
+                form.password.data.encode('utf-8'), bcrypt.gensalt())
+            users.insert_one({'email': form.email.data,
+                              'password': hashed_password})
+            return redirect(url_for('users.login'))
+    return render_template('register.html',
+                           title='Emberstone - Register',
+                           form=form)

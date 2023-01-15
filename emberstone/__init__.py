@@ -5,7 +5,6 @@ This file initializes the Flask app, the routes, and the database.
 # Imports
 import os
 import pymongo
-import bcrypt
 from dotenv import load_dotenv
 from flask import Flask
 from flask_login import LoginManager
