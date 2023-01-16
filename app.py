@@ -4,7 +4,7 @@ Emberstone - A python based web application for fire and rescue services
 
 
 # Imports
-from emberstone import app
+from src import app
 
 
 # Run app

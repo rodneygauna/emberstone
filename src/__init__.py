@@ -50,8 +50,8 @@ from . import models
 
 
 # Blueprint imports
-from emberstone.core.views import core_bp
-from emberstone.users.views import users_bp
+from src.core.views import core_bp
+from src.users.views import users_bp
 
 # Register blueprints
 app.register_blueprint(core_bp)

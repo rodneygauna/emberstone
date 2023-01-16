@@ -6,7 +6,6 @@ https://www.usfa.fema.gov/nfirs/documentation/
 
 # Imports
 from flask import redirect, url_for
-from flask_login import UserMixin
 from . import db, login_manager
 
 
@@ -33,6 +32,7 @@ def unauthorized():
 # User model
 class User:
     '''SQL Table: Users'''
+
     def __init__(self, email, password):
         self.email = email
         self.password = password
