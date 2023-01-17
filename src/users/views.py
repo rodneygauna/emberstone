@@ -89,28 +89,27 @@ def register():
                                    # TODO: Fix this message
                                    error='Error: Email already exists.')
         # If user doesn't exist, create user
-        else:
-            # Hash password
-            hashed_password = bcrypt.hashpw(
-                form.password.data.encode('utf-8'), bcrypt.gensalt())
-            # Insert user into database
-            users.insert_one({'_id': ObjectId(),
-                              'email': form.email.data,
-                              'password': hashed_password,
-                              'departments': []})
-            # Check if user is being created from a department
-            new_department = request.cookies.get('new_department')
-            if new_department:
-                departments.update_one({'_id': ObjectId(new_department)},
-                                       {'$push': {'users': form.email.data}})
-                users.update_one({'email': form.email.data},
-                                 {'$push': {'departments':
-                                            ObjectId(new_department)}})
-                # Remove department cookie
-                resp = make_response(redirect(url_for('users.login')))
-                resp.delete_cookie('new_department')
-                # Redirect user to login page and delete department cookie
-                return resp
+        # Hash password
+        hashed_password = bcrypt.hashpw(
+            form.password.data.encode('utf-8'), bcrypt.gensalt())
+        # Insert user into database
+        users.insert_one({'_id': ObjectId(),
+                          'email': form.email.data,
+                          'password': hashed_password,
+                          'departments': []})
+        # Check if user is being created from a department
+        new_department = request.cookies.get('new_department')
+        if new_department:
+            departments.update_one({'_id': ObjectId(new_department)},
+                                   {'$push': {'users': form.email.data}})
+            users.update_one({'email': form.email.data},
+                             {'$push': {'departments':
+                                        ObjectId(new_department)}})
+            # Remove department cookie
+            resp = make_response(redirect(url_for('users.login')))
+            resp.delete_cookie('new_department')
+            # Redirect user to login page and delete department cookie
+            return resp
     return render_template('register.html',
                            title='Emberstone - Register',
                            form=form)
