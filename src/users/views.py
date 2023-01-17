@@ -3,7 +3,6 @@ User views for emberstone
 '''
 
 # Imports
-import os
 from flask import Blueprint, render_template, redirect, url_for
 from flask_login import login_user, logout_user, login_required
 import bcrypt
