@@ -6,7 +6,9 @@ https://www.usfa.fema.gov/nfirs/documentation/
 
 # Imports
 from flask import redirect, url_for
-from . import db, login_manager
+from flask_login import UserMixin
+from bson.objectid import ObjectId
+from src import db, login_manager
 
 
 # Database - Users variable
@@ -17,10 +19,14 @@ users = db.users
 @login_manager.user_loader
 def load_user(user_id):
     '''Queries the database for the user_id and returns the user object'''
-    user = users.find_one({'email': user_id})
-    if user:
-        return User(user['email'], user['password'])
-    return None
+    user = users.find_one({"_id": ObjectId(user_id)})
+    if isinstance(user, dict):
+        user_obj = User(_id=str(user["_id"]),
+                        email=user["email"],
+                        password=user["password"],
+                        departments=user["departments"])
+        return user_obj
+    return user
 
 
 @login_manager.unauthorized_handler
@@ -30,24 +36,18 @@ def unauthorized():
 
 
 # User model
-class User:
+class User(UserMixin):
     '''SQL Table: Users'''
 
-    def __init__(self, email, password):
+    def __init__(self, _id, email, password, departments):
+        self._id = _id
         self.email = email
         self.password = password
-
-    def is_authenticated(self):
-        return True
-
-    def is_active(self):
-        return True
-
-    def is_anonymous(self):
-        return False
+        self.departments = departments
 
     def get_id(self):
-        return self.email
+        '''Returns a unique identifier for the user as a string'''
+        return self._id
 
     def __repr__(self):
         return f"User('{self.email}')"
