@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS -->
     <link
-      href="{{ url_for('static', filename='css/normalize.css') }}"
+      href="{{url_for('static', filename='css/normalize.css')}}"
       rel="stylesheet"
     />
     <link
-      href="{{ url_for('static', filename='css/style.css') }}"
+      href="{{url_for('static', filename='css/style.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{url_for('static', filename='assets/fontawesome/css/fontawesome.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{url_for('static', filename='assets/fontawesome/css/regular.css')}}"
       rel="stylesheet"
     />
     <title>{{title}}</title>
@@ -18,7 +26,10 @@
   <body>
     <!-- Content Start -->
     <div class="container-fluid">
-      <div>{% block content %}{% endblock content %}</div>
+      <div class="row">
+        <div class="two columns">{%include 'navbar.html'%}</div>
+        <div class="ten columns">{%block content%}{%endblock content%}</div>
+      </div>
     </div>
     <!-- Content End -->
   </body>
