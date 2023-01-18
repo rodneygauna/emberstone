@@ -1,1 +1,37 @@
-{% block navbar %} Navbar goes here {% endblock navbar %}
+{%block navbar%}
+<nav>
+  <ul>
+    {%if current_user.is_authenticated%}
+    <li>
+      <a href="{{url_for('core.index')}}"
+        ><i class="fa-regular fa-house-user"></i> Home</a
+      >
+    </li>
+    <li>
+      <a href="#"><i class="fa-regular fa-gear"></i> Settings</a>
+    </li>
+    <li>
+      <a href="{{url_for('users.logout')}}"
+        ><i class="fa-regular fa-power-off"></i> Logout</a
+      >
+    </li>
+    {%else%}
+    <li>
+      <a href="{{url_for('core.index')}}"
+        ><i class="fa-regular fa-house-user"></i> Home</a
+      >
+    </li>
+    <li>
+      <a href="{{url_for('users.login')}}"
+        ><i class="fa-regular fa-right-to-bracket"></i> Login</a
+      >
+    </li>
+    <li>
+      <a href="{{url_for('departments.add_department')}}"
+        ><i class="fa-regular fa-user-plus"></i> Register</a
+      >
+    </li>
+    {%endif%}
+  </ul>
+</nav>
+{%endblock navbar%}
