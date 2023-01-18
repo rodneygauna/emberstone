@@ -123,3 +123,7 @@ dmypy.json
 .pyre/
 
 emberstone/database.db
+
+src/.DS_Store
+
+src/static/.DS_Store
