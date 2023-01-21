@@ -4,7 +4,10 @@
 {{department.street_suffix}} {{department.city}} {{department.state}}
 {{department.zipcode}} {{department.county_code}} {{department.tele_phone}}
 {{department.fax_phone}} {{department.status}} {{department.users}}
-<form method="post" action="{{ url_for('departments.add_department') }}">
+<form
+  method="post"
+  action="{{ url_for('departments.edit_department', department_id=department)}}"
+>
   {{form.hidden_tag()}}
   <div class="row">
     <div class="eight columns">
