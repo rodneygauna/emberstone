@@ -53,8 +53,10 @@ from . import models
 from src.core.views import core_bp
 from src.users.views import users_bp
 from src.departments.views import departments_bp
+from src.settings.views import settings_bp
 
 # Register blueprints
 app.register_blueprint(core_bp)
 app.register_blueprint(users_bp)
 app.register_blueprint(departments_bp)
+app.register_blueprint(settings_bp)
