@@ -1,0 +1,34 @@
+{%extends "base.html"%} {%block content%} {{department.nfirs_id}}
+{{department.name}} {{department.street_number}} {{department.street_prefix}}
+{{department.street_name}} {{department.street_type}}
+{{department.street_suffix}} {{department.city}} {{department.state}}
+{{department.zipcode}} {{department.county_code}} {{department.tele_phone}}
+{{department.fax_phone}} {{department.status}} {{department.users}}
+<form method="post" action="{{ url_for('departments.add_department') }}">
+  {{form.hidden_tag()}}
+  <div class="row">
+    <div class="eight columns">
+      <h2>Edit Department</h2>
+      {{form.nfirs_id.label}} {{form.nfirs_id(class="u-full-width")}}
+      {{form.name.label}} {{form.name(class="u-full-width")}}
+      {{form.street_number.label}} {{form.street_number(class="u-full-width")}}
+      {{form.street_prefix.label}} {{form.street_prefix(class="u-full-width")}}
+      {{form.street_name.label}} {{form.street_name(class="u-full-width")}}
+      {{form.street_type.label}} {{form.street_type(class="u-full-width")}}
+      {{form.street_suffix.label}} {{form.street_suffix(class="u-full-width")}}
+      {{form.city.label}} {{form.city(class="u-full-width")}}
+      {{form.state.label}} {{form.state(class="u-full-width")}}
+      {{form.zipcode.label}} {{form.zipcode(class="u-full-width")}}
+      {{form.county_code.label}} {{form.county_code(class="u-full-width")}}
+      {{form.tele_phone.label}} {{form.tele_phone(class="u-full-width")}}
+      {{form.fax_phone.label}} {{form.fax_phone(class="u-full-width")}}
+      {{form.status.label}} {{form.status(class="u-full-width")}}
+      <div>{{form.submit(class="button-primary")}}</div>
+    </div>
+    <div class="four columns">
+      <h2>Editing a Department</h2>
+      <p>Information about how to edit a department and what that means</p>
+    </div>
+  </div>
+</form>
+{%endblock content%}
