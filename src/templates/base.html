@@ -21,6 +21,9 @@
       href="{{url_for('static', filename='assets/fontawesome/css/regular.css')}}"
       rel="stylesheet"
     />
+    <link
+      href="{{url_for('static', filename='assets/select2/css/select2.css')}}"
+      rel="stylesheet"
     <title>{{title}}</title>
   </head>
   <body>
@@ -32,5 +35,9 @@
       </div>
     </div>
     <!-- Content End -->
+    <!-- JS -->
+    <script src="{{url_for('static', filename='assets/jquery/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/select2/js/select2.full.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
   </body>
 </html>
