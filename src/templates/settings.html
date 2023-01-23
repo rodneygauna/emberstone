@@ -7,6 +7,10 @@
       href="{{url_for('departments.edit_department', department_id=department)}}"
       >Edit Department</a
     >
+    <h3>Users</h3>
+    <a href="{{url_for('users.department_users', department_id=department)}}"
+      >Department Users</a
+    >
   </div>
 </div>
 {%endblock content%}

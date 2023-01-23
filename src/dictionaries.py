@@ -14,6 +14,7 @@ STATUS = [
 
 # State Dictionary
 STATE = [
+    ("", ""),
     ("AL", "Alabama"),
     ("AK", "Alaska"),
     ("AZ", "Arizona"),
