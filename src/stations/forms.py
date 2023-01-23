@@ -1,25 +1,22 @@
 '''
-Department forms for emberstone
+Station forms for emberstone
 '''
 
 # Imports
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
-from wtforms.validators import DataRequired, InputRequired, Length
+from wtforms.validators import DataRequired, InputRequired
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
 from src.dictionaries import COUNTRY_CODES, STATUS
 
+# Form - Station
 
-# Form - Department
-class DepartmentForm(FlaskForm):
-    '''Department creation form'''
-    # NFIRS ID
-    nfirs_id = StringField('NFIRS ID',
-                           validators=[Length(min=5, max=5)])
-    # Department Name
-    name = StringField('Department Name*',
-                       validators=[InputRequired()],
-                       render_kw={'placeholder': 'Department Name'})
+
+class StationForm(FlaskForm):
+    '''Station creation form'''
+    # Station Name and Number
+    name = StringField('Station Name*', validators=[InputRequired()])
+    number = StringField('Station Number*', validators=[InputRequired()])
     # Address
     street_number = StringField('Street Number')
     street_prefix = SelectField('Street Prefix', choices=STREET_PREFIX_SUFFIX)
@@ -31,10 +28,10 @@ class DepartmentForm(FlaskForm):
     zipcode = IntegerField('Zipcode*', validators=[InputRequired()])
     county_code = SelectField('County Code', choices=COUNTRY_CODES)
     # Phone
-    tele_phone = IntegerField('Phone Number*', validators=[InputRequired()])
-    fax_phone = IntegerField('Fax Number')
+    tele_phone = StringField('Phone Number*', validators=[InputRequired()])
+    fax_phone = StringField('Fax Number')
     # Status
     status = SelectField('Status', choices=STATUS,
                          validators=[DataRequired()])
     # Submit
-    submit = SubmitField('Save')
+    submit = SubmitField('Save Station')
