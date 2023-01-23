@@ -1,0 +1,39 @@
+{%extends "base.html"%} {%block content%}
+<h2>Department Stations</h2>
+<a href="{{url_for('stations.add_station', department_id=department['_id'])}}">
+  Add Station</a
+>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for station in stations_list%}
+    <tr>
+      <td>{{station.name}}</td>
+      <td>{{station.number}}</td>
+      <td>
+        {{station.street_number}} {{station.street_prefix}}
+        {{station.street_name}} {{station.street_suffix}}
+        {{station.street_type}}
+        <br />
+        {{station.city}}, {{station.state}} {{station.zipcode}}
+      </td>
+      <td>{{station.status}}</td>
+      <td>
+        <a
+          href="{{url_for('stations.edit_station', station_id=station['_id'])}}"
+          >Edit Station</a
+        >
+      </td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%endblock content%}
