@@ -8,7 +8,7 @@ from flask import make_response
 from flask_login import login_user, logout_user, login_required, current_user
 import bcrypt
 from bson.objectid import ObjectId
-from src.users.forms import LoginForm, RegisterForm
+from src.users.forms import LoginForm, RegisterForm, UserForm
 from src.models import User
 from src import db
 
@@ -112,4 +112,92 @@ def register():
             return resp
     return render_template('register.html',
                            title='Emberstone - Register',
+                           form=form)
+
+
+# Department Users Page
+@users_bp.route('/department_users/<department_id>')
+@login_required
+def department_users(department_id):
+    '''Route: Department Users Page'''
+    # Query database for department
+    department = departments.find_one({'_id': ObjectId(department_id)})
+
+    # Check if department exists
+    if department is None:
+        return 'Department not found.', 404
+
+    # Query database for users
+    department_users = users.find({'departments': ObjectId(department_id)})
+
+    return render_template('department_users.html',
+                           title='Emberstone - Department Users',
+                           department=department,
+                           department_users=department_users)
+
+
+# User Edit Profile Page
+@users_bp.route('/edit_profile/<user_id>', methods=['GET', 'POST'])
+@login_required
+def edit_profile(user_id):
+    '''Route: User Edit Profile Page'''
+    form = UserForm()
+
+    # Query database for user
+    user = users.find_one({'_id': ObjectId(user_id)})
+
+    # Check if user exists
+    if user is None:
+        return 'User not found.', 404
+
+    if request.method == 'GET':
+        form.email.data = user['email']
+        form.firstname.data = user.get('firstname', '')
+        form.middlename.data = user.get('middlename', '')
+        form.lastname.data = user.get('lastname', '')
+        form.suffixname.data = user.get('suffixname', '')
+        form.prefixname.data = user.get('prefixname', '')
+        form.street_number.data = user.get('street_number', '')
+        form.apartment_number.data = user.get('apartment_number', '')
+        form.street_prefix.data = user.get('street_prefix', '')
+        form.street_name.data = user.get('street_name', '')
+        form.street_type.data = user.get('street_type', '')
+        form.street_suffix.data = user.get('street_suffix', '')
+        form.city.data = user.get('city', '')
+        form.state.data = user.get('state', '')
+        form.zipcode.data = user.get('zipcode', '')
+        form.county_code.data = user.get('county_code', '')
+        form.tele_phone.data = user.get('tele_phone', '')
+        form.fax_phone.data = user.get('fax_phone', '')
+        form.personnel_number.data = user.get('personnel_number', '')
+        form.rank.data = user.get('rank', '')
+        form.status.data = user.get('status', '')
+
+    if form.validate_on_submit():
+        # TODO: Check if email is already in use other than current user
+        users.update_one({'_id': ObjectId(user_id)},
+                         {'$set': {'email': form.email.data,
+                                   'firstname': form.firstname.data,
+                                   'middlename': form.middlename.data,
+                                   'lastname': form.lastname.data,
+                                   'suffixname': form.suffixname.data,
+                                   'prefixname': form.prefixname.data,
+                                   'street_number': form.street_name.data,
+                                   'apartment_number': form.apartment_number.data,
+                                   'street_prefix': form.street_prefix.data,
+                                   'street_name': form.street_name.data,
+                                   'street_type': form.street_type.data,
+                                   'street_suffix': form.street_suffix.data,
+                                   'city': form.city.data,
+                                   'state': form.state.data,
+                                   'zipcode': form.zipcode.data,
+                                   'county_code': form.county_code.data,
+                                   'tele_phone': form.tele_phone.data,
+                                   'fax_phone': form.fax_phone.data,
+                                   'personnel_number': form.personnel_number.data,
+                                   'rank': form.rank.data,
+                                   'status': form.status.data}})
+        return redirect(url_for('settings.settings'))
+    return render_template('edit_profile.html',
+                           user=user,
                            form=form)

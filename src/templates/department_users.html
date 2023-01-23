@@ -1,0 +1,32 @@
+{%extends "base.html"%} {%block content%}
+<h2>Department Users</h2>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for user in department_users%}
+    <tr>
+      <td>
+        {{user.lastname}} {{user.suffixname}}, {{user.firstname}}
+        {{user.middlename}}
+      </td>
+      <td>{{user.email}}</td>
+      <td>{{user.role}}</td>
+      <td>{{user.status}}</td>
+      <td>
+        <a href="{{url_for('users.edit_profile', user_id=user['_id'])}}"
+          >Edit User</a
+        >
+      </td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%endblock content%}

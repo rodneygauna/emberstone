@@ -6,7 +6,7 @@
 {{department.fax_phone}} {{department.status}} {{department.users}}
 <form
   method="post"
-  action="{{ url_for('departments.edit_department', department_id=department['_id'])}}"
+  action="{{url_for('departments.edit_department', department_id=department['_id'])}}"
 >
   {{form.hidden_tag()}}
   <div class="row">
