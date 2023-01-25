@@ -11,6 +11,14 @@ STATUS = [
     ('Inactive', 'Inactive')
 ]
 
+# Incident Reporting Status Dictionary
+INDICENT_REPORTING_STATUS = [
+    ('Initial', 'Initial'),
+    ('Delete', 'Delete'),
+    ('Change', 'Change'),
+    ('No Activity', 'No Activity')
+]
+
 
 # State Dictionary
 STATE = [
