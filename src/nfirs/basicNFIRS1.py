@@ -4,8 +4,8 @@ Basic Module (NFIRS-1) form
 
 # Imports
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField, IntegerField, \
-    DateField, TimeField
+from wtforms import StringField, SubmitField, SelectField, IntegerField
+from wtforms import DateField, TimeField, BooleanField
 from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries import INDICENT_REPORTING_STATUS, LOCATION
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
@@ -103,6 +103,20 @@ class BasicModuleForm(FlaskForm):
         'Secondary Action Taken', choices=ACTIONS_TAKEN)
     actions_taken_3 = SelectField(
         'Tertiary Action Taken', choices=ACTIONS_TAKEN)
+
+    # Section G1 - Resources
+    suppression_apparatus = StringField(
+        'Suppression Apparatus', validators=[Length(max=4)])
+    suppression_personnel = StringField(
+        'Suppression Personnel', validators=[Length(max=4)])
+    ems_apparatus = StringField('EMS Apparatus', validators=[Length(max=4)])
+    ems_personnel = StringField('EMS Personnel', validators=[Length(max=4)])
+    other_apparatus = StringField(
+        'Other Apparatus', validators=[Length(max=4)])
+    other_personnel = StringField(
+        'Other Personnel', validators=[Length(max=4)])
+    resource_count_includes_aid_received = BooleanField(
+        'Resource Count Includes Aid Received')
 
     # Submit
     submit = SubmitField('Save')
