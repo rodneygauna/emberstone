@@ -222,5 +222,37 @@ class BasicModuleForm(FlaskForm):
     # Section L - Remarks
     remarks = TextAreaField('Remarks', validators=[Length(max=255)])
 
+    # Section M - Authorization
+    # TODO: the system will automatically populate this field
+    # based on the current user or selecting a user from a list
+    officer_id = StringField('Officer in Charge ID',
+                             validators=[Length(max=9)])
+    officer_lastname = StringField(
+        'Officer in Charge Last Name', validators=[Length(max=25)])
+    officer_firstname = StringField(
+        'Officer in Charge First Name', validators=[Length(max=15)])
+    officer_middleinitial = StringField(
+        'Officer in Charge Middle Initial', validators=[Length(max=1)])
+    officer_rank = StringField(
+        'Officer in Charge Rank', validators=[Length(max=10)])
+    officer_assignment = StringField(
+        'Officer in Charge Assignment', validators=[Length(max=10)])
+    officer_date = DateField('Officer in Charge Date', format='%m/%d/%Y')
+    same_as_officer = SelectField('Same as Officer in Charge', choices=[
+                                  ('N', 'No'), ('Y', 'Yes')])
+    member_id = StringField('Officer in Charge ID',
+                            validators=[Length(max=9)])
+    member_lastname = StringField(
+        'Officer in Charge Last Name', validators=[Length(max=25)])
+    member_firstname = StringField(
+        'Officer in Charge First Name', validators=[Length(max=15)])
+    member_middleinitial = StringField(
+        'Officer in Charge Middle Initial', validators=[Length(max=1)])
+    member_rank = StringField(
+        'Officer in Charge Rank', validators=[Length(max=10)])
+    member_assignment = StringField(
+        'Officer in Charge Assignment', validators=[Length(max=10)])
+    member_date = DateField('Officer in Charge Date', format='%m/%d/%Y')
+
     # Submit
     submit = SubmitField('Save')
