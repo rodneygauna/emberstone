@@ -118,5 +118,13 @@ class BasicModuleForm(FlaskForm):
     resource_count_includes_aid_received = BooleanField(
         'Resource Count Includes Aid Received')
 
+    # Section G2 - Estimated Dollar Losses and Values
+    property_loss = StringField('Property Loss', validators=[Length(max=9)])
+    contents_loss = StringField('Contents Loss', validators=[Length(max=9)])
+    property_value = StringField(
+        'Pre-Incident Property Value', validators=[Length(max=9)])
+    contents_value = StringField(
+        'Pre-Incident Contents Value', validators=[Length(max=9)])
+
     # Submit
     submit = SubmitField('Save')
