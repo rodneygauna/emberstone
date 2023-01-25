@@ -5,13 +5,13 @@ Basic Module (NFIRS-1) form
 # Imports
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
-from wtforms import DateField, TimeField, BooleanField
+from wtforms import DateField, TimeField, TextAreaField
 from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries import INDICENT_REPORTING_STATUS, LOCATION
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
 from src.dictionaries import INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN, DETECTOR
 from src.dictionaries import HAZARDOUS_MATERIALS_RELEASE, MIXED_USE_PROPERTY
-from src.dictionaries import PROPERTY_USE
+from src.dictionaries import PROPERTY_USE, NAME_PREFIX, NAME_SUFFIX
 
 
 # Form - Basic Module (NFIRS-1)
@@ -117,8 +117,9 @@ class BasicModuleForm(FlaskForm):
         'Other Apparatus', validators=[Length(max=4)])
     other_personnel = StringField(
         'Other Personnel', validators=[Length(max=4)])
-    resource_count_includes_aid_received = BooleanField(
-        'Resource Count Includes Aid Received')
+    resource_count_includes_aid_received = SelectField(
+        'Resource Count Includes Aid Received',
+        choices=[('Y', 'Yes'), ('N', 'No')])
 
     # Section G2 - Estimated Dollar Losses and Values
     property_loss = StringField('Property Loss', validators=[Length(max=9)])
@@ -154,6 +155,72 @@ class BasicModuleForm(FlaskForm):
 
     # Section J - Property Use
     property_use = SelectField('Property Use', choices=PROPERTY_USE)
+
+    # Section K1 - Person/Entity Involved
+    business_name_involved = StringField(
+        'Business Name', validators=[Length(max=25)])
+    telephone_number_involved = StringField(
+        'Telephone Number', validators=[Length(max=10)])
+    name_prefix_involved = SelectField('Name Prefix', choices=NAME_PREFIX)
+    firstname_involved = StringField('First Name', validators=[Length(max=15)])
+    middleinitial_involved = StringField(
+        'Middle Initial', validators=[Length(max=1)])
+    lastname_involved = StringField('Last Name', validators=[Length(max=25)])
+    name_suffix_involved = SelectField('Name Suffix', choices=NAME_SUFFIX)
+    same_as_incident_location_involved = SelectField(
+        'Same as Incident Location', choices=[
+            ('', ''), ('Y', 'Yes'), ('N', 'No')])
+    number_milepost_involved = StringField(
+        'Number or Milepost', validators=[Length(max=8)])
+    street_prefix_involved = SelectField(
+        'Street Prefix', choices=STREET_PREFIX_SUFFIX)
+    street_highway_involved = StringField(
+        'Street or Highway', validators=[Length(max=20)])
+    street_type_involved = SelectField(
+        'Street Type', choices=STREET_TYPE_CHOICES)
+    street_suffix_involved = SelectField(
+        'Street Suffix', choices=STREET_PREFIX_SUFFIX)
+    apartment_suite_room_involved = StringField(
+        'Apartment/Suite/Room', validators=[Length(max=15)])
+    city_involved = StringField('City', validators=[Length(max=20)])
+    state_involved = SelectField('State', choices=STATE)
+    zipcode_involved = StringField('Zip Code', validators=[Length(max=9)])
+    pobox_involved = StringField('PO Box', validators=[Length(max=10)])
+
+    # Section K2 - Owner
+    savme_as_person_involved = SelectField('Same as Person Involved', choices=[
+                                           ('', ''), ('Y', 'Yes'), ('N', 'No')])
+    business_name_owner = StringField(
+        'Business Name', validators=[Length(max=25)])
+    telephone_number_owner = StringField(
+        'Telephone Number', validators=[Length(max=10)])
+    name_prefix_owner = SelectField('Name Prefix', choices=NAME_PREFIX)
+    firstname_owner = StringField('First Name', validators=[Length(max=15)])
+    middleinitial_owner = StringField(
+        'Middle Initial', validators=[Length(max=1)])
+    lastname_owner = StringField('Last Name', validators=[Length(max=25)])
+    name_suffix_owner = SelectField('Name Suffix', choices=NAME_SUFFIX)
+    same_as_incident_location_owner = SelectField(
+        'Same as Incident Location', choices=[('Y', 'Yes'), ('N', 'No')])
+    number_milepost_owner = StringField(
+        'Number or Milepost', validators=[Length(max=8)])
+    street_prefix_owner = SelectField(
+        'Street Prefix', choices=STREET_PREFIX_SUFFIX)
+    street_highway_owner = StringField(
+        'Street or Highway', validators=[Length(max=20)])
+    street_type_owner = SelectField(
+        'Street Type', choices=STREET_TYPE_CHOICES)
+    street_suffix_owner = SelectField(
+        'Street Suffix', choices=STREET_PREFIX_SUFFIX)
+    apartment_suite_room_owner = StringField(
+        'Apartment/Suite/Room', validators=[Length(max=15)])
+    city_owner = StringField('City', validators=[Length(max=20)])
+    state_owner = SelectField('State', choices=STATE)
+    zipcode_owner = StringField('Zip Code', validators=[Length(max=9)])
+    pobox_owner = StringField('PO Box', validators=[Length(max=10)])
+
+    # Section L - Remarks
+    remarks = TextAreaField('Remarks', validators=[Length(max=255)])
 
     # Submit
     submit = SubmitField('Save')
