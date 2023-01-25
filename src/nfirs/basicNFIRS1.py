@@ -9,7 +9,8 @@ from wtforms import DateField, TimeField, BooleanField
 from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries import INDICENT_REPORTING_STATUS, LOCATION
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
-from src.dictionaries import INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN
+from src.dictionaries import INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN, DETECTOR
+from src.dictionaries import HAZARDOUS_MATERIALS_RELEASE
 
 
 # Form - Basic Module (NFIRS-1)
@@ -125,6 +126,27 @@ class BasicModuleForm(FlaskForm):
         'Pre-Incident Property Value', validators=[Length(max=9)])
     contents_value = StringField(
         'Pre-Incident Contents Value', validators=[Length(max=9)])
+
+    # Section H - Completed Modules
+    # TODO: the system will automatically populate this field
+    # based on the forms needed and completed by the user
+
+    # Section H1 - Casualties
+    fire_service_deaths = StringField(
+        'Fire Service Deaths', validators=[Length(max=3)])
+    fire_service_injuries = StringField(
+        'Fire Service Injuries', validators=[Length(max=3)])
+    civilian_deaths = StringField(
+        'Civilian Deaths', validators=[Length(max=3)])
+    civilian_injuries = StringField(
+        'Civilian Injuries', validators=[Length(max=3)])
+
+    # Section H2 - Detector
+    detector = SelectField('Detector', choices=DETECTOR)
+
+    # Section H3 - Hazardous Materials Release
+    hazmat_release = SelectField(
+        'Hazardous Materials Release', choices=HAZARDOUS_MATERIALS_RELEASE)
 
     # Submit
     submit = SubmitField('Save')
