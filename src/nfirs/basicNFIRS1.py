@@ -35,13 +35,15 @@ class BasicModuleForm(FlaskForm):
     # collects information on the specific incident location
     location_type = SelectField(
         'Location Type*', choices=LOCATION, validators=[DataRequired()])
-    census_tract = StringField('Census Tract')
-    milepost = StringField('Milepost')
+    census_tract = StringField('Census Tract', validators=[Length(max=8)])
+    milepost = StringField('Milepost', validators=[Length(max=8)])
     street_prefix = SelectField('Street Prefix', choices=STREET_PREFIX_SUFFIX)
-    street_highway = StringField('Street or Highway Name')
+    street_highway = StringField(
+        'Street or Highway Name', validators=[Length(max=30)])
     street_type = SelectField('Street Type', choices=STREET_TYPE_CHOICES)
     street_suffix = SelectField('Street Suffix', choices=STREET_PREFIX_SUFFIX)
-    apartment_suite_room = StringField('Apartment, Suite, or Room')
+    apartment_suite_room = StringField(
+        'Apartment, Suite, or Room', validators=[Length(max=15)])
     city = StringField('City', validators=[Length(max=50)])
     state = SelectField('State', choices=STATE)
     zipcode = StringField('ZIP Code', validators=[Length(min=5, max=9)])
