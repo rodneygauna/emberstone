@@ -10,7 +10,8 @@ from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries import INDICENT_REPORTING_STATUS, LOCATION
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
 from src.dictionaries import INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN, DETECTOR
-from src.dictionaries import HAZARDOUS_MATERIALS_RELEASE
+from src.dictionaries import HAZARDOUS_MATERIALS_RELEASE, MIXED_USE_PROPERTY
+from src.dictionaries import PROPERTY_USE
 
 
 # Form - Basic Module (NFIRS-1)
@@ -147,6 +148,12 @@ class BasicModuleForm(FlaskForm):
     # Section H3 - Hazardous Materials Release
     hazmat_release = SelectField(
         'Hazardous Materials Release', choices=HAZARDOUS_MATERIALS_RELEASE)
+
+    # Section I - Mixed Use
+    mixed_use = SelectField('Mixed Use', choices=MIXED_USE_PROPERTY)
+
+    # Section J - Property Use
+    property_use = SelectField('Property Use', choices=PROPERTY_USE)
 
     # Submit
     submit = SubmitField('Save')
