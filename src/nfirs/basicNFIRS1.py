@@ -21,7 +21,8 @@ class BasicModuleForm(FlaskForm):
     # collects the indicent header information
     # TODO: fdid = prepopulated from the department
     # TODO: state = prepopulated from the department
-    incident_date = DateField('Incident Date*', validators=[InputRequired()])
+    incident_date = DateField(
+        'Incident Date*', format='%m/%d/%Y', validators=[InputRequired()])
     # TODO: station = prepopulated from the station selected
     incident_number = IntegerField(
         'Incident Number*', validators=[InputRequired(), Length(max=7)])
@@ -68,13 +69,17 @@ class BasicModuleForm(FlaskForm):
         'Incident Number Receiving Aid', validators=[Length(max=7)])
 
     # Section E1 - Dates and Times
-    alarm_date = DateField('Alarm Date', validators=[InputRequired()])
+    alarm_date = DateField('Alarm Date', format='%m/%d/%Y',
+                           validators=[InputRequired()])
     alarm_time = TimeField('Alarm Time', validators=[InputRequired()])
-    arrival_date = DateField('Arrival Date', validators=[InputRequired()])
+    arrival_date = DateField('Arrival Date', format='%m/%d/%Y',
+                             validators=[InputRequired()])
     arrival_time = TimeField('Arrival Time', validators=[InputRequired()])
-    controlled_date = DateField('Controlled Date')
+    controlled_date = DateField('Controlled Date',
+                                format='%m/%d/%Y')
     controlled_time = TimeField('Controlled Time')
-    cleared_date = DateField('Cleared Date')
+    cleared_date = DateField('Cleared Date',
+                             format='%m/%d/%Y')
     cleared_time = TimeField('Cleared Time')
 
     # Section E2 - Shifts and Alarms
