@@ -9,7 +9,7 @@ from wtforms import StringField, SubmitField, SelectField, IntegerField, \
 from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries import INDICENT_REPORTING_STATUS, LOCATION
 from src.dictionaries import STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE
-from src.dictionaries import INCIDENT_TYPE, AID_GIVEN
+from src.dictionaries import INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN
 
 
 # Form - Basic Module (NFIRS-1)
@@ -94,6 +94,15 @@ class BasicModuleForm(FlaskForm):
         'Special Study ID #2', validators=[Length(max=5)])
     special_study_code_2 = StringField(
         'Special Study Code #2', validators=[Length(max=5)])
+
+    # Section F - Actions Taken
+    actions_taken_1 = SelectField(
+        'Primary Action Taken', choices=ACTIONS_TAKEN,
+        validators=[DataRequired()])
+    actions_taken_2 = SelectField(
+        'Secondary Action Taken', choices=ACTIONS_TAKEN)
+    actions_taken_3 = SelectField(
+        'Tertiary Action Taken', choices=ACTIONS_TAKEN)
 
     # Submit
     submit = SubmitField('Save')
