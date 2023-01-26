@@ -71,16 +71,18 @@ class BasicModuleForm(FlaskForm):
     # Section E1 - Dates and Times
     alarm_date = DateField('Alarm Date', format='%m/%d/%Y',
                            validators=[InputRequired()])
-    alarm_time = TimeField('Alarm Time', validators=[InputRequired()])
+    alarm_time = TimeField('Alarm Time', format='%H:%M:%S',
+                           validators=[InputRequired()])
     arrival_date = DateField('Arrival Date', format='%m/%d/%Y',
                              validators=[InputRequired()])
-    arrival_time = TimeField('Arrival Time', validators=[InputRequired()])
+    arrival_time = TimeField(
+        'Arrival Time', format='%H:%M:%S', validators=[InputRequired()])
     controlled_date = DateField('Controlled Date',
                                 format='%m/%d/%Y')
-    controlled_time = TimeField('Controlled Time')
+    controlled_time = TimeField('Controlled Time', format='%H:%M:%S')
     cleared_date = DateField('Cleared Date',
                              format='%m/%d/%Y')
-    cleared_time = TimeField('Cleared Time')
+    cleared_time = TimeField('Cleared Time', format='%H:%M:%S')
 
     # Section E2 - Shifts and Alarms
     shift_or_platoon = StringField(
