@@ -34,7 +34,7 @@ from src.models import (
 users_bp = Blueprint('users', __name__)
 
 
-# Register User
+# Route - Register User
 @users_bp.route('/register', methods=['GET', 'POST'])
 def register_user():
     """Registers a new user"""
@@ -67,7 +67,7 @@ def register_user():
                            form=form)
 
 
-# Login user
+# Route - Login user
 @users_bp.route('/login', methods=['GET', 'POST'])
 def login():
     """Logs in a user"""
@@ -94,7 +94,7 @@ def login():
                            form=form)
 
 
-# Logout user
+# Route - Logout user
 @users_bp.route('/logout')
 @login_required
 def logout():
