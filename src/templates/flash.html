@@ -1,0 +1,11 @@
+{% with messages=get_flashed_messages(with_categories=true) %} {% if messages %}
+{% for category, message in messages %}
+<div class="row">
+  <div class="banner-container">
+    <div class="banner {{ category }}">
+      <span class="banner-text">{{ message }}</span>
+      <button class="banner-close" onclick="hideBanner()">&times;</button>
+    </div>
+  </div>
+</div>
+{% endfor %} {% endif %} {% endwith %}

@@ -1,0 +1,20 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    {% include 'favicon.html' %} {% include 'styles.html' %}
+  </head>
+  <body>
+    <!-- Navbar - Start -->
+    {% include 'navigation.html' %}
+    <!-- Navbar - End -->
+    <main>
+      <!-- Flash - Start -->
+      {% include 'flash.html' %}
+      <!-- Flash - End -->
+      {% block content %}{% endblock content %}
+    </main>
+    {% include 'javascript.html' %}
+  </body>
+</html>

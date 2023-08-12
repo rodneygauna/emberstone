@@ -1,0 +1,59 @@
+{% block navbar %}
+<div class="topbar">
+  <div class="topbar-row">
+    <img
+      src="{{ url_for('static', filename='assets/logo/h3o-inferno-logo-329x569.png') }}"
+      alt="logo"
+    />
+    <div class="topbar-column">
+      <div class="topbar-left">
+        <ul>
+          <li class="topbar-item">
+            <a href="{{ url_for('core.index') }}" class="topbar-link">
+              <i class="fas fa-home"></i>
+              <span class="topbar-link-text"></span>
+            </a>
+          </li>
+          {% if current_user.is_authenticated %} {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="topbar-column">
+      <div class="topbar-right">
+        <ul>
+          {% if current_user.is_authenticated %}
+          <li class="topbar-item">
+            <a href="#" class="topbar-link">
+              <i class="fas fa-envelope"></i>
+              <span class="topbar-link-text"></span>
+            </a>
+          </li>
+          <li class="topbar-item">
+            <a
+              href="{{ url_for('users.user_profile', user_id=current_user.id) }}"
+              class="topbar-link"
+            >
+              <i class="fas fa-user"></i>
+              <span class="topbar-link-text"></span>
+            </a>
+          </li>
+          <li class="topbar-item">
+            <a href="{{ url_for('users.logout') }}" class="topbar-link">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="topbar-link-text">Logout</span>
+            </a>
+          </li>
+          {% else %}
+          <li class="topbar-item">
+            <a href="{{ url_for('users.login') }}" class="topbar-link">
+              <i class="fas fa-sign-in-alt"></i>
+              <span class="topbar-link-text">Login</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock navbar %}
