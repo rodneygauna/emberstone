@@ -12,6 +12,11 @@ from src import db
 from src.models import (
     User,
 )
+from src.dictionaries.dict_location import (
+    STATE, STREET_PREFIX_SUFFIX, COUNTY_CODES,
+    STREET_TYPE_CHOICES
+)
+from src.dictionaries.dict_general import STATUS
 
 # Faker instance
 faker = Faker()
@@ -47,13 +52,33 @@ def db_seed():
 
     # Create users
     for i in range(1, max_range):
-        random_email = (
-            f"{faker.first_name()}{faker.last_name()}@healthtrio.com"
-        )
+        random_street_pre_suffix = random.choice(
+            [item[0] for item in STREET_PREFIX_SUFFIX])
+
         data.append(
             User(
-                email=random_email,
+                email=faker.email(),
                 password_hash=generate_password_hash("password"),
+                firstname=faker.first_name(),
+                middlename=random.choice([faker.first_name(), None]),
+                lastname=faker.last_name(),
+                suffixname=random.choice([faker.suffix(), None]),
+                prefixname=random.choice([faker.prefix(), None]),
+                street_number=faker.building_number(),
+                street_prefix=random.choice([random_street_pre_suffix, None]),
+                street_name=faker.street_name(),
+                street_type=random.choice(
+                    [item[0] for item in STREET_TYPE_CHOICES]),
+                street_suffix=random.choice([random_street_pre_suffix, None]),
+                city=faker.city(),
+                state=random.choice([item[0] for item in STATE]),
+                zipcode=faker.zipcode(),
+                county_code=random.choice([item[0] for item in COUNTY_CODES]),
+                tele_phone=faker.phone_number(),
+                fax_phone=random.choice([faker.phone_number(), None]),
+                personnel_number=random.randint(1000, 9999),
+                rank=random.choice(["Firefighter", "Captain", "Chief"]),
+                status=random.choice([item[0] for item in STATUS]),
             )
         )
 
