@@ -15,6 +15,9 @@ from src.models import (
     Station,
     UserDepartment,
 )
+from src.dictionaries.dict_names import (
+    NAME_PREFIX, NAME_SUFFIX
+)
 from src.dictionaries.dict_location import (
     STATE, STREET_PREFIX_SUFFIX, COUNTY_CODES,
     STREET_TYPE_CHOICES
@@ -55,6 +58,10 @@ def db_seed():
 
     # Create Users
     for i in range(1, max_range):
+        random_name_prefix = random.choice(
+            [item[0] for item in NAME_PREFIX])
+        random_name_suffix = random.choice(
+            [item[0] for item in NAME_SUFFIX])
         random_street_pre_suffix = random.choice(
             [item[0] for item in STREET_PREFIX_SUFFIX])
 
@@ -65,8 +72,8 @@ def db_seed():
                 firstname=faker.first_name(),
                 middlename=random.choice([faker.first_name(), None]),
                 lastname=faker.last_name(),
-                suffixname=random.choice([faker.suffix(), None]),
-                prefixname=random.choice([faker.prefix(), None]),
+                suffixname=random.choice([random_name_suffix, None]),
+                prefixname=random.choice([random_name_prefix, None]),
                 street_number=faker.building_number(),
                 street_prefix=random.choice([random_street_pre_suffix, None]),
                 street_name=faker.street_name(),
