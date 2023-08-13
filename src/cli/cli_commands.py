@@ -94,13 +94,14 @@ def db_seed():
 
     # Create Departments
     for i in range(1, max_range):
+        random_department_name = f"{faker.city()} Fire Department"
         random_street_pre_suffix = random.choice(
             [item[0] for item in STREET_PREFIX_SUFFIX])
 
         data.append(
             Department(
                 nfirs_id=random.randint(10000, 99999),
-                name=faker.company(),
+                name=random_department_name,
                 street_number=faker.building_number(),
                 street_prefix=random.choice([random_street_pre_suffix, None]),
                 street_name=faker.street_name(),
