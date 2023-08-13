@@ -11,6 +11,9 @@ from werkzeug.security import generate_password_hash
 from src import db
 from src.models import (
     User,
+    Department,
+    Station,
+    UserDepartment,
 )
 from src.dictionaries.dict_location import (
     STATE, STREET_PREFIX_SUFFIX, COUNTY_CODES,
@@ -50,7 +53,7 @@ def db_seed():
     # Data to seed the database with
     data = []
 
-    # Create users
+    # Create Users
     for i in range(1, max_range):
         random_street_pre_suffix = random.choice(
             [item[0] for item in STREET_PREFIX_SUFFIX])
@@ -78,6 +81,67 @@ def db_seed():
                 fax_phone=random.choice([faker.phone_number(), None]),
                 personnel_number=random.randint(1000, 9999),
                 rank=random.choice(["Firefighter", "Captain", "Chief"]),
+                status=random.choice([item[0] for item in STATUS]),
+            )
+        )
+
+    # Create Departments
+    for i in range(1, max_range):
+        random_street_pre_suffix = random.choice(
+            [item[0] for item in STREET_PREFIX_SUFFIX])
+
+        data.append(
+            Department(
+                nfirs_id=random.randint(10000, 99999),
+                name=faker.company(),
+                street_number=faker.building_number(),
+                street_prefix=random.choice([random_street_pre_suffix, None]),
+                street_name=faker.street_name(),
+                street_type=random.choice(
+                    [item[0] for item in STREET_TYPE_CHOICES]),
+                street_suffix=random.choice([random_street_pre_suffix, None]),
+                city=faker.city(),
+                state=random.choice([item[0] for item in STATE]),
+                zipcode=faker.zipcode(),
+                county_code=random.choice([item[0] for item in COUNTY_CODES]),
+                tele_phone=faker.phone_number(),
+                fax_phone=random.choice([faker.phone_number(), None]),
+                status=random.choice([item[0] for item in STATUS]),
+            )
+        )
+
+    # Create UserDepartments
+    for i in range(1, max_range):
+        data.append(
+            UserDepartment(
+                user_id=random.randint(1, max_range),
+                department_id=random.randint(1, max_range),
+                status=random.choice([item[0] for item in STATUS]),
+            )
+        )
+
+    # Create Stations
+    for i in range(1, max_range):
+        random_street_pre_suffix = random.choice(
+            [item[0] for item in STREET_PREFIX_SUFFIX])
+
+        data.append(
+            Station(
+                department_id=random.randint(1, max_range),
+                name=faker.company(),
+                number=random.randint(1, 99),
+                street_number=faker.building_number(),
+                street_prefix=random.choice([random_street_pre_suffix, None]),
+                street_name=faker.street_name(),
+                street_type=random.choice(
+                    [item[0] for item in STREET_TYPE_CHOICES]),
+                street_suffix=random.choice([random_street_pre_suffix, None]),
+                city=faker.city(),
+                state=random.choice([item[0] for item in STATE]),
+                zipcode=faker.zipcode(),
+                county_code=random.choice([item[0] for item in COUNTY_CODES]),
+                tele_phone=faker.phone_number(),
+                fax_phone=random.choice([faker.phone_number(), None]),
                 status=random.choice([item[0] for item in STATUS]),
             )
         )
