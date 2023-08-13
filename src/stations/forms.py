@@ -10,7 +10,7 @@ from wtforms import (
 )
 from wtforms.validators import DataRequired, InputRequired
 from src.dictionaries.dict_location import (
-    STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE, COUNTRY_CODES,
+    STREET_PREFIX_SUFFIX, STREET_TYPE_CHOICES, STATE, COUNTY_CODES,
 )
 from src.dictionaries.dict_general import STATUS
 
@@ -31,7 +31,7 @@ class StationForm(FlaskForm):
     city = StringField('City*', validators=[InputRequired()])
     state = SelectField('State*', choices=STATE, validators=[DataRequired()])
     zipcode = IntegerField('Zipcode*', validators=[InputRequired()])
-    county_code = SelectField('County Code', choices=COUNTRY_CODES)
+    county_code = SelectField('County Code', choices=COUNTY_CODES)
     # Phone
     tele_phone = StringField('Phone Number*', validators=[InputRequired()])
     fax_phone = StringField('Fax Number')

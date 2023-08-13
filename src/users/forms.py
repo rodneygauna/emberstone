@@ -14,7 +14,7 @@ from wtforms.validators import (
     EqualTo
 )
 from src.dictionaries.dict_location import (
-    STATE, STREET_PREFIX_SUFFIX, COUNTRY_CODES,
+    STATE, STREET_PREFIX_SUFFIX, COUNTY_CODES,
     STREET_TYPE_CHOICES
 )
 from src.dictionaries.dict_general import STATUS
@@ -35,7 +35,7 @@ class LoginForm(FlaskForm):
 
 
 # Form - Registration
-class RegisterForm(FlaskForm):
+class RegisterUserForm(FlaskForm):
     '''User registration form'''
     email = EmailField('Email', validators=[InputRequired()])
     password = PasswordField('Password', validators=[
@@ -67,7 +67,7 @@ class UserForm(FlaskForm):
     city = StringField('City')
     state = SelectField('State', choices=STATE)
     zipcode = StringField('Zipcode')
-    county_code = SelectField('County Code', choices=COUNTRY_CODES)
+    county_code = SelectField('County Code', choices=COUNTY_CODES)
     # Phone
     tele_phone = StringField('Phone Number')
     fax_phone = StringField('Fax Number')
@@ -78,3 +78,19 @@ class UserForm(FlaskForm):
     status = SelectField('Status', choices=STATUS)
     # Submit
     submit = SubmitField('Save User')
+
+
+# Form - Change Password
+class ChangePasswordForm(FlaskForm):
+    """Change Password Form"""
+
+    current_password = PasswordField('Current Password',
+                                     validators=[InputRequired(),
+                                                 Length(min=6)])
+    new_password = PasswordField('New Password',
+                                 validators=[InputRequired(),
+                                             Length(min=6)])
+    confirm_new_password = PasswordField('Confirm New Password',
+                                         validators=[InputRequired(),
+                                                     EqualTo('new_password')])
+    submit = SubmitField('Change Password')

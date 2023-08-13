@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <div class="six columns">
+    <a
+      href="{{url_for('departments.edit_department', department_id=department.department_id)}}"
+      >Edit Department</a
+    >
+    <h3>Users</h3>
+    <a
+      href="{{url_for('users.view_department_users', department_id=department.department_id)}}"
+      >Department Users</a
+    >
+    <h3>Stations</h3>
+    <a
+      href="{{url_for('stations.view_stations', department_id=department.department_id)}}"
+      >Department Stations</a
+    >
+  </div>
+</div>
+{% endblock content %}

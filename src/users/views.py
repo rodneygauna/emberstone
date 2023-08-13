@@ -27,6 +27,7 @@ from src.users.forms import (
 from src import db
 from src.models import (
     User,
+    Department,
 )
 
 
@@ -142,3 +143,19 @@ def change_password():
     return render_template('users/change_password.html',
                            title='emberstone - Change Password',
                            form=form)
+
+
+# Route - View Department Users
+@users_bp.route('/department/<int:department_id>/users')
+@login_required
+def view_department_users(department_id):
+    """Allows the user to view all users in a department"""
+
+    department = Department.query.get_or_404(department_id)
+
+    if department not in current_user.departments:
+        abort(403)
+
+    return render_template('users/department_users.html',
+                           title='emberstone - Department Users',
+                           department=department)

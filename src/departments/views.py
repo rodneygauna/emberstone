@@ -12,7 +12,7 @@ from flask import (
 from flask_login import (
     login_required, current_user)
 from sqlalchemy import func
-from src.stations.forms import DepartmentForm
+from src.departments.forms import DepartmentForm
 from src import db
 from src.models import (
     Department

@@ -84,16 +84,39 @@ class Department(db.Model):
     nfirs_id = db.Column(db.String(5), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     street_number = db.Column(db.String(255), nullable=False)
-    street_prefix = db.Column(db.String(255), nullable=False)
+    street_prefix = db.Column(db.String(255))
     street_name = db.Column(db.String(255), nullable=False)
     street_type = db.Column(db.String(255), nullable=False)
-    street_suffix = db.Column(db.String(255), nullable=False)
+    street_suffix = db.Column(db.String(255))
     city = db.Column(db.String(255), nullable=False)
     state = db.Column(db.String(255), nullable=False)
     zipcode = db.Column(db.Integer, nullable=False)
     county_code = db.Column(db.String(255), nullable=False)
     tele_phone = db.Column(db.Integer, nullable=False)
     fax_phone = db.Column(db.Integer)
+    # Status
+    status = db.Column(db.String(10), default="ACTIVE")
+    # Timestamps
+    created_date = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+    updated_date = db.Column(db.DateTime)
+    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
+# Model - Relationship - User and Department
+class UserDepartment(db.Model):
+    """
+    Model - Relationship - User and Department
+    One-to-One Relationship
+    """
+
+    __tablename__ = "user_departments"
+
+    # IDs
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    department_id = db.Column(db.Integer, db.ForeignKey('departments.id'))
     # Status
     status = db.Column(db.String(10), default="ACTIVE")
     # Timestamps
@@ -117,16 +140,16 @@ class Station(db.Model):
     name = db.Column(db.String(255), nullable=False)
     number = db.Column(db.String(255), nullable=False)
     street_number = db.Column(db.String(255), nullable=False)
-    street_prefix = db.Column(db.String(255), nullable=False)
+    street_prefix = db.Column(db.String(255))
     street_name = db.Column(db.String(255), nullable=False)
     street_type = db.Column(db.String(255), nullable=False)
-    street_suffix = db.Column(db.String(255), nullable=False)
+    street_suffix = db.Column(db.String(255))
     city = db.Column(db.String(255), nullable=False)
     state = db.Column(db.String(255), nullable=False)
     zipcode = db.Column(db.String(255), nullable=False)
     county_code = db.Column(db.String(255), nullable=False)
     tele_phone = db.Column(db.String(255), nullable=False)
-    fax_phone = db.Column(db.String(255), nullable=False)
+    fax_phone = db.Column(db.String(255))
     # Status
     status = db.Column(db.String(10), default="ACTIVE")
     # Timestamps
