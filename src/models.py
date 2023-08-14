@@ -108,7 +108,8 @@ class Department(db.Model):
 class UserDepartment(db.Model):
     """
     Model - Relationship - User and Department
-    One-to-One Relationship
+    Usually a One-to-One Relationship but can be a One-to-Many Relationship
+    depending on how the application is hosted.
     """
 
     __tablename__ = "user_departments"
