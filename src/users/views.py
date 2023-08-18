@@ -11,6 +11,7 @@ from flask import (
     flash,
     redirect,
     url_for,
+    abort,
 )
 from werkzeug.security import generate_password_hash
 from flask_login import (
@@ -88,7 +89,8 @@ def login():
 
             flash('Login successful.', 'success')
             return redirect(next)
-        flash('Invalid email or password.', 'error')
+
+        abort(403)
 
     return render_template('users/login.html',
                            title='emberstone - Login',
