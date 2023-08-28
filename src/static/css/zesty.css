@@ -1,0 +1,845 @@
+/*
+* Zesty UX
+* Copyright 2023, Rodney Gauna
+* www.zestyux.com
+* Free to use under the GNU GPL v3.0 license
+* http://www.gnu.org/licenses/gpl.html
+*/
+
+/* Table of Contents
+---------------------------
+- Font Import
+- Base Styles
+- Dark Mode
+- Grid
+- Typography
+- Buttons
+- Code
+- Cards
+- Banners
+*/
+
+/* Font Import
+--------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Base Styles
+--------------------------- */
+:root {
+    /* Colors */
+    --color-primary: #00A2FF;
+    --color-danger: #FB6161;
+    --color-success: #24BF79;
+    --color-warning: #FFB800;
+    --color-white: #FFFFFF;
+    --color-info-dark: #000C1A;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #F6F6F9;
+
+    /* Borders */
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    /* Padding */
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    /* Shadows */
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables {
+    --color-background: #0E1B30;
+    --color-white: #202528;
+    --color-dark: #EDEFFD;
+    --color-dark-variant: #A3BDCC;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+/* Dark Mode
+--------------------------- */
+.dark-mode {
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.dark-mode span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode span.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+/* Grid
+--------------------------- */
+.container {
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.column,
+.columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+/* devices larger than 400px */
+@media (min-width: 400px) {
+    .container {
+        width: 85%;
+        padding: 0;
+    }
+}
+
+/* devices larger than 550px */
+@media (min-width: 550px) {
+    .container {
+        width: 80%;
+    }
+
+    .column,
+    .columns {
+        margin-left: 4%;
+    }
+
+    .column:first-child,
+    .columns:first-child {
+        margin-left: 0;
+    }
+
+    .one.column,
+    .one.columns {
+        width: 4.66666666667%;
+    }
+
+    .two.columns {
+        width: 13.3333333333%;
+    }
+
+    .three.columns {
+        width: 22%;
+    }
+
+    .four.columns {
+        width: 30.6666666667%;
+    }
+
+    .five.columns {
+        width: 39.3333333333%;
+    }
+
+    .six.columns {
+        width: 48%;
+    }
+
+    .seven.columns {
+        width: 56.6666666667%;
+    }
+
+    .eight.columns {
+        width: 65.3333333333%;
+    }
+
+    .nine.columns {
+        width: 74.0%;
+    }
+
+    .ten.columns {
+        width: 82.6666666667%;
+    }
+
+    .eleven.columns {
+        width: 91.3333333333%;
+    }
+
+    .twelve.columns {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .one-third.column {
+        width: 30.6666666667%;
+    }
+
+    .two-third.column {
+        width: 65.3333333333%;
+    }
+
+    .half.column {
+        width: 48%;
+    }
+
+}
+
+/* Typography
+--------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+p {
+    color: var(--color-dark);
+    font-weight: 300;
+}
+
+.text-muted {
+    color: var(--color-info-dark);
+}
+
+/* Links
+--------------------------- */
+a {
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--color-dark-variant);
+}
+
+/* Buttons
+--------------------------- */
+/* Basic Button */
+.btn,
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: transparent;
+    border-radius: var(--border-radius-1);
+    border: 1px solid var(--color-dark-variant);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0.8rem 0.1rem;
+    color: var(--color-dark);
+}
+
+.btn:hover,
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.btn:focus,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+    border: 1px solid var(--color-dark);
+}
+
+/* Primary Button */
+.btn-primary,
+.button-primary,
+button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover,
+.button-primary:hover,
+button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.btn-primary:focus,
+.button-primary:focus,
+button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    color: var(--color-white);
+    transition: all 0.35s ease-in-out;
+}
+
+/* Danger Button */
+.btn-danger,
+.button-danger,
+button-danger,
+input[type="submit"].button-danger,
+input[type="reset"].button-danger,
+input[type="button"].button-danger {
+    background-color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+    color: var(--color-white);
+}
+
+.btn-danger:hover,
+.button-danger:hover,
+button-danger:hover,
+input[type="submit"].button-danger:hover,
+input[type="reset"].button-danger:hover,
+input[type="button"].button-danger:hover,
+.btn-danger:focus,
+.button-danger:focus,
+button-danger:focus,
+input[type="submit"].button-danger:focus,
+input[type="reset"].button-danger:focus,
+input[type="button"].button-danger:focus {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    color: var(--color-white);
+    transition: all 0.35s ease-in-out;
+}
+
+/* Success Button */
+.btn-success,
+.button-success,
+button-success,
+input[type="submit"].button-success,
+input[type="reset"].button-success,
+input[type="button"].button-success {
+    background-color: var(--color-success);
+    border: 1px solid var(--color-success);
+    color: var(--color-white);
+}
+
+.btn-success:hover,
+.button-success:hover,
+button-success:hover,
+input[type="submit"].button-success:hover,
+input[type="reset"].button-success:hover,
+input[type="button"].button-success:hover,
+.btn-success:focus,
+.button-success:focus,
+button-success:focus,
+input[type="submit"].button-success:focus,
+input[type="reset"].button-success:focus,
+input[type="button"].button-success:focus {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    color: var(--color-white);
+    transition: all 0.35s ease-in-out;
+}
+
+/* Warning Button */
+.btn-warning,
+.button-warning,
+button-warning,
+input[type="submit"].button-warning,
+input[type="reset"].button-warning,
+input[type="button"].button-warning {
+    background-color: var(--color-warning);
+    border: 1px solid var(--color-warning);
+    color: var(--color-white);
+}
+
+.btn-warning:hover,
+.button-warning:hover,
+button-warning:hover,
+input[type="submit"].button-warning:hover,
+input[type="reset"].button-warning:hover,
+input[type="button"].button-warning:hover,
+.btn-warning:focus,
+.button-warning:focus,
+button-warning:focus,
+input[type="submit"].button-warning:focus,
+input[type="reset"].button-warning:focus,
+input[type="button"].button-warning:focus {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    color: var(--color-white);
+    transition: all 0.35s ease-in-out;
+}
+
+/* Code
+--------------------------- */
+code {
+    border-radius: var(--border-radius-1);
+    background: var(--color-background);
+    border: 1px solid var(--color-dark);
+    font-size: 90%;
+    color: var(--color-dark);
+    white-space: nowrap;
+}
+
+pre > code {
+    display: block;
+    padding: 1rem;
+    white-space: pre;
+    margin: 0.8rem 0.1rem;
+}
+
+/* Cards
+--------------------------- */
+.card {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    margin-bottom: 1rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* Banners
+--------------------------- */
+.banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.banner {
+    display: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-1);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.banner-text {
+    margin-right: 1rem;
+    color: var(--color-dark);
+}
+
+.banner-close {
+    background: none;
+    border: none;
+    color: var(--color-dark);
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.banner.success {
+    background-color: var(--color-success);
+    color: var(--color-white);
+    display: flex;
+}
+
+.banner.danger {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    display: flex;
+}
+
+.banner.warning {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+    display: flex;
+}
+
+/* Forms
+--------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+    padding: 0.8rem 1.6rem;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-1);
+    border: 1px solid var(--color-dark-variant);
+    box-sizing: border-box;
+    margin: 0.8rem 0.1rem;
+    color: var(--color-dark);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border: 1.6px solid var(--color-dark);
+    outline: 0;
+}
+
+label,
+legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+fieldset {
+    padding: 0;
+    border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}
+
+label {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+label > .label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal;
+}
+
+/* Checkboxes */
+input[type="checkbox"] + span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.5rem 0.1rem;
+    cursor: pointer;
+}
+
+/* Radio Buttons */
+input[type="radio"] + span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.5rem 0.1rem;
+    cursor: pointer;
+}
+
+/* Tables
+--------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1.2rem;
+    color: var(--color-dark);
+}
+
+th,
+td {
+    padding: 0.8rem 1.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-dark-variant);
+}
+
+th:first-child,
+td:first-child {
+    padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+/* Aternate Table Row Colors */
+.alt-colors tr:nth-child(even) {
+    background-color: var(--color-dark-variant);
+}
+
+/* Lists
+--------------------------- */
+ul,
+ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+ul {
+    list-style: circle inside;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: 1.5rem 0 1.5rem 3rem;
+    font-size: 90%;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+/* Images
+--------------------------- */
+img {
+    max-width: 100%;
+}
+
+/* Image with a rounded border */
+.squared {
+    border-radius: var(--border-radius-1);
+}
+
+/* Image with a circle border */
+.rounded {
+    border-radius: 50%;
+}
+
+/* Utilities
+--------------------------- */
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+/* Miscelaneous
+--------------------------- */
+/* Hide */
+.hide {
+    display: none;
+}
+
+/* Show */
+.show {
+    display: block;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Align */
+.align-left {
+    float: left;
+}
+
+.align-right {
+    float: right;
+}
+
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Text Align */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text Transform */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+/* Text Truncate */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Text Wrap */
+.text-wrap {
+    white-space: normal;
+}
+
+/* Text Break */
+.text-break {
+    word-break: break-word;
+}
+
+/* Text Reset */
+.text-reset {
+    color: inherit;
+}
+
+/* Text Decoration */
+.text-decoration-none {
+    text-decoration: none;
+}
+
+/* Horizontal Rule */
+.hr {
+    border: 0;
+    border-top: 1px solid var(--color-dark-variant);
+}

@@ -9,12 +9,14 @@
     <!-- Navbar - Start -->
     {% include 'navigation.html' %}
     <!-- Navbar - End -->
-    <main>
-      <!-- Flash - Start -->
-      {% include 'flash.html' %}
-      <!-- Flash - End -->
-      {% block content %}{% endblock content %}
-    </main>
+    <div class="container">
+      <main>
+        <!-- Flash - Start -->
+        {% include 'flash.html' %}
+        <!-- Flash - End -->
+        {% block content %}{% endblock content %}
+      </main>
+    </div>
     {% include 'javascript.html' %}
   </body>
 </html>
