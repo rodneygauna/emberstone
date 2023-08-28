@@ -473,7 +473,7 @@ pre > code {
 /* Cards
 --------------------------- */
 .card {
-    background-color: var(--color-white);
+    background-color: var(--color-background);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
@@ -592,7 +592,7 @@ input[type="tel"],
 textarea,
 select {
     padding: 0.8rem 1.6rem;
-    background-color: var(--color-white);
+    background-color: var(--color-background);
     border-radius: var(--border-radius-1);
     border: 1px solid var(--color-dark-variant);
     box-sizing: border-box;

@@ -2,14 +2,8 @@
 <h1>Login</h1>
 <form method="post">
   {{ form.hidden_tag() }}
-  <div class="row">
-    <div class="u-full-width">
-      {{ form.email.label }} {{ form.email() }} {{ form.password.label }} {{
-      form.password() }}
-    </div>
-  </div>
-  <div class="row">
-    <div>{{ form.submit }}</div>
-  </div>
+  <div class="row">{{ form.email.label }} {{ form.email }}</div>
+  <div class="row">{{ form.password.label }} {{ form.password }}</div>
+  <div class="row">{{ form.submit }}</div>
 </form>
 {% endblock content %}

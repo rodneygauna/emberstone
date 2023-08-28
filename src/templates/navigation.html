@@ -1,19 +1,24 @@
 {% block navbar %}
 <aside>
+  <!-- Logo Menu - Start -->
   <!-- Logo - Start -->
-  <div class="toggle">
-    <div class="logo">
+  <div class="logo">
+    <a href="{{ url_for('core.index') }}">
       <img
         src="{{ url_for('static', filename='assets/logos/emberstone_logo_1024x1024.png') }}"
         alt="Emberstone Logo"
+        style="width: 30%"
       />
-      <h2>Emberstone</h2>
-    </div>
-    <div class="close" id="close-btn">
-      <span>&times;</span>
-    </div>
+    </a>
   </div>
   <!-- Logo - End -->
+  <!-- Dark/Light Mode Toggle - Start -->
+  <div class="dark-mode">
+    <span class="active"> L </span>
+    <span class=""> D </span>
+  </div>
+  <!-- Dark/Light Mode Toggle - End -->
+  <!-- Logo Menu - End -->
   <!-- Navbar - Start -->
   <div class="sidebar">
     <a href="#"><h3>Home</h3></a>

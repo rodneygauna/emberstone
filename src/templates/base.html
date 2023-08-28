@@ -12,17 +12,18 @@
         {% include 'flash.html' %}
         <!-- Flash Banners - End -->
         <div class="row">
-          <div class="one-third column">
+          <div class="two columns">
             <!-- Navbar - Start -->
             {% include 'navigation.html' %}
             <!-- Navbar - End -->
           </div>
-          <div class="two-third column">
-            <div class="card">
-              <!-- Content - Start -->
-              {% block content %}{% endblock content %}
-              <!-- Content - End -->
-            </div>
+          <div class="ten columns">
+            <!-- Top Nav - Start -->
+            <div class="row">{% include 'topnav.html' %}</div>
+            <!-- Top Nav - End -->
+            <!-- Content - Start -->
+            {% block content %}{% endblock content %}
+            <!-- Content - End -->
           </div>
         </div>
       </main>
