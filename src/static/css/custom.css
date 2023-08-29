@@ -1,7 +1,4 @@
 /* Sidenav */
-aside {
-    height: 100vh;
-}
 
 aside .logo {
     display: flex;
@@ -15,7 +12,7 @@ aside .logo {
 aside .sidebar {
     display: flex;
     flex-direction: column;
-    height: 92vh;
+    height: 88vh;
     position: relative;
     top: 1.5rem;
     transition: all 0.3s ease;
