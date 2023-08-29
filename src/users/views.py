@@ -28,7 +28,6 @@ from src.users.forms import (
 from src import db
 from src.models import (
     User,
-    Department,
 )
 
 
