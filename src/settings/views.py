@@ -15,7 +15,6 @@ from src import db
 from src.models import (
     User,
     Department,
-    UserDepartment,
 )
 
 
@@ -30,19 +29,5 @@ settings_bp = Blueprint('settings', __name__)
 def settings():
     '''Route: Settings Page'''
 
-    department = (
-        db.session.query(
-            UserDepartment.user_id,
-            UserDepartment.department_id,
-            Department.id,
-            User.id,
-            )
-        .filter(UserDepartment.user_id == current_user.id)
-        .join(User, User.id == UserDepartment.user_id)
-        .join(Department, Department.id == UserDepartment.department_id)
-        .first()
-    )
-
     return render_template('settings/settings.html',
-                           department=department,
                            title='Emberstone - Settings')

@@ -3,6 +3,15 @@ aside {
     height: 100vh;
 }
 
+aside .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    max-width: 44px;
+    margin-top: 1rem;
+}
+
 aside .sidebar {
     display: flex;
     flex-direction: column;
@@ -38,11 +47,6 @@ aside .sidebar a:last-child {
 
 .topnav a {
     margin-left: 0.5rem;
-}
-
-/* Card - Custom */
-.card {
-    height: 100vh;
 }
 
 /* Button Group */

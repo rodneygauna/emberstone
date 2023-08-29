@@ -109,7 +109,7 @@ body {
 
 .dark-mode span.active {
     background-color: var(--color-primary);
-    color: white;
+    color: #FFFFFF;
     border-radius: var(--border-radius-1);
 }
 

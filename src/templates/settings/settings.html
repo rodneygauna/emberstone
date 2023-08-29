@@ -1,20 +1,31 @@
 {% extends 'base.html' %} {% block content %}
+<h1>Settings</h1>
 <div class="row">
   <div class="six columns">
-    <a
-      href="{{url_for('departments.edit_department', department_id=department.department_id)}}"
-      >Edit Department</a
-    >
-    <h3>Users</h3>
-    <a
-      href="{{url_for('users.view_department_users', department_id=department.department_id)}}"
-      >Department Users</a
-    >
-    <h3>Stations</h3>
-    <a
-      href="{{url_for('stations.view_stations', department_id=department.department_id)}}"
-      >Department Stations</a
-    >
+    <div class="card">
+      <div class="card-header">Department</div>
+      <div class="card-body">
+        <a href="{{url_for('departments.edit_department')}}">Edit Department</a>
+      </div>
+    </div>
+  </div>
+  <div class="six columns">
+    <div class="card">
+      <div class="card-header">Stations</div>
+      <div class="card-body">
+        <a href="{{url_for('stations.view_stations') }}">View Stations</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <div class="card">
+        <div class="card-header">Users</div>
+        <div class="card-body">
+          <a href="#">Manager Users</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock content %}

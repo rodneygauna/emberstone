@@ -23,13 +23,13 @@ stations_bp = Blueprint('stations', __name__)
 
 
 # Route - View Stations Page
-@stations_bp.route('/view_stations/<int:department_id>')
+@stations_bp.route('/view_stations')
 @login_required
-def view_stations(department_id):
+def view_stations():
     '''Route: View Stations Page'''
 
-    department = Department.query.filter_by(id=department_id).first()
-    stations_list = Station.query.filter_by(department_id=department_id).all()
+    department = Department.query.first()
+    stations_list = Station.query.all()
 
     return render_template('view_stations.html',
                            title='Emberstone - View Stations',
@@ -38,16 +38,16 @@ def view_stations(department_id):
 
 
 # Route - Create Station Page
-@stations_bp.route('/add_station/<int:department_id>',
+@stations_bp.route('/add_station',
                    methods=['GET', 'POST'])
 @login_required
-def add_station(department_id):
+def add_station():
     '''Route: Add Station Page'''
 
     form = StationForm()
 
     # Variables
-    department = Department.query.filter_by(id=department_id).first()
+    department = Department.query.first()
 
     # Validate form
     if form.validate_on_submit():
@@ -61,7 +61,6 @@ def add_station(department_id):
 
         # Add station to database
         new_station = Station(
-            department_id=department_id,
             name=form.name.data,
             number=form.number.data,
             street_number=form.street_number.data,

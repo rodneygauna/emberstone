@@ -72,16 +72,16 @@ def add_department():
 
 
 # Route - Edit Department Page
-@departments_bp.route('/department/<int:department_id>/edit',
+@departments_bp.route('/department/edit',
                       methods=['GET', 'POST'])
 @login_required
-def edit_department(department_id):
+def edit_department():
     '''Route: Edit Department Page'''
 
     form = DepartmentForm()
 
     # Variables
-    department = Department.query.filter_by(id=department_id).first()
+    department = Department.query.first()
 
     # Populate form fields
     if request.method == 'GET':

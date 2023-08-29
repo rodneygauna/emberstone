@@ -13,7 +13,6 @@ from src.models import (
     User,
     Department,
     Station,
-    UserDepartment,
 )
 from src.dictionaries.dict_names import (
     NAME_PREFIX, NAME_SUFFIX
@@ -118,16 +117,6 @@ def db_seed():
             )
         )
 
-    # Create UserDepartments
-    for i in range(1, max_range):
-        data.append(
-            UserDepartment(
-                user_id=random.randint(1, max_range),
-                department_id=random.randint(1, max_range),
-                status=random.choice([item[0] for item in STATUS]),
-            )
-        )
-
     # Create Stations
     for i in range(1, max_range):
         random_street_pre_suffix = random.choice(
@@ -135,7 +124,6 @@ def db_seed():
 
         data.append(
             Station(
-                department_id=random.randint(1, max_range),
                 name=faker.company(),
                 number=random.randint(1, 99),
                 street_number=faker.building_number(),

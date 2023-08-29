@@ -104,30 +104,6 @@ class Department(db.Model):
     updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
-# Model - Relationship - User and Department
-class UserDepartment(db.Model):
-    """
-    Model - Relationship - User and Department
-    Usually a One-to-One Relationship but can be a One-to-Many Relationship
-    depending on how the application is hosted.
-    """
-
-    __tablename__ = "user_departments"
-
-    # IDs
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    department_id = db.Column(db.Integer, db.ForeignKey('departments.id'))
-    # Status
-    status = db.Column(db.String(10), default="ACTIVE")
-    # Timestamps
-    created_date = db.Column(db.DateTime, nullable=False,
-                             default=datetime.utcnow)
-    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-    updated_date = db.Column(db.DateTime)
-    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
-
-
 # Model - Station
 class Station(db.Model):
     """Model - Stations"""
@@ -136,7 +112,6 @@ class Station(db.Model):
 
     # IDs
     id = db.Column(db.Integer, primary_key=True)
-    department_id = db.Column(db.Integer, db.ForeignKey('departments.id'))
     # Station Information
     name = db.Column(db.String(255), nullable=False)
     number = db.Column(db.String(255), nullable=False)
