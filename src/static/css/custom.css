@@ -1,15 +1,43 @@
-/* Navigation - Sidebar */
+/* Sidenav */
 aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000;
+    height: 100vh;
+}
+
+aside .sidebar {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    width: 200px;
-    border-right: 1px solid #dee2e6;
+    height: 92vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a {
+    display: flex;
+    color: var(--color-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+/* Topnav */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.topnav a {
+    margin-left: 0.5rem;
 }
 
 /* Card - Custom */

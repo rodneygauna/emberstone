@@ -1,6 +1,5 @@
 {% block navbar %}
 <aside>
-  <!-- Logo Menu - Start -->
   <!-- Logo - Start -->
   <div class="logo">
     <a href="{{ url_for('core.index') }}">
@@ -12,17 +11,16 @@
     </a>
   </div>
   <!-- Logo - End -->
-  <!-- Dark/Light Mode Toggle - Start -->
-  <div class="dark-mode">
-    <span class="active"> L </span>
-    <span class=""> D </span>
-  </div>
-  <!-- Dark/Light Mode Toggle - End -->
-  <!-- Logo Menu - End -->
   <!-- Navbar - Start -->
   <div class="sidebar">
-    <a href="#"><h3>Home</h3></a>
-    <a href="#"><h3>Home</h3></a>
+    {% if current_user.is_authenticated %}
+    <a href="#"><h3>Dashboard</h3></a>
+    <a href="#"><h3>Incidents</h3></a>
+    <a href="#"><h3>Settings</h3></a>
+    {% else %}
+    <a href="{{ url_for('core.index') }}"><h3>Home</h3></a>
+    <a href="{{ url_for('users.login') }}"><h3>Login</h3></a>
+    {% endif %}
   </div>
   <!-- Navbar - End -->
 </aside>
