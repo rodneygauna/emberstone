@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Edit Department</h1>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div class="row">
+    <div class="half column">{{ form.name.label }} {{ form.name() }}</div>
+    <div class="half column">
+      {{ form.nfirs_id.label }} {{ form.nfirs_id() }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="half column">
+      <div>{{ form.street_number.label }} {{ form.street_number() }}</div>
+      <div>{{ form.street_prefix.label }} {{ form.street_prefix() }}</div>
+      <div>{{ form.street_name.label }} {{ form.street_name() }}</div>
+      <div>{{ form.street_type.label }} {{ form.street_type() }}</div>
+      <div>{{ form.street_suffix.label }} {{ form.street_suffix() }}</div>
+    </div>
+    <div class="half column">
+      <div>{{ form.city.label }} {{ form.city() }}</div>
+      <div>{{ form.state.label }} {{ form.state() }}</div>
+      <div>{{ form.zipcode.label }} {{ form.zipcode() }}</div>
+      <div>{{ form.county_code.label }} {{ form.county_code() }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="half column">
+      {{ form.tele_phone.label }} {{ form.tele_phone() }}
+    </div>
+    <div class="half column">
+      {{ form.fax_phone.label }} {{ form.fax_phone() }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="half column">{{ form.status.label }} {{ form.status() }}</div>
+  </div>
+  {{ form.submit() }}
+</form>
+{% endblock content %}

@@ -123,7 +123,7 @@ def edit_department():
         flash('Department updated successfully', 'success')
         return redirect(url_for('settings.settings'))
 
-    return render_template('edit_department.html',
+    return render_template('departments/edit_department.html',
                            title='Emberstone - Edit Department',
                            department=department,
                            form=form)
