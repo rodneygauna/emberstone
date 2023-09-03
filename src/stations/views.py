@@ -14,7 +14,7 @@ from sqlalchemy import func
 from src.stations.forms import StationForm
 from src import db
 from src.models import (
-    Department, Station
+    Station,
 )
 
 
@@ -28,13 +28,11 @@ stations_bp = Blueprint('stations', __name__)
 def view_stations():
     '''Route: View Stations Page'''
 
-    department = Department.query.first()
-    stations_list = Station.query.all()
+    stations = Station.query.order_by(Station.number).all()
 
-    return render_template('view_stations.html',
+    return render_template('stations/view_stations.html',
                            title='Emberstone - View Stations',
-                           department=department,
-                           stations_list=stations_list)
+                           stations=stations)
 
 
 # Route - Create Station Page
@@ -46,13 +44,10 @@ def add_station():
 
     form = StationForm()
 
-    # Variables
-    department = Department.query.first()
-
     # Validate form
     if form.validate_on_submit():
         # Check if station exists
-        existing_station = Station.query.filter_by(
+        existing_station = Station.query.filter(
             func.lower(Station.name) == func.lower(form.name.data)
         ).first()
         # If station exists, return error
@@ -79,11 +74,10 @@ def add_station():
         db.session.add(new_station)
         db.session.commit()
         # Return to settings page
-        return redirect(url_for('settings.settings'))
+        return redirect(url_for('stations.view_stations'))
 
-    return render_template('add_station.html',
+    return render_template('stations/add-edit_station.html',
                            title='Emberstone - Add Station',
-                           department=department,
                            form=form)
 
 
@@ -141,9 +135,9 @@ def edit_station(station_id):
         db.session.commit()
         # Return to settings page
         flash('Station updated successfully.', 'success')
-        return redirect(url_for('settings.settings'))
+        return redirect(url_for('stations.view_stations'))
 
-    return render_template('edit_station.html',
+    return render_template('stations/add-edit_station.html',
                            title='Emberstone - Edit Station',
                            station=station,
                            form=form)
