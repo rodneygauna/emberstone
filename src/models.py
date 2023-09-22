@@ -82,6 +82,7 @@ class Department(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # Department Information
     nfirs_id = db.Column(db.String(5), nullable=False)
+    state_fdid = db.Column(db.String(5), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     street_number = db.Column(db.String(255), nullable=False)
     street_prefix = db.Column(db.String(255))
@@ -114,7 +115,7 @@ class Station(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # Station Information
     name = db.Column(db.String(255), nullable=False)
-    number = db.Column(db.String(255), nullable=False)
+    number = db.Column(db.Integer, nullable=False)
     street_number = db.Column(db.String(255), nullable=False)
     street_prefix = db.Column(db.String(255))
     street_name = db.Column(db.String(255), nullable=False)
@@ -134,3 +135,53 @@ class Station(db.Model):
     created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
     updated_date = db.Column(db.DateTime)
     updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
+# Model - NFIRS 1 - Basic Incident Information
+class NFIRS1Basic(db.Model):
+    """Model - NFIRS 1 - Basic Incident Information"""
+
+    __tablename__ = "nfirs1_basic"
+
+    # IDs
+    id = db.Column(db.Integer, primary_key=True)
+    # Section A - Incident Header
+    state_fdid = db.Column(db.String(5), nullable=False)
+    incident_state = db.Column(db.String(2), nullable=False)
+    incident_date = db.Column(db.DateTime, nullable=False)
+    station_number = db.Column(db.Integer, nullable=False)
+    incident_number = db.Column(db.Integer, nullable=False)
+    exposure_number = db.Column(db.Integer, nullable=False)
+    incident_reporting_status = db.Column(db.String(12), nullable=False)
+    # Section B - Location
+    location_type = db.Column(db.String(2), nullable=False)
+    census_tract = db.Column(db.String(6))
+    milepost = db.Column(db.String(8))
+    street_prefix = db.Column(db.String(2))
+    street_highway = db.Column(db.String(30))
+    street_type = db.Column(db.String(4))
+    street_suffix = db.Column(db.String(4))
+    apartment_suite_room = db.Column(db.String(15))
+    city = db.Column(db.String(50), nullable=False)
+    state = db.Column(db.String(2), nullable=False)
+    zipcode = db.Column(db.String(9), nullable=False)
+    crossstreet_directions_usnationalgrid = db.Column(db.String(30))
+    # Section C - Incident Type
+    incident_type = db.Column(db.String(3), nullable=False)
+    # Section D - Aid Given or Received
+    # Section E1 - Date and Times
+    # Section E2 - Shifts and Alarms
+    # Section E3 - Special Studies
+    # Section F - Actions Taken
+    # Section G1 - Resources
+    # Section G2 - Estimated Dollar Losses and Values
+    # Section H - Completed Models
+    # Section H1 - Casualties
+    # Section H2 - Detector
+    # Section H3 - Hazardous materials Release
+    # Section I - Mixed Use
+    # Section J - Property Use
+    # Section K1 - Person/Entity Involved
+    # Section K2 - Owner
+    # Section L - Remarks
+    # Section M - Authorization
