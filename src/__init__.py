@@ -8,6 +8,8 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
+from sqlalchemy.exc import OperationalError
 from flask_migrate import Migrate
 from flask_login import LoginManager
 
@@ -17,24 +19,39 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 
-# SQLite database
-SQLITE_LOCATION = os.getenv(
-    "SQLITE_LOCATION", os.path.abspath(os.path.dirname(__file__))
-)
-
 # Flask initialization
 app = Flask(__name__)
-basedir = SQLITE_LOCATION
 app.config["SECRET_KEY"] = SECRET_KEY
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
-    basedir, "database.db"
-)
+# Database configuration
+database_path = os.path.join(app.root_path, 'data', 'database.db')
+os.makedirs(os.path.join(app.root_path, 'data'), exist_ok=True)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + database_path
 
 # Database initialization
 db = SQLAlchemy(app)
 
+
 # Migrations initialization
 Migrate(app, db)
+
+
+# Function to create the database if it doesn't exist
+def create_database_if_not_exists():
+    """Create the database if it doesn't exist."""
+    try:
+        engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"])
+        engine.connect()
+    except OperationalError as e:
+        app.logger.error("Database connection failed due to: %s", e)
+        app.logger.info("Attempting to create the database...")
+        try:
+            with app.app_context():
+                db.create_all()
+            app.logger.info("Database created successfully.")
+        except Exception as e_inner:
+            app.logger.error("Database creation failed due to: %s", e_inner)
+            raise e_inner
+
 
 # Login manager initialization
 login_manager = LoginManager()

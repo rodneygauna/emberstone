@@ -3,7 +3,18 @@ This is the main file for the application.
 """
 
 # Imports
-from src import app
+from src import (
+    app, db,
+    create_database_if_not_exists
+)
+
+
+# Create the database if it doesn't exist
+with app.app_context():
+    create_database_if_not_exists()
+
+    # Create the database tables
+    db.create_all()
 
 
 # Run the app
