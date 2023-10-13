@@ -1,5 +1,5 @@
 # Dockerfile
-FROM python:3.11.6-slim-bookworm
+FROM python:3.11.6-alpine
 
 # Set environment variables
 ARG SECRET_KEY
