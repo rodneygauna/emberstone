@@ -100,6 +100,7 @@ def db_seed():
         data.append(
             Department(
                 nfirs_id=random.randint(10000, 99999),
+                state_fdid=random.randint(10000, 99999),
                 name=random_department_name,
                 street_number=faker.building_number(),
                 street_prefix=random.choice([random_street_pre_suffix, None]),
