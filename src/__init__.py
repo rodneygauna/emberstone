@@ -27,6 +27,7 @@ database_path = os.path.join(app.root_path, 'data', 'database.db')
 os.makedirs(os.path.join(app.root_path, 'data'), exist_ok=True)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + database_path
 
+
 # Database initialization
 db = SQLAlchemy(app)
 
