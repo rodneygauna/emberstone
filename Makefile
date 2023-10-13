@@ -1,5 +1,5 @@
 # Makefile
-.PHONY: build run up stop clean logs bash
+.PHONY: build run up stop clean logs bash seed test-env
 
 # Docker-related variables
 DOCKER_COMPOSE = docker-compose
@@ -32,3 +32,10 @@ logs:
 # Container bash
 bash:
 	$(DOCKER_COMPOSE) exec app /bin/bash
+
+# Seed the database with test data
+seed:
+	$(DOCKER_COMPOSE) exec app flask commands db_seed
+
+# Test environment
+test-env: clean up seed
