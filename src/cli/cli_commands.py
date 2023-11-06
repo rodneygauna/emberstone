@@ -92,31 +92,29 @@ def db_seed():
         )
 
     # Create Departments
-    for i in range(1, max_range):
-        random_department_name = f"{faker.city()} Fire Department"
-        random_street_pre_suffix = random.choice(
-            [item[0] for item in STREET_PREFIX_SUFFIX])
+    random_department_name = f"{faker.city()} Fire Department"
+    random_street_pre_suffix = random.choice(
+        [item[0] for item in STREET_PREFIX_SUFFIX])
 
-        data.append(
-            Department(
-                nfirs_id=random.randint(10000, 99999),
-                state_fdid=random.randint(10000, 99999),
-                name=random_department_name,
-                street_number=faker.building_number(),
-                street_prefix=random.choice([random_street_pre_suffix, None]),
-                street_name=faker.street_name(),
-                street_type=random.choice(
-                    [item[0] for item in STREET_TYPE_CHOICES]),
-                street_suffix=random.choice([random_street_pre_suffix, None]),
-                city=faker.city(),
-                state=random.choice([item[0] for item in STATE]),
-                zipcode=faker.zipcode(),
-                county_code=random.choice([item[0] for item in COUNTY_CODES]),
-                tele_phone=faker.phone_number(),
-                fax_phone=random.choice([faker.phone_number(), None]),
-                status=random.choice([item[0] for item in STATUS]),
-            )
+    data.append(
+        Department(
+            nfirs_id=random.randint(10000, 99999),
+            state_fdid=random.randint(10000, 99999),
+            name=random_department_name,
+            street_number=faker.building_number(),
+            street_prefix=random.choice([random_street_pre_suffix, None]),
+            street_name=faker.street_name(),
+            street_type=random.choice(
+                [item[0] for item in STREET_TYPE_CHOICES]),
+            street_suffix=random.choice([random_street_pre_suffix, None]),
+            city=faker.city(),
+            state=random.choice([item[0] for item in STATE]),
+            zipcode=faker.zipcode(),
+            county_code=random.choice([item[0] for item in COUNTY_CODES]),
+            tele_phone=faker.phone_number(),
+            fax_phone=random.choice([faker.phone_number(), None]),
         )
+    )
 
     # Create Stations
     for i in range(1, max_range):
