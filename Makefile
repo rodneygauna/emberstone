@@ -1,5 +1,5 @@
 # Makefile
-.PHONY: build run up stop clean logs bash seed test-env
+.PHONY: build run up stop clean logs shell seed test-env
 
 # Docker-related variables
 DOCKER_COMPOSE = docker-compose
@@ -29,9 +29,9 @@ clean:
 logs:
 	$(DOCKER_COMPOSE) logs --tail=100 -f
 
-# Container bash
-bash:
-	$(DOCKER_COMPOSE) exec app /bin/bash
+# Container shell
+shell:
+	$(DOCKER_COMPOSE) exec app sh
 
 # Seed the database with test data
 seed:
