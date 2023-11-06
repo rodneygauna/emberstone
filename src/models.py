@@ -179,7 +179,6 @@ class NFIRS1Basic(db.Model):
     fdid_receiving_aid = db.Column(db.String(5))
     state_receiving_aid = db.Column(db.String(2))
     incident_number_receiving_aid = db.Column(db.String(7))
-    """
     # Section E1 - Date and Times
     alarm_date = db.Column(db.Date, nullable=False)
     alarm_time = db.Column(db.Time, nullable=False)
@@ -288,4 +287,3 @@ class NFIRS1Basic(db.Model):
     member_rank = db.Column(db.String(10))
     member_assignment = db.Column(db.String(10))
     member_date = db.Column(db.Date)
-    """
