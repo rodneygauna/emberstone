@@ -4,8 +4,6 @@ Database models for the application.
 
 # Imports
 from datetime import datetime
-from dataclasses import dataclass
-from enum import Enum
 from flask import redirect, url_for
 from werkzeug.security import check_password_hash
 from flask_login import UserMixin
@@ -25,46 +23,23 @@ def unauthorized():
     """Redirects unauthorized users to the login page"""
     return redirect(url_for("users.login"))
 
-# Enum - Status
-
-
-class Status(Enum):
-    ACTIVE = "ACTIVE"
-    INACTIVE = "INACTIVE"
-
-
-# TimestampMixin
-@dataclass
-class TimestampMixin:
-    created_date: datetime = db.Column(
-        db.DateTime, nullable=False, default=datetime.utcnow)
-    created_by: int = db.Column(db.Integer)
-    updated_date: datetime = db.Column(db.DateTime)
-    updated_by: int = db.Column(db.Integer)
-
 
 # Model - User
-class User(db.Model, UserMixin, TimestampMixin):
+class User(db.Model, UserMixin):
+    """Model - Users"""
+
     __tablename__ = "users"
 
+    # IDs
     id = db.Column(db.Integer, primary_key=True)
+    # Login Information
     email = db.Column(db.String(255), unique=True, index=True)
     password_hash = db.Column(db.String(128))
+    # Profile Picture
     profile_image = db.Column(
-        db.String(255), nullable=False, default="default_profile.jpg")
-    status = db.Column(db.Enum(Status), default=Status.ACTIVE)
-
-    # Flask-Login Check Password
-    def check_password(self, password):
-        """Checks if the password is correct"""
-        return check_password_hash(self.password_hash, password)
-
-
-class UserProfile(db.Model, TimestampMixin):
-    __tablename__ = "user_profiles"
-
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+        db.String(255), nullable=False, default="default_profile.jpg"
+    )
+    # User Information
     firstname = db.Column(db.String(255), nullable=False)
     middlename = db.Column(db.String(255))
     lastname = db.Column(db.String(255), nullable=False)
@@ -83,10 +58,22 @@ class UserProfile(db.Model, TimestampMixin):
     fax_phone = db.Column(db.String(255))
     personnel_number = db.Column(db.String(255), nullable=False)
     rank = db.Column(db.String(255), nullable=False)
+    # Status
+    status = db.Column(db.String(10), default="ACTIVE")
+    # Timestamps
+    created_date = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    created_by = db.Column(db.Integer)
+    updated_date = db.Column(db.DateTime)
+    updated_by = db.Column(db.Integer)
+
+    def check_password(self, password):
+        """Checks if the password is correct"""
+        return check_password_hash(self.password_hash, password)
 
 
 # Model - Department
-class Department(db.Model, TimestampMixin):
+class Department(db.Model):
     """Model - Departments"""
 
     __tablename__ = "departments"
@@ -109,11 +96,17 @@ class Department(db.Model, TimestampMixin):
     tele_phone = db.Column(db.Integer, nullable=False)
     fax_phone = db.Column(db.Integer)
     # Status
-    status = db.Column(db.Enum(Status), default=Status.ACTIVE)
+    status = db.Column(db.String(10), default="ACTIVE")
+    # Timestamps
+    created_date = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+    updated_date = db.Column(db.DateTime)
+    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
 # Model - Station
-class Station(db.Model, TimestampMixin):
+class Station(db.Model):
     """Model - Stations"""
 
     __tablename__ = "stations"
@@ -135,11 +128,17 @@ class Station(db.Model, TimestampMixin):
     tele_phone = db.Column(db.String(255), nullable=False)
     fax_phone = db.Column(db.String(255))
     # Status
-    status = db.Column(db.Enum(Status), default=Status.ACTIVE)
+    status = db.Column(db.String(10), default="ACTIVE")
+    # Timestamps
+    created_date = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+    updated_date = db.Column(db.DateTime)
+    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
 
 
 # Model - NFIRS 1 - Basic Incident Information
-class NFIRS1Basic(db.Model, TimestampMixin):
+class NFIRS1Basic(db.Model):
     """Model - NFIRS 1 - Basic Incident Information"""
 
     __tablename__ = "nfirs1_basic"
@@ -147,7 +146,13 @@ class NFIRS1Basic(db.Model, TimestampMixin):
     # IDs
     id = db.Column(db.Integer, primary_key=True)
     # Status
-    status = db.Column(db.Enum(Status), default=Status.ACTIVE)
+    status = db.Column(db.String(10), default="ACTIVE")
+    # Timestamps
+    created_date = db.Column(db.DateTime, nullable=False,
+                             default=datetime.utcnow)
+    created_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+    updated_date = db.Column(db.DateTime)
+    updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
     # Section A - Incident Header
     state_fdid = db.Column(db.String(5), nullable=False)
     incident_state = db.Column(db.String(2), nullable=False)
