@@ -3,6 +3,7 @@ Basic Module (NFIRS-1) form
 '''
 
 # Imports
+from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, IntegerField
 from wtforms import DateField, TimeField, TextAreaField
@@ -20,62 +21,76 @@ from src.dictionaries.dict_property import (
 from src.dictionaries.dict_names import (
     NAME_PREFIX, NAME_SUFFIX
 )
+from src import db
+from src.models import (
+    NFIRS1Basic,
+    Department,
+    Station,
+)
 
 
 # Form - Basic Module (NFIRS-1)
 class BasicModuleForm(FlaskForm):
     '''Basic Module (NFIRS-1) form'''
-    # Section A - Incident Header
-    # collects the indicent header information
-    # TODO: fdid = prepopulated from the department
-    # TODO: state = prepopulated from the department
-    incident_date = DateField(
-        'Incident Date*', validators=[InputRequired()])
-    # TODO: station = prepopulated from the station selected
-    incident_number = StringField(
-        'Incident Number*', validators=[InputRequired(), Length(max=7)])
-    # Original incident exposure number will be '000',
-    # and exposure are numbered sequentially and incremented by 1
-    # beginning with '001'
-    exposure_number = StringField(
-        'Exposure Number*', validators=[InputRequired(), Length(min=3, max=3)])
-    incident_reporting_status = SelectField(
-        'Incident Reporting Status*', choices=INDICENT_REPORTING_STATUS,
-        validators=[DataRequired()])
 
+    # Form Fields
+    # Section A - Incident Header
+    state_fdid = StringField('State FDID (required)',
+                             validators=[InputRequired(),
+                                         Length(max=5)])
+    department_state = StringField('Department State (required)',
+                                   validators=[InputRequired(), Length(max=2)])
+    incident_date = DateField(
+        'Incident Date (required)', validators=[InputRequired()])
+    station = SelectField('Station')
+    incident_number = StringField(
+        'Incident Number (required)', validators=[InputRequired(),
+                                                  Length(max=7)])
+    exposure_number = StringField(
+        'Exposure Number (required)', validators=[InputRequired(),
+                                                  Length(min=3, max=3)])
+    incident_reporting_status = SelectField(
+        'Incident Reporting Status (required)',
+        choices=INDICENT_REPORTING_STATUS,
+        validators=[DataRequired()])
     # Section B - Location
-    # collects information on the specific incident location
     location_type = SelectField(
-        'Location Type*', choices=LOCATION, validators=[DataRequired()])
+        'Location Type (required)', choices=LOCATION,
+        validators=[InputRequired()])
     census_tract = StringField('Census Tract', validators=[Length(max=6)])
-    milepost = StringField('Milepost', validators=[Length(max=8)])
+    number_milepost = StringField(
+        'Number/Milepost', validators=[Length(max=8)])
     street_prefix = SelectField('Street Prefix', choices=STREET_PREFIX_SUFFIX)
     street_highway = StringField(
-        'Street or Highway Name', validators=[Length(max=30)])
+        'Street or Highway Name (required)', validators=[InputRequired(),
+                                                         Length(max=30)])
     street_type = SelectField('Street Type', choices=STREET_TYPE_CHOICES)
     street_suffix = SelectField('Street Suffix', choices=STREET_PREFIX_SUFFIX)
     apartment_suite_room = StringField(
         'Apartment, Suite, or Room', validators=[Length(max=15)])
-    city = StringField('City', validators=[Length(max=50)])
-    state = SelectField('State', choices=STATE)
-    zipcode = StringField('ZIP Code', validators=[Length(min=5, max=9)])
+    city = StringField('City (required)', validators=[
+                       InputRequired(), Length(max=50)])
+    state = SelectField('State (required)', choices=STATE,
+                        validators=[InputRequired()])
+    zipcode = StringField('ZIP Code (required)', validators=[
+                          InputRequired(), Length(min=5, max=9)])
     crossstreet_directions_usnationalgrid = StringField(
         'Cross Street, Directions, or US National Grid',
         validators=[Length(max=30)])
-
     # Section C - Incident Type
-    incident_type = SelectField('Incident Type', choices=INCIDENT_TYPE)
-
+    incident_type = SelectField('Incident Type (required)',
+                                choices=INCIDENT_TYPE,
+                                validators=[InputRequired()])
+    """
     # Section D - Aid Given or Received
     aid_given_or_received = SelectField(
-        'Aid Given or Received', choices=AID_GIVEN,
+        'Aid Given or Received (required)', choices=AID_GIVEN,
         validators=[DataRequired()])
     fdid_receiving_aid = StringField(
         'FDID Receiving Aid', validators=[Length(min=5, max=5)])
     state_receiving_aid = SelectField('State Receiving Aid', choices=STATE)
-    incident_number_receiving_aid = IntegerField(
+    incident_number_receiving_aid = StringField(
         'Incident Number Receiving Aid', validators=[Length(max=7)])
-
     # Section E1 - Dates and Times
     alarm_date = DateField('Alarm Date', format='%m/%d/%Y',
                            validators=[InputRequired()])
@@ -270,6 +285,70 @@ class BasicModuleForm(FlaskForm):
     member_assignment = StringField(
         'Officer in Charge Assignment', validators=[Length(max=10)])
     member_date = DateField('Officer in Charge Date', format='%m/%d/%Y')
+    """
 
     # Submit
     submit = SubmitField('Save')
+
+    # Helper Functions
+    def __init__(self, *args, **kwargs):
+        super(BasicModuleForm, self).__init__(*args, **kwargs)
+        self.station.choices = self.station_choices()
+
+    def populate_incident_number(self):
+        """Populate the incident number field with the next incident number"""
+        last_incident_number = (
+            db.session.query(NFIRS1Basic.incident_number)
+            .order_by(NFIRS1Basic.id.desc()).first()
+        )
+        if last_incident_number is None:
+            next_incident_number = 1
+        else:
+            next_incident_number = int(last_incident_number[0]) + 1
+        next_incident_number = str(next_incident_number)
+        self.incident_number.data = next_incident_number
+        return next_incident_number
+
+    def populate_incident_date(self):
+        """Populate the incident date field with today's date"""
+        self.incident_date.data = datetime.utcnow()
+        return self.incident_date.data
+
+    def populate_exposure_number(self):
+        """Populate the exposure number field with 001"""
+        self.exposure_number.data = '001'
+        return self.exposure_number.data
+
+    def populate_department_state_fdid(self):
+        """Populate the department state FDID field"""
+        department = (
+            db.session.query(Department).first()
+        )
+        state_fdid = department.state_fdid
+        if len(state_fdid) < 5:
+            state_fdid = state_fdid.zfill(5)
+        self.state_fdid.data = state_fdid
+        return self.state_fdid.data
+
+    def populate_department_state(self):
+        """Populate the department state field"""
+        department = (
+            db.session.query(Department).first()
+        )
+        state = department.state
+        self.department_state.data = state
+
+    def station_choices(self):
+        """Generate a list of station choices and return a list"""
+        station_choices = [
+            ('', '')
+        ]
+        stations = (
+            db.session.query(Station)
+            .filter_by(status='Active')
+            .order_by(Station.name).all()
+        )
+        for station in stations:
+            station_choices.append(
+                (station.number, station.name))
+        return station_choices

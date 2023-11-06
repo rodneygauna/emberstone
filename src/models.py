@@ -153,18 +153,18 @@ class NFIRS1Basic(db.Model):
     updated_by = db.Column(db.Integer, db.ForeignKey('users.id'))
     # Section A - Incident Header
     state_fdid = db.Column(db.String(5), nullable=False)
-    incident_state = db.Column(db.String(2), nullable=False)
+    department_state = db.Column(db.String(2), nullable=False)
     incident_date = db.Column(db.Date, nullable=False)
-    station_number = db.Column(db.Integer, nullable=False)
+    station = db.Column(db.String(3))
     incident_number = db.Column(db.String(7), nullable=False)
     exposure_number = db.Column(db.String(3), nullable=False)
     incident_reporting_status = db.Column(db.String(14), nullable=False)
     # Section B - Location
     location_type = db.Column(db.String(2), nullable=False)
     census_tract = db.Column(db.String(6))
-    milepost = db.Column(db.String(8))
+    number_milepost = db.Column(db.String(8))
     street_prefix = db.Column(db.String(2))
-    street_highway = db.Column(db.String(30))
+    street_highway = db.Column(db.String(30), nullable=False)
     street_type = db.Column(db.String(4))
     street_suffix = db.Column(db.String(4))
     apartment_suite_room = db.Column(db.String(15))
@@ -174,11 +174,12 @@ class NFIRS1Basic(db.Model):
     crossstreet_directions_usnationalgrid = db.Column(db.String(30))
     # Section C - Incident Type
     incident_type = db.Column(db.String(3), nullable=False)
+    """
     # Section D - Aid Given or Received
-    aid_given_or_received = db.Column(db.String(50), nullable=False)
+    aid_given_or_received = db.Column(db.String(1), nullable=False)
     fdid_receiving_aid = db.Column(db.String(5))
-    state_receiving_aid = db.Column(db.String(50))
-    incident_number_receiving_aid = db.Column(db.Integer)
+    state_receiving_aid = db.Column(db.String(2))
+    incident_number_receiving_aid = db.Column(db.String(7))
     # Section E1 - Date and Times
     alarm_date = db.Column(db.Date, nullable=False)
     alarm_time = db.Column(db.Time, nullable=False)
@@ -287,3 +288,4 @@ class NFIRS1Basic(db.Model):
     member_rank = db.Column(db.String(10))
     member_assignment = db.Column(db.String(10))
     member_date = db.Column(db.Date)
+    """

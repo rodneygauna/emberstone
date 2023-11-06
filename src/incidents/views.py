@@ -46,6 +46,11 @@ def new_nfirs1():
     """Basic Incident Information (NFIRS 1)"""
 
     form = BasicModuleForm()
+    form.populate_incident_number()
+    form.populate_incident_date()
+    form.populate_exposure_number()
+    form.populate_department_state_fdid()
+    form.populate_department_state()
 
     if form.validate_on_submit():
         # Create a dictionary to map form data to model
@@ -58,9 +63,6 @@ def new_nfirs1():
         incident_data.update({
             'created_date': datetime.utcnow(),
             'created_by': current_user.id,
-            'state_fdid': '00000',
-            'incident_state': 'NY',
-            'station_number': 0000,
         })
         # Create Incident
         new_incident = NFIRS1Basic(**incident_data)
