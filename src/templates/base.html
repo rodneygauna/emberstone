@@ -6,28 +6,26 @@
     <title>{{ title }}</title>
     {% include 'favicon.html' %} {% include 'styles.html' %}
     <!-- FOUC Fix -->
-    <script>let FF_FOUC_FIX;</script>
+    <script>
+      let FF_FOUC_FIX;
+    </script>
   </head>
   <body>
+    <!-- Top Nav - Start -->
+    <!-- Navbar - Start -->
+    {% include 'navigation.html' %}
+    <!-- Navbar - End -->
+    <div class="row">{% include 'topnav.html' %}</div>
+    <!-- Top Nav - End -->
     <div class="container">
       <main>
         <!-- Flash Banners - Start -->
         {% include 'flash.html' %}
         <!-- Flash Banners - End -->
         <div class="row">
-          <div class="two columns">
-            <!-- Navbar - Start -->
-            {% include 'navigation.html' %}
-            <!-- Navbar - End -->
-          </div>
-          <div class="ten columns">
-            <!-- Top Nav - Start -->
-            <div class="row">{% include 'topnav.html' %}</div>
-            <!-- Top Nav - End -->
-            <!-- Content - Start -->
-            {% block content %}{% endblock content %}
-            <!-- Content - End -->
-          </div>
+          <!-- Content - Start -->
+          {% block content %}{% endblock content %}
+          <!-- Content - End -->
         </div>
       </main>
     </div>
