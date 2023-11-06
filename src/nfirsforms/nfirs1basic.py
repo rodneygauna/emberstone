@@ -30,14 +30,14 @@ class BasicModuleForm(FlaskForm):
     # TODO: fdid = prepopulated from the department
     # TODO: state = prepopulated from the department
     incident_date = DateField(
-        'Incident Date*', format='%m/%d/%Y', validators=[InputRequired()])
+        'Incident Date*', validators=[InputRequired()])
     # TODO: station = prepopulated from the station selected
-    incident_number = IntegerField(
+    incident_number = StringField(
         'Incident Number*', validators=[InputRequired(), Length(max=7)])
     # Original incident exposure number will be '000',
     # and exposure are numbered sequentially and incremented by 1
     # beginning with '001'
-    exposure_number = IntegerField(
+    exposure_number = StringField(
         'Exposure Number*', validators=[InputRequired(), Length(min=3, max=3)])
     incident_reporting_status = SelectField(
         'Incident Reporting Status*', choices=INDICENT_REPORTING_STATUS,
@@ -149,13 +149,13 @@ class BasicModuleForm(FlaskForm):
     # based on the forms needed and completed by the user
 
     # Section H1 - Casualties
-    fire_service_deaths = IntegerField(
+    fire_service_deaths = StringField(
         'Fire Service Deaths', validators=[Length(max=3)])
-    fire_service_injuries = IntegerField(
+    fire_service_injuries = StringField(
         'Fire Service Injuries', validators=[Length(max=3)])
-    civilian_deaths = IntegerField(
+    civilian_deaths = StringField(
         'Civilian Deaths', validators=[Length(max=3)])
-    civilian_injuries = IntegerField(
+    civilian_injuries = StringField(
         'Civilian Injuries', validators=[Length(max=3)])
 
     # Section H2 - Detector

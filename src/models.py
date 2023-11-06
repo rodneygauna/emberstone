@@ -156,9 +156,9 @@ class NFIRS1Basic(db.Model):
     incident_state = db.Column(db.String(2), nullable=False)
     incident_date = db.Column(db.Date, nullable=False)
     station_number = db.Column(db.Integer, nullable=False)
-    incident_number = db.Column(db.Integer, nullable=False)
-    exposure_number = db.Column(db.Integer, nullable=False)
-    incident_reporting_status = db.Column(db.String(12), nullable=False)
+    incident_number = db.Column(db.String(7), nullable=False)
+    exposure_number = db.Column(db.String(3), nullable=False)
+    incident_reporting_status = db.Column(db.String(14), nullable=False)
     # Section B - Location
     location_type = db.Column(db.String(2), nullable=False)
     census_tract = db.Column(db.String(6))
@@ -218,10 +218,10 @@ class NFIRS1Basic(db.Model):
     contents_value = db.Column(db.String(9))
     # Section H - Completed Models
     # Section H1 - Casualties
-    fire_service_deaths = db.Column(db.Integer)
-    fire_service_injuries = db.Column(db.Integer)
-    civilian_deaths = db.Column(db.Integer)
-    civilian_injuries = db.Column(db.Integer)
+    fire_service_deaths = db.Column(db.String(3))
+    fire_service_injuries = db.Column(db.String(3))
+    civilian_deaths = db.Column(db.String(3))
+    civilian_injuries = db.Column(db.String(3))
     # Section H2 - Detector
     detector = db.Column(db.String(50))
     # Section H3 - Hazardous materials Release
@@ -287,3 +287,4 @@ class NFIRS1Basic(db.Model):
     member_rank = db.Column(db.String(10))
     member_assignment = db.Column(db.String(10))
     member_date = db.Column(db.Date)
+    """
