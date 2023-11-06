@@ -145,8 +145,6 @@ class NFIRS1Basic(db.Model):
 
     # IDs
     id = db.Column(db.Integer, primary_key=True)
-    # Status
-    status = db.Column(db.String(10), default="ACTIVE")
     # Timestamps
     created_date = db.Column(db.DateTime, nullable=False,
                              default=datetime.utcnow)

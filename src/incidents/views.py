@@ -45,6 +45,9 @@ def nfirs1():
     if form.validate_on_submit():
         # Create Incident
         new_incident = NFIRS1Basic(
+            # Timestamps
+            created_at=datetime.utcnow(),
+            created_by=current_user.id,
             # Section A - Incident Header
             # TODO: the system will automatically populate the state_fdid and incident_state fields based on the current user
             incident_date=form.incident_date.data,
