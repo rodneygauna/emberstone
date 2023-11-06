@@ -2,10 +2,12 @@
 <h1>Basic Module (NFIRS-1)</h1>
 <form method="post">
   {{ form.hidden_tag() }}
+  <div class="row">{{ form.submit(class="button-primary") }}</div>
   <div class="row">
-    <h2>Incident Header</h2>
-    <div class="half column"></div>
-    <div class="half column"></div>
+    <div class="half column">
+      {% for field in form if field.type != "SubmitField" and field.type !=
+      "CSRFTokenField" %} {{ field.label }} {{ field() }} {% endfor %}
+    </div>
   </div>
   <div class="row">{{ form.submit(class="button-primary") }}</div>
 </form>
