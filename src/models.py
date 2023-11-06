@@ -188,6 +188,7 @@ class NFIRS1Basic(db.Model):
     controlled_time = db.Column(db.Time)
     cleared_date = db.Column(db.Date)
     cleared_time = db.Column(db.Time)
+    """
     # Section E2 - Shifts and Alarms
     shift_or_platoon = db.Column(db.String(1))
     alarms = db.Column(db.String(2))
@@ -287,3 +288,4 @@ class NFIRS1Basic(db.Model):
     member_rank = db.Column(db.String(10))
     member_assignment = db.Column(db.String(10))
     member_date = db.Column(db.Date)
+    """

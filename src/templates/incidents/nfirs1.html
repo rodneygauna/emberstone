@@ -9,6 +9,9 @@
       "CSRFTokenField" %} {{ field.label }} {{ field() }} {% endfor %}
     </div>
   </div>
-  <div class="row">{{ form.submit(class="button-primary") }}</div>
+  <div class="row">
+    {{ form.submit(class="button-primary", style=" display: flex;
+    flex-direction: column; position: fixed; bottom: 0; right: 0; ") }}
+  </div>
 </form>
 {% endblock content %}

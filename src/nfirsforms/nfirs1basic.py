@@ -141,36 +141,41 @@ class BasicModuleForm(FlaskForm):
     # Section E1 - Dates and Times
     alarm_date = DateField(
         "Alarm Date (required)",
-        validators=[InputRequired()])
+        validators=[DataRequired()]
+    )
     alarm_time = TimeField(
         "Alarm Time (required)",
-        format="%H:%M:%S",
-        validators=[InputRequired()]
+        format="%H:%M",
+        validators=[DataRequired()]
     )
     arrival_date = DateField(
         "Arrival Date (required)",
-        validators=[InputRequired()]
+        validators=[DataRequired()]
     )
     arrival_time = TimeField(
         "Arrival Time (required)",
-        format="%H:%M:%S",
-        validators=[InputRequired()]
+        format="%H:%M",
+        validators=[DataRequired()]
     )
     controlled_date = DateField(
         "Controlled Date",
-        format="%m/%d/%Y"
+        validators=[Optional()]
     )
     controlled_time = TimeField(
         "Controlled Time",
-        format="%H:%M:%S"
+        format="%H:%M",
+        validators=[Optional()]
     )
     cleared_date = DateField(
-        "Cleared Date"
+        "Cleared Date",
+        validators=[Optional()]
     )
     cleared_time = TimeField(
         "Cleared Time",
-        format="%H:%M:%S"
+        format="%H:%M",
+        validators=[Optional()]
     )
+    """
     # Section E2 - Shifts and Alarms
     shift_or_platoon = StringField(
         "Shift or Platoon",
@@ -524,6 +529,7 @@ class BasicModuleForm(FlaskForm):
         "Officer in Charge Date",
         format="%m/%d/%Y"
     )
+    """
     # Submit
     submit = SubmitField("Save")
 
