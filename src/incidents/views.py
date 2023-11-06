@@ -6,12 +6,11 @@ Incidents views for emberstone
 # Imports
 from datetime import datetime
 from flask import (
-    Blueprint, render_template, redirect, url_for, request, flash,
-    abort, make_response
+    Blueprint, render_template, redirect, url_for, flash,
 )
 from flask_login import (
-    login_required, current_user)
-from sqlalchemy import func
+    login_required, current_user
+)
 from src.nfirsforms.nfirs1basic import BasicModuleForm
 from src import db
 from src.models import NFIRS1Basic
@@ -49,7 +48,8 @@ def nfirs1():
             created_at=datetime.utcnow(),
             created_by=current_user.id,
             # Section A - Incident Header
-            # TODO: the system will automatically populate the state_fdid and incident_state fields based on the current user
+            # TODO: the system will automatically populate the state_fdid and
+            # incident_state fields based on the current user
             incident_date=form.incident_date.data,
             # TODO: this needs to be auto-generated based on the date
             incident_number=form.incident_number.data,
@@ -67,14 +67,18 @@ def nfirs1():
             city=form.city.data,
             state=form.state.data,
             zipcode=form.zipcode.data,
-            crossstreet_directions_usnationalgrid=form.crossstreet_directions_usnationalgrid.data,
+            crossstreet_directions_usnationalgrid=(
+                form.crossstreet_directions_usnationalgrid.data
+            ),
             # Section C - Incident Type
             incident_type=form.incident_type.data,
             # Section D - Aid Given or Received
             aid_given_or_received=form.aid_given_or_received.data,
             fdid_receiving_aid=form.fdid_receiving_aid.data,
             state_receiving_aid=form.state_receiving_aid.data,
-            incident_number_receiving_aid=form.incident_number_receiving_aid.data,
+            incident_number_receiving_aid=(
+                form.incident_number_receiving_aid.data
+            ),
             # Section E1 - Date and Times
             alarm_date=form.alarm_date.data,
             alarm_time=form.alarm_time.data,
@@ -89,10 +93,14 @@ def nfirs1():
             alarms=form.alarms.data,
             district=form.district.data,
             # Section E3 - Special Studies
-            special_study_sequence_number_1=form.special_study_sequence_number_1.data,
+            special_study_sequence_number_1=(
+                form.special_study_sequence_number_1.data
+            ),
             special_study_id_1=form.special_study_type_1.data,
             special_study_code_1=form.special_study_code_1.data,
-            special_study_sequence_number_2=form.special_study_sequence_number_2.data,
+            special_study_sequence_number_2=(
+                form.special_study_sequence_number_2.data
+            ),
             special_study_id_2=form.special_study_type_2.data,
             special_study_code_2=form.special_study_code_2.data,
             # Section F - Actions Taken
@@ -106,7 +114,9 @@ def nfirs1():
             ems_personnel=form.ems_personnel.data,
             other_apparatus=form.other_apparatus.data,
             other_personnel=form.other_personnel.data,
-            resource_count_includes_aid_received=form.resource_count_includes_aid_received.data,
+            resource_count_includes_aid_received=(
+                form.resource_count_includes_aid_received.data
+            ),
             # Section G2 - Estimated Dollar Losses and Values
             property_loss=form.property_loss.data,
             contents_loss=form.contents_loss.data,
@@ -136,13 +146,17 @@ def nfirs1():
             middleinitial_involved=form.middleinitial_involved.data,
             lastname_involved=form.lastname_involved.data,
             name_suffix_involved=form.name_suffix_involved.data,
-            same_as_incident_location_involved=form.same_as_incident_location_involved.data,
+            same_as_incident_location_involved=(
+                form.same_as_incident_location_involved.data
+            ),
             number_milepost_involved=form.number_milepost_involved.data,
             street_prefix_involved=form.street_prefix_involved.data,
             street_highway_involved=form.street_highway_involved.data,
             street_type_involved=form.street_type_involved.data,
             street_suffix_involved=form.street_suffix_involved.data,
-            apartment_suite_room_involved=form.apartment_suite_room_involved.data,
+            apartment_suite_room_involved=(
+                form.apartment_suite_room_involved.data
+            ),
             city_involved=form.city_involved.data,
             state_involved=form.state_involved.data,
             zipcode_involved=form.zipcode_involved.data,
@@ -156,7 +170,9 @@ def nfirs1():
             middleinitial_owner=form.middleinitial_owner.data,
             lastname_owner=form.lastname_owner.data,
             name_suffix_owner=form.name_suffix_owner.data,
-            same_as_incident_location_owner=form.same_as_incident_location_owner.data,
+            same_as_incident_location_owner=(
+                form.same_as_incident_location_owner.data
+            ),
             number_milepost_owner=form.number_milepost_owner.data,
             street_prefix_owner=form.street_prefix_owner.data,
             street_highway_owner=form.street_highway_owner.data,
