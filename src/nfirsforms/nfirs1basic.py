@@ -9,7 +9,9 @@ from wtforms import (
     StringField, SubmitField, SelectField, IntegerField,
     DateField, TimeField, TextAreaField
 )
-from wtforms.validators import DataRequired, InputRequired, Length
+from wtforms.validators import (
+    DataRequired, InputRequired, Length, Optional
+)
 from src.dictionaries.dict_fire import (
     INDICENT_REPORTING_STATUS, INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN,
     DETECTOR, HAZARDOUS_MATERIALS_RELEASE
@@ -83,16 +85,16 @@ class BasicModuleForm(FlaskForm):
     incident_type = SelectField('Incident Type (required)',
                                 choices=INCIDENT_TYPE,
                                 validators=[InputRequired()])
-    """
     # Section D - Aid Given or Received
     aid_given_or_received = SelectField(
         'Aid Given or Received (required)', choices=AID_GIVEN,
-        validators=[DataRequired()])
+        validators=[InputRequired()])
     fdid_receiving_aid = StringField(
-        'FDID Receiving Aid', validators=[Length(min=5, max=5)])
+        'FDID Receiving Aid', validators=[Optional(), Length(min=5, max=5)])
     state_receiving_aid = SelectField('State Receiving Aid', choices=STATE)
     incident_number_receiving_aid = StringField(
-        'Incident Number Receiving Aid', validators=[Length(max=7)])
+        'Incident Number Receiving Aid', validators=[Optional(), Length(max=7)])
+    """
     # Section E1 - Dates and Times
     alarm_date = DateField('Alarm Date', format='%m/%d/%Y',
                            validators=[InputRequired()])

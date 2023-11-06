@@ -174,12 +174,12 @@ class NFIRS1Basic(db.Model):
     crossstreet_directions_usnationalgrid = db.Column(db.String(30))
     # Section C - Incident Type
     incident_type = db.Column(db.String(3), nullable=False)
-    """
     # Section D - Aid Given or Received
     aid_given_or_received = db.Column(db.String(1), nullable=False)
     fdid_receiving_aid = db.Column(db.String(5))
     state_receiving_aid = db.Column(db.String(2))
     incident_number_receiving_aid = db.Column(db.String(7))
+    """
     # Section E1 - Date and Times
     alarm_date = db.Column(db.Date, nullable=False)
     alarm_time = db.Column(db.Time, nullable=False)
