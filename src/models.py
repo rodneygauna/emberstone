@@ -287,4 +287,3 @@ class NFIRS1Basic(db.Model):
     member_rank = db.Column(db.String(10))
     member_assignment = db.Column(db.String(10))
     member_date = db.Column(db.Date)
-    """
