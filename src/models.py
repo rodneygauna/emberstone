@@ -154,7 +154,7 @@ class NFIRS1Basic(db.Model):
     # Section A - Incident Header
     state_fdid = db.Column(db.String(5), nullable=False)
     incident_state = db.Column(db.String(2), nullable=False)
-    incident_date = db.Column(db.DateTime, nullable=False)
+    incident_date = db.Column(db.Date, nullable=False)
     station_number = db.Column(db.Integer, nullable=False)
     incident_number = db.Column(db.Integer, nullable=False)
     exposure_number = db.Column(db.Integer, nullable=False)
@@ -212,10 +212,10 @@ class NFIRS1Basic(db.Model):
     other_personnel = db.Column(db.String(4))
     resource_count_includes_aid_received = db.Column(db.String(1))
     # Section G2 - Estimated Dollar Losses and Values
-    property_loss = db.Column(db.Integer)
-    contents_loss = db.Column(db.Integer)
-    property_value = db.Column(db.Integer)
-    contents_value = db.Column(db.Integer)
+    property_loss = db.Column(db.String(9))
+    contents_loss = db.Column(db.String(9))
+    property_value = db.Column(db.String(9))
+    contents_value = db.Column(db.String(9))
     # Section H - Completed Models
     # Section H1 - Casualties
     fire_service_deaths = db.Column(db.Integer)

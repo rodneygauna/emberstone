@@ -149,13 +149,13 @@ class BasicModuleForm(FlaskForm):
     # based on the forms needed and completed by the user
 
     # Section H1 - Casualties
-    fire_service_deaths = StringField(
+    fire_service_deaths = IntegerField(
         'Fire Service Deaths', validators=[Length(max=3)])
-    fire_service_injuries = StringField(
+    fire_service_injuries = IntegerField(
         'Fire Service Injuries', validators=[Length(max=3)])
-    civilian_deaths = StringField(
+    civilian_deaths = IntegerField(
         'Civilian Deaths', validators=[Length(max=3)])
-    civilian_injuries = StringField(
+    civilian_injuries = IntegerField(
         'Civilian Injuries', validators=[Length(max=3)])
 
     # Section H2 - Detector
