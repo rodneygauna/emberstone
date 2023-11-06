@@ -5,8 +5,10 @@ Basic Module (NFIRS-1) form
 # Imports
 from datetime import datetime
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField, IntegerField
-from wtforms import DateField, TimeField, TextAreaField
+from wtforms import (
+    StringField, SubmitField, SelectField, IntegerField,
+    DateField, TimeField, TextAreaField
+)
 from wtforms.validators import DataRequired, InputRequired, Length
 from src.dictionaries.dict_fire import (
     INDICENT_REPORTING_STATUS, INCIDENT_TYPE, AID_GIVEN, ACTIONS_TAKEN,
@@ -25,7 +27,7 @@ from src import db
 from src.models import (
     NFIRS1Basic,
     Department,
-    Station,
+    Station
 )
 
 
