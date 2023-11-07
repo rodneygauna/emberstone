@@ -14,9 +14,9 @@ SECRET_KEY="secret key goes here"
 ```
 
 Remember to replace the examples in the quotes on your .env file.
-Make the necessary changes and save the file.
+Make the necessary changes to the .env file and save the file.
 
-Lastly, for the data to save on the server, a database will need to be created. This can be done with the following command:
+Lastly, for the data to be saved on the server, a database will need to be created. This can be done with the following command:
 
 ```python
 flask commands db_create
