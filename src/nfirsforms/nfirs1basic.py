@@ -175,7 +175,6 @@ class BasicModuleForm(FlaskForm):
         format="%H:%M",
         validators=[Optional()]
     )
-    """
     # Section E2 - Shifts and Alarms
     shift_or_platoon = StringField(
         "Shift or Platoon",
@@ -189,6 +188,7 @@ class BasicModuleForm(FlaskForm):
         "District",
         validators=[Optional(), Length(max=3)]
     )
+    """
     # Section E3 - Special Studies
     special_study_sequence_number_1 = StringField(
         "Special Study Sequence Number #1",

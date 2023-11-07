@@ -188,11 +188,11 @@ class NFIRS1Basic(db.Model):
     controlled_time = db.Column(db.Time)
     cleared_date = db.Column(db.Date)
     cleared_time = db.Column(db.Time)
-    """
     # Section E2 - Shifts and Alarms
     shift_or_platoon = db.Column(db.String(1))
     alarms = db.Column(db.String(2))
     district = db.Column(db.String(3))
+    """
     # Section E3 - Special Studies
     special_study_sequence_number_1 = db.Column(db.String(3))
     special_study_id_1 = db.Column(db.String(5))
