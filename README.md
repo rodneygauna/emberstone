@@ -35,3 +35,7 @@ Stop and remove the image:
 ```terminal
 docker-compose down --rmi all
 ```
+
+### Makefile Commands
+
+Commands go here.
