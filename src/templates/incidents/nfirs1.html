@@ -2,13 +2,196 @@
 <h1>Basic Module (NFIRS-1)</h1>
 <form method="post">
   {{ form.hidden_tag() }}
-  <div class="row">{{ form.submit(class="button-primary") }}</div>
+  <!-- Section A - Start -->
+  <h2>Section A - Incident Header</h2>
   <div class="row">
     <div class="half column">
-      {% for field in form if field.type != "SubmitField" and field.type !=
-      "CSRFTokenField" %} {{ field.label }} {{ field() }} {% endfor %}
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-a-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-a-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
     </div>
   </div>
+  <!-- Section A - End -->
+  <!-- Section B - Start -->
+  <h2>Section B - Location</h2>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-b-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-b-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-bb-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-bb-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section B - End -->
+  <!-- Section C - Start -->
+  <h2>Section C - Incident Type</h2>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-c-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-c-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section C - End -->
+  <!-- Section D - Start -->
+  <h2>Section D - Aid Given or Received</h2>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-d-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-d-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section D - End -->
+  <!-- Section E1 - Start -->
+  <h2>Section E1 - Dates and Times</h2>
+  <div class="row">
+    <div class="three columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e1-1' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="three columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e1-2' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="three columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e1-3' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="three columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e1-4' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section E1 - End -->
+  <!-- Section E2 - Start -->
+  <h2>Section E2 - Shifts and Alarms</h2>
+  <div class="row">
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e2-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e2-middle' %} {{ field.label
+      }}{{ field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e2-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section E2 - End -->
+  <!-- Section E3 - Start -->
+  <h2>Section E3 - Special Studies</h2>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e3-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-e3-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section E3 - End -->
+  <!-- Section F - Start -->
+  <h2>Section F - Actions Taken</h2>
+  <div class="row">
+    {% for field in form %} {% if field.render_kw and
+    field.render_kw.get('data-group') == 'row-f-left' %} {{ field.label }}{{
+    field() }} {% endif %} {% endfor %}
+  </div>
+  <div class="row">
+    {% for field in form %} {% if field.render_kw and
+    field.render_kw.get('data-group') == 'row-f-middle' %} {{ field.label }}{{
+    field() }} {% endif %} {% endfor %}
+  </div>
+  <div class="row">
+    {% for field in form %} {% if field.render_kw and
+    field.render_kw.get('data-group') == 'row-f-right' %} {{ field.label }}{{
+    field() }} {% endif %} {% endfor %}
+  </div>
+  <!-- Section F - End -->
+  <!-- Section G1 - Start -->
+  <h2>Section G1 - Resources</h2>
+  <div class="row">
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-g1-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-g1-middle' %} {{ field.label
+      }}{{ field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="four columns">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-g1-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+    {% for field in form %} {% if field.render_kw and
+    field.render_kw.get('data-group') == 'row-gg-left' %} {{ field.label }}{{
+    field() }} {% endif %} {% endfor %}
+  </div>
+  <!-- Section G1 - End -->
+  <!-- Section G2 - Start -->
+  <h2>Section G2 - Estimated Dollar Losses and Values</h2>
+  <div class="row">
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-g2-left' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+    <div class="half column">
+      {% for field in form %} {% if field.render_kw and
+      field.render_kw.get('data-group') == 'row-g2-right' %} {{ field.label }}{{
+      field() }} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <!-- Section G2 - End -->
   <div class="row">
     {{ form.submit(class="button-primary", style=" display: flex;
     flex-direction: column; position: fixed; bottom: 0; right: 0; ") }}

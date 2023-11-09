@@ -42,236 +42,295 @@ class BasicModuleForm(FlaskForm):
     # Section A - Incident Header
     state_fdid = StringField(
         "State FDID (required)",
-        validators=[InputRequired(), Length(max=5)]
+        validators=[InputRequired(), Length(max=5)],
+        render_kw={"data-group": "row-a-left"},
     )
     department_state = StringField(
         "Department State (required)",
-        validators=[InputRequired(), Length(max=2)]
+        validators=[InputRequired(), Length(max=2)],
+        render_kw={"data-group": "row-a-left"},
     )
     incident_date = DateField(
         "Incident Date (required)",
-        validators=[InputRequired()])
-    station = SelectField("Station")
+        validators=[InputRequired()],
+        render_kw={"data-group": "row-a-right"},
+    )
+    station = SelectField(
+        "Station",
+        render_kw={"data-group": "row-a-left"},
+    )
     incident_number = StringField(
         "Incident Number (required)",
-        validators=[InputRequired(), Length(max=7)]
+        validators=[InputRequired(), Length(max=7)],
+        render_kw={"data-group": "row-a-right"},
     )
     exposure_number = StringField(
         "Exposure Number (required)",
-        validators=[InputRequired(), Length(min=3, max=3)]
+        validators=[InputRequired(), Length(min=3, max=3)],
+        render_kw={"data-group": "row-a-right"},
     )
     incident_reporting_status = SelectField(
         "Incident Reporting Status (required)",
         choices=INDICENT_REPORTING_STATUS,
         validators=[DataRequired()],
+        render_kw={"data-group": "row-a-right"},
     )
     # Section B - Location
     location_type = SelectField(
         "Location Type (required)", choices=LOCATION,
-        validators=[InputRequired()]
+        validators=[InputRequired()],
+        render_kw={"data-group": "row-b-left"},
     )
     census_tract = StringField(
         "Census Tract",
-        validators=[Optional(), Length(max=6)])
+        validators=[Optional(), Length(max=6)],
+        render_kw={"data-group": "row-b-right"},
+    )
     number_milepost = StringField(
         "Number/Milepost",
-        validators=[Optional(), Length(max=8)]
+        validators=[Optional(), Length(max=8)],
+        render_kw={"data-group": "row-bb-left"},
     )
     street_prefix = SelectField(
         "Street Prefix",
-        choices=STREET_PREFIX_SUFFIX
+        choices=STREET_PREFIX_SUFFIX,
+        render_kw={"data-group": "row-bb-left"},
     )
     street_highway = StringField(
         "Street or Highway Name (required)",
         validators=[InputRequired(), Length(max=30)],
+        render_kw={"data-group": "row-bb-left"},
     )
     street_type = SelectField(
         "Street Type",
-        choices=STREET_TYPE_CHOICES
+        choices=STREET_TYPE_CHOICES,
+        render_kw={"data-group": "row-bb-left"},
     )
     street_suffix = SelectField(
         "Street Suffix",
-        choices=STREET_PREFIX_SUFFIX
+        choices=STREET_PREFIX_SUFFIX,
+        render_kw={"data-group": "row-bb-left"},
     )
     apartment_suite_room = StringField(
         "Apartment, Suite, or Room",
-        validators=[Optional(), Length(max=15)]
+        validators=[Optional(), Length(max=15)],
+        render_kw={"data-group": "row-bb-left"},
     )
     city = StringField(
         "City (required)",
-        validators=[InputRequired(), Length(max=50)]
+        validators=[InputRequired(), Length(max=50)],
+        render_kw={"data-group": "row-bb-right"},
     )
     state = SelectField(
         "State (required)",
         choices=STATE,
-        validators=[InputRequired()]
+        validators=[InputRequired()],
+        render_kw={"data-group": "row-bb-right"},
     )
     zipcode = StringField(
         "ZIP Code (required)",
-        validators=[InputRequired(), Length(min=5, max=9)]
+        validators=[InputRequired(), Length(min=5, max=9)],
+        render_kw={"data-group": "row-bb-right"},
     )
     crossstreet_directions_usnationalgrid = StringField(
         "Cross Street, Directions, or US National Grid",
         validators=[Optional(), Length(max=30)],
+        render_kw={"data-group": "row-b-right"},
     )
     # Section C - Incident Type
     incident_type = SelectField(
         "Incident Type (required)",
         choices=INCIDENT_TYPE,
-        validators=[InputRequired()]
+        validators=[InputRequired()],
+        render_kw={"data-group": "row-c-left"},
     )
     # Section D - Aid Given or Received
     aid_given_or_received = SelectField(
         "Aid Given or Received (required)",
         choices=AID_GIVEN,
         validators=[InputRequired()],
+        render_kw={"data-group": "row-d-left"},
     )
     fdid_receiving_aid = StringField(
         "FDID Receiving Aid",
-        validators=[Optional(), Length(min=5, max=5)]
+        validators=[Optional(), Length(min=5, max=5)],
+        render_kw={"data-group": "row-d-right"},
     )
     state_receiving_aid = SelectField(
         "State Receiving Aid",
-        choices=STATE
+        choices=STATE,
+        render_kw={"data-group": "row-d-right"},
     )
     incident_number_receiving_aid = StringField(
         "Incident Number Receiving Aid",
-        validators=[Optional(), Length(max=7)]
+        validators=[Optional(), Length(max=7)],
+        render_kw={"data-group": "row-d-right"},
     )
     # Section E1 - Dates and Times
     alarm_date = DateField(
         "Alarm Date (required)",
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        render_kw={"data-group": "row-e1-1"},
     )
     alarm_time = TimeField(
         "Alarm Time (required)",
         format="%H:%M",
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        render_kw={"data-group": "row-e1-1"},
     )
     arrival_date = DateField(
         "Arrival Date (required)",
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        render_kw={"data-group": "row-e1-2"},
     )
     arrival_time = TimeField(
         "Arrival Time (required)",
         format="%H:%M",
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        render_kw={"data-group": "row-e1-2"},
     )
     controlled_date = DateField(
         "Controlled Date",
-        validators=[Optional()]
+        validators=[Optional()],
+        render_kw={"data-group": "row-e1-3"},
     )
     controlled_time = TimeField(
         "Controlled Time",
         format="%H:%M",
-        validators=[Optional()]
+        validators=[Optional()],
+        render_kw={"data-group": "row-e1-3"},
     )
     cleared_date = DateField(
         "Cleared Date",
-        validators=[Optional()]
+        validators=[Optional()],
+        render_kw={"data-group": "row-e1-4"},
     )
     cleared_time = TimeField(
         "Cleared Time",
         format="%H:%M",
-        validators=[Optional()]
+        validators=[Optional()],
+        render_kw={"data-group": "row-e1-4"},
     )
     # Section E2 - Shifts and Alarms
     shift_or_platoon = StringField(
         "Shift or Platoon",
-        validators=[Optional(), Length(max=1)]
+        validators=[Optional(), Length(max=1)],
+        render_kw={"data-group": "row-e2-left"},
     )
     alarms = StringField(
         "Alarms",
-        validators=[Optional(), Length(max=2)]
+        validators=[Optional(), Length(max=2)],
+        render_kw={"data-group": "row-e2-middle"},
     )
     district = StringField(
         "District",
-        validators=[Optional(), Length(max=3)]
+        validators=[Optional(), Length(max=3)],
+        render_kw={"data-group": "row-e2-right"},
     )
     # Section E3 - Special Studies
     special_study_sequence_number_1 = StringField(
         "Special Study Sequence Number #1",
-        validators=[Optional(), Length(max=3)]
+        validators=[Optional(), Length(max=3)],
+        render_kw={"data-group": "row-e3-left"},
     )
     special_study_id_1 = StringField(
         "Special Study ID #1",
-        validators=[Optional(), Length(max=5)]
+        validators=[Optional(), Length(max=5)],
+        render_kw={"data-group": "row-e3-left"},
     )
     special_study_code_1 = StringField(
         "Special Study Code #1",
-        validators=[Optional(), Length(max=5)]
+        validators=[Optional(), Length(max=5)],
+        render_kw={"data-group": "row-e3-left"},
     )
     special_study_sequence_number_2 = StringField(
         "Special Study Sequence Number #2",
-        validators=[Optional(), Length(max=3)]
+        validators=[Optional(), Length(max=3)],
+        render_kw={"data-group": "row-e3-right"},
     )
     special_study_id_2 = StringField(
         "Special Study ID #2",
-        validators=[Optional(), Length(max=5)]
+        validators=[Optional(), Length(max=5)],
+        render_kw={"data-group": "row-e3-right"},
     )
     special_study_code_2 = StringField(
         "Special Study Code #2",
-        validators=[Optional(), Length(max=5)]
+        validators=[Optional(), Length(max=5)],
+        render_kw={"data-group": "row-e3-right"},
     )
     # Section F - Actions Taken
     actions_taken_1 = SelectField(
         "Primary Action Taken",
         choices=ACTIONS_TAKEN,
-        validators=[DataRequired()]
+        validators=[DataRequired()],
+        render_kw={"data-group": "row-f-left"},
     )
     actions_taken_2 = SelectField(
         "Secondary Action Taken",
-        choices=ACTIONS_TAKEN
+        choices=ACTIONS_TAKEN,
+        render_kw={"data-group": "row-f-middle"},
     )
     actions_taken_3 = SelectField(
         "Tertiary Action Taken",
-        choices=ACTIONS_TAKEN
+        choices=ACTIONS_TAKEN,
+        render_kw={"data-group": "row-f-right"},
     )
     # Section G1 - Resources
     suppression_apparatus = StringField(
         "Suppression Apparatus",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-left"},
     )
     suppression_personnel = StringField(
         "Suppression Personnel",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-left"},
     )
     ems_apparatus = StringField(
         "EMS Apparatus",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-middle"},
     )
     ems_personnel = StringField(
         "EMS Personnel",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-middle"},
     )
     other_apparatus = StringField(
         "Other Apparatus",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-right"},
     )
     other_personnel = StringField(
         "Other Personnel",
-        validators=[Optional(), Length(max=4)]
+        validators=[Optional(), Length(max=4)],
+        render_kw={"data-group": "row-g1-right"},
     )
     resource_count_includes_aid_received = SelectField(
         "Resource Count Includes Aid Received",
-        choices=[("Y", "Yes"), ("N", "No")]
+        choices=[("Y", "Yes"), ("N", "No")],
+        render_kw={"data-group": "row-gg-left"},
     )
     # Section G2 - Estimated Dollar Losses and Values
     property_loss = StringField(
         "Property Loss",
-        validators=[Optional(), Length(max=9)]
+        validators=[Optional(), Length(max=9)],
+        render_kw={"data-group": "row-g2-left"},
     )
     contents_loss = StringField(
         "Contents Loss",
-        validators=[Optional(), Length(max=9)]
+        validators=[Optional(), Length(max=9)],
+        render_kw={"data-group": "row-g2-right"},
     )
     property_value = StringField(
         "Pre-Incident Property Value",
-        validators=[Optional(), Length(max=9)]
+        validators=[Optional(), Length(max=9)],
+        render_kw={"data-group": "row-g2-left"},
     )
     contents_value = StringField(
         "Pre-Incident Contents Value",
-        validators=[Optional(), Length(max=9)]
+        validators=[Optional(), Length(max=9)],
+        render_kw={"data-group": "row-g2-right"},
     )
     # Section H - Completed Modules
     # TODO: the system will automatically populate this field
