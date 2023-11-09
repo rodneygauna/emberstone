@@ -192,7 +192,6 @@ class NFIRS1Basic(db.Model):
     shift_or_platoon = db.Column(db.String(1))
     alarms = db.Column(db.String(2))
     district = db.Column(db.String(3))
-    """
     # Section E3 - Special Studies
     special_study_sequence_number_1 = db.Column(db.String(3))
     special_study_id_1 = db.Column(db.String(5))
@@ -218,6 +217,7 @@ class NFIRS1Basic(db.Model):
     property_value = db.Column(db.String(9))
     contents_value = db.Column(db.String(9))
     # Section H - Completed Models
+    """
     # Section H1 - Casualties
     fire_service_deaths = db.Column(db.String(3))
     fire_service_injuries = db.Column(db.String(3))

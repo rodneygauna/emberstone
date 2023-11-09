@@ -275,6 +275,7 @@ AID_GIVEN = [
 
 # Actions Taken Dictionary
 ACTIONS_TAKEN = [
+    ("", ""),
     ("1", "Fire Control or Extinguishment"),
     ("10", "Fire control or extinguishment, other"),
     ("11", "Extinguishment by fire service personnel"),

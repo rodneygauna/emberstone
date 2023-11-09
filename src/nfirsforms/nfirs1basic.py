@@ -188,7 +188,6 @@ class BasicModuleForm(FlaskForm):
         "District",
         validators=[Optional(), Length(max=3)]
     )
-    """
     # Section E3 - Special Studies
     special_study_sequence_number_1 = StringField(
         "Special Study Sequence Number #1",
@@ -277,6 +276,7 @@ class BasicModuleForm(FlaskForm):
     # Section H - Completed Modules
     # TODO: the system will automatically populate this field
     # based on the forms needed and completed by the user
+    """
     # Section H1 - Casualties
     fire_service_deaths = StringField(
         "Fire Service Deaths",
