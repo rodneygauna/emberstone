@@ -9,7 +9,7 @@ services:
         SECRET_KEY: ${SECRET_KEY}
     command: ["python3", "app.py"]
     ports:
-      - "5000:5000"
+      - "5001:5000"
     volumes:
       - ./src/data:/app/src/data
     env_file:
