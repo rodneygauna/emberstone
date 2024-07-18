@@ -1,4 +1,3 @@
-// validationConstants.js
 const stateAbbreviations = [
   "AL", // Alabama
   "AK", // Alaska
