@@ -2,6 +2,7 @@ services:
   # MongoDB service
   mongodb:
     image: mongo
+    container_name: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
@@ -14,6 +15,7 @@ services:
   # Backend service
   backend:
     build: ./backend
+    container_name: backend
     environment:
       MONGO_URI: ${MONGO_URI}
       JWT_SECRET: ${JWT_SECRET}
@@ -27,6 +29,7 @@ services:
   # Frontend service
   frontend:
     build: ./frontend
+    container_name: frontend
     ports:
       - 80:80
     depends_on:
