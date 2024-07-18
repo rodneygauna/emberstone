@@ -65,7 +65,7 @@ const departmentSchema = new mongoose.Schema(
     // Department Phone
     phone_number: {
       type: Number,
-      required: [true, "Phone number is required."]
+      required: [true, "Phone number is required."],
       min: 1000000000,
       max: 9999999999,
     },
