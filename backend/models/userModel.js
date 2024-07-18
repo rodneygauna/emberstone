@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema(
     // User Address
     street_number_or_milepost: {
       type: String,
+      required: [true, "Street number or Milepost is required"],
       maxLength: 8,
     },
     street_prefix: {
@@ -36,10 +37,12 @@ const userSchema = new mongoose.Schema(
     },
     street_or_highway_name: {
       type: String,
+      required: [true, "Street or Highway name is required"],
       maxLength: 30,
     },
     street_type: {
       type: String,
+      required: [true, "Street type is required"],
       maxLength: 4,
     },
     street_suffix: {
@@ -52,14 +55,17 @@ const userSchema = new mongoose.Schema(
     },
     city: {
       type: String,
+      required: [true, "City is required"],
       maxLength: 20,
     },
     state: {
       type: String,
+      required: [true, "State is required"],
       maxLength: 2,
     },
     zip: {
       type: String,
+      required: [true, "Zip code is required"],
       minLength: 5,
       maxLength: 9,
     },
@@ -70,6 +76,7 @@ const userSchema = new mongoose.Schema(
     // User Phone
     phone_number: {
       type: Number,
+      required: [true, "Phone number is required"],
       min: 1000000000,
       max: 9999999999,
     },
@@ -81,10 +88,12 @@ const userSchema = new mongoose.Schema(
     // Personnel Information
     personnel_number: {
       type: String,
+      required: [true, "Personnel number is required"],
       maxLength: 9,
     },
     rank: {
       type: String,
+      required: [true, "Rank is required"],
       maxLength: 10,
     },
     // User Email and Password Hash

@@ -1,23 +1,17 @@
 import mongoose from "mongoose";
 
-const departmentSchema = new mongoose.Schema(
+const stationSchema = new mongoose.Schema(
   {
     // Identifiers
-    nfirs_id: {
-      type: String,
-      required: [true, "NFIRS ID is required"],
-      maxLength: 5,
-    },
-    state_fdid: {
-      type: String,
-      required: [true, "State Fire Department ID is required"],
-      maxLength: 5,
-    },
     name: {
       type: String,
       required: [true, "Fire Department name is required"],
     },
-    // Department Address
+    station_number: {
+      type: Number,
+      required: [true, "Station number is required"],
+    },
+    // Station Address
     street_number_or_milepost: {
       type: String,
       required: [true, "Street number or milepost is required"],
@@ -62,7 +56,7 @@ const departmentSchema = new mongoose.Schema(
       required: [true, "County code is required"],
       maxLength: 3,
     },
-    // Department Phone
+    // Station Phone
     phone_number: {
       type: Number,
       required: [true, "Phone number is required."]
@@ -85,4 +79,4 @@ const departmentSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Department", departmentSchema);
+export default mongoose.model("Station", stationSchema);
