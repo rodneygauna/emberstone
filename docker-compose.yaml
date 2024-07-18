@@ -1,0 +1,36 @@
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+    ports:
+      - 27017:27017
+    volumes:
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - emberstone-data:/data/db
+  # Backend service
+  backend:
+    build: ./backend
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+  # Frontend service
+  frontend:
+    build: ./frontend
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+# Volumes
+volumes:
+  emberstone-data:

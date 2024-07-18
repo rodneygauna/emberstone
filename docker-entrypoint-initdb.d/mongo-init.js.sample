@@ -1,0 +1,8 @@
+// Filename: mongo-init.js.sample
+db = db.getSiblingDB("emberstone");
+db.createUser({
+  user: "", // Add username here
+  pwd: "", // Add password here
+  roles: [{ role: "readWrite", db: "emberstone" }],
+});
+db.createCollection("users");
