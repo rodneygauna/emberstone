@@ -33,19 +33,19 @@ const optionalNumberMinMax = (min, max) => ({
 });
 
 // Phone number required validation
-const requiredPhoneNumber = {
+const requiredPhoneNumber = () => ({
   type: Number,
   required: [true, "Phone number is required."],
   min: [1000000000, "Phone number is too short. Must be 10 digits."],
   max: [9999999999, "Phone number is too long. Must be 10 digits."],
-};
+});
 
 // Phone number optinsal validation
-const optionalPhoneNumber = {
+const optionalPhoneNumber = () => ({
   type: Number,
   min: [1000000000, "Phone number is too short. Must be 10 digits."],
   max: [9999999999, "Phone number is too long. Must be 10 digits."],
-};
+});
 
 // Required enum validation
 const requiredEnum = (fieldName, enumValues) => ({
