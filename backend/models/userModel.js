@@ -1,101 +1,46 @@
 import mongoose from "mongoose";
+import {
+  requiredStringMaxLength,
+  optionalStringMaxLength,
+  requiredNumberMinMax,
+  requiredPhoneNumber,
+  optionalPhoneNumber,
+  requiredEnum,
+} from "./utils/validation/validationConstants.js";
+import stateAbbreviations from "./utils/enumValues/stateEnums.js";
 
 const userSchema = new mongoose.Schema(
   {
     // User Name
-    prefix_name: {
-      type: String,
-      maxLength: 3,
-    },
-    first_name: {
-      type: String,
-      required: [true, "First name is required"],
-      maxLength: 15,
-    },
-    middle_initial: {
-      type: String,
-      maxLength: 1,
-    },
-    last_name: {
-      type: String,
-      required: [true, "Last name is required"],
-      maxLength: 25,
-    },
-    suffix_name: {
-      type: String,
-      maxLength: 3,
-    },
+    prefix_name: optionalStringMaxLength(3),
+    first_name: requiredStringMaxLength("First name", 15),
+    middle_initial: optionalStringMaxLength(1),
+    last_name: requiredStringMaxLength("Last name", 25),
+    suffix_name: optionalStringMaxLength(3),
     // User Address
-    street_number_or_milepost: {
-      type: String,
-      required: [true, "Street number or Milepost is required"],
-      maxLength: 8,
-    },
-    street_prefix: {
-      type: String,
-      maxLength: 2,
-    },
-    street_or_highway_name: {
-      type: String,
-      required: [true, "Street or Highway name is required"],
-      maxLength: 30,
-    },
-    street_type: {
-      type: String,
-      required: [true, "Street type is required"],
-      maxLength: 4,
-    },
-    street_suffix: {
-      type: String,
-      maxLength: 2,
-    },
-    apartment_number: {
-      type: String,
-      maxLength: 15,
-    },
-    city: {
-      type: String,
-      required: [true, "City is required"],
-      maxLength: 20,
-    },
-    state: {
-      type: String,
-      required: [true, "State is required"],
-      maxLength: 2,
-    },
-    zip: {
-      type: String,
-      required: [true, "Zip code is required"],
-      minLength: 5,
-      maxLength: 9,
-    },
-    crossstreet_directions_nationalgrid: {
-      type: String,
-      maxLength: 30,
-    },
+    street_number_or_milepost: requiredStringMaxLength(
+      "Street number or Milepost",
+      8
+    ),
+    street_prefix: optionalStringMaxLength(2),
+    street_or_highway_name: requiredStringMaxLength(
+      "Street or Highway name",
+      30
+    ),
+    street_type: requiredStringMaxLength("Street type", 4),
+    street_suffix: optionalStringMaxLength(2),
+    apartment_number: optionalStringMaxLength(15),
+    city: requiredStringMaxLength("City", 20),
+    state: requiredEnum("State", stateAbbreviations),
+    zip: requiredNumberMinMax("Zip code", 10000, 99999),
+    county_code: requiredStringMaxLength("County code", 3),
+    crossstreet_directions_nationalgrid: optionalStringMaxLength(30),
     // User Phone
-    phone_number: {
-      type: Number,
-      required: [true, "Phone number is required"],
-      min: 1000000000,
-      max: 9999999999,
-    },
-    fax_number: {
-      type: Number,
-      min: 1000000000,
-      max: 9999999999,
-    },
+    phone_number: requiredPhoneNumber(1000000000, 9999999999),
+    fax_number: optionalPhoneNumber(1000000000, 9999999999),
     // Personnel Information
-    personnel_number: {
-      type: String,
-      required: [true, "Personnel number is required"],
-      maxLength: 9,
-    },
-    rank: {
-      type: String,
-      required: [true, "Rank is required"],
-      maxLength: 10,
-    },
+    personnel_number: requiredStringMaxLength("Personnel Number", 9),
+    rank: requiredStringMaxLength("Rank", 10),
     // User Email and Password Hash
     email: {
       type: String,
