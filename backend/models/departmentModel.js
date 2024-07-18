@@ -6,7 +6,7 @@ import {
   requiredNumberMinMax,
   requiredPhoneNumber,
   optionalPhoneNumber,
-} from "./utils/validation/validationConstants.js";
+} from "../utils/validation/validationConstants.js";
 
 const departmentSchema = new mongoose.Schema(
   {

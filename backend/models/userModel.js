@@ -6,8 +6,8 @@ import {
   requiredPhoneNumber,
   optionalPhoneNumber,
   requiredEnum,
-} from "./utils/validation/validationConstants.js";
-import stateAbbreviations from "./utils/enumValues/stateEnums.js";
+} from "../utils/validation/validationConstants.js";
+import stateAbbreviations from "../utils/enumValues/stateEnums.js";
 
 const userSchema = new mongoose.Schema(
   {
