@@ -66,6 +66,19 @@ const optionalEnum = (enumValues) => ({
   },
 });
 
+// Required date validation
+const requiredDate = (fieldName) => ({
+  type: Date,
+  required: [true, `${fieldName} is required`],
+});
+
+// Required relational link (foreign keys)
+const requireRef = (fieldName, refTable) => ({
+  type: Schema.Types.ObjectId,
+  ref: refTable,
+  required: [true, `${fieldName} is required`],
+});
+
 export {
   requiredString,
   requiredStringMaxLength,
@@ -76,4 +89,6 @@ export {
   optionalPhoneNumber,
   requiredEnum,
   optionalEnum,
+  requiredDate,
+  requireRef,
 };
