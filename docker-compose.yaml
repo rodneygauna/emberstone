@@ -2,20 +2,20 @@ services:
   # MongoDB service
   mongodb:
     image: mongo
-    container_name: mongo-emberstone
+    container_name: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     ports:
       - 27017:27017
     volumes:
-      - emberstone_data:/data/db
+      - data:/data/db
     networks:
-      - emberstone_backend
+      - backend
   # Backend service
   backend:
     build: ./backend
-    container_name: backend-emberstone
+    container_name: backend
     environment:
       MONGO_HOST: mongodb
       MONGO_USERNAME: ${MONGO_USERNAME}
@@ -30,22 +30,22 @@ services:
     depends_on:
       - mongodb
     networks:
-      - emberstone_backend
-      - emberstone_frontend
+      - backend
+      - frontend
   # Frontend service
   frontend:
     build: ./frontend
-    container_name: frontend-emberstone
+    container_name: frontend
     ports:
       - 80:80
     depends_on:
       - backend
     networks:
-      - emberstone_frontend
+      - frontend
 # Volumes
 volumes:
-  emberstone_data:
+  data:
 # Networks
 networks:
-  emberstone_backend:
-  emberstone_frontend:
+  backend:
+  frontend:
