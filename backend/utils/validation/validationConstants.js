@@ -73,7 +73,16 @@ const requiredYesNo = (fieldName) => ({
   enum: {
     values: ["Y", "N"],
     message: "Invalid value. Must be 'Y' for yes or 'N' for no.",
-  }
+  },
+});
+
+// Optional Y/N
+const optionalYesNo = () => ({
+  type: String,
+  enum: {
+    values: ["Y", "N"],
+    message: "Invalid value. Must be 'Y' for yes or 'N' for no.",
+  },
 });
 
 // Required date validation
@@ -100,6 +109,7 @@ export {
   requiredEnum,
   optionalEnum,
   requiredYesNo,
+  optionalYesNo,
   requiredDate,
   requireRef,
 };
