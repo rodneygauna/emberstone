@@ -4,9 +4,9 @@ import {
   requiredEnum,
   optionalStringMaxLength,
   requiredStringMaxLength,
-} from ".../utils/validation/validationConstants.js";
-import locationTypeCodes from "../utils/enumValues/locationTypeCodes.js"
-import stateAbbreviations from "../utils/enumValues/stateEnums.js";
+} from "../../utils/validation/validationConstants.js";
+import locationTypeCodes from "../../utils/enumValues/locationTypeCodes.js"
+import stateAbbreviations from "../../utils/enumValues/stateEnums.js";
 
 const locationModuleSchema = new mongoose.Schema({
   wildland_address_elsewhere_flag: requiredYesNo("Wildland Address Elsewhere Flag"),

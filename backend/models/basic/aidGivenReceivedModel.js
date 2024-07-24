@@ -5,7 +5,7 @@ import {
   optionalEnum,
 } from "../../utils/validation/validationConstants.js";
 import aidGivenCodes from "../../utils/enumValues/aidGivenCodes.js";
-import stateAbbreviations from "../utils/enumValues/stateEnums.js";
+import stateAbbreviations from "../../utils/enumValues/stateEnums.js";
 
 const aidGivenReceivedSchema = new mongoose.Schema({
   aid_type: requiredEnum("Aid Type", aidGivenCodes),
