@@ -5,7 +5,7 @@ import {
   optionalStringMaxLength,
   requiredStringMaxLength,
 } from ".../utils/validation/validationConstants.js";
-import { locationTypeCodes } from "../utils/enumValues/locationTypeCodes.js"
+import locationTypeCodes from "../utils/enumValues/locationTypeCodes.js"
 import stateAbbreviations from "../utils/enumValues/stateEnums.js";
 
 const locationModuleSchema = new mongoose.Schema({

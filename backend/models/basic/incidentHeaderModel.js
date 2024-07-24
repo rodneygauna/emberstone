@@ -5,7 +5,7 @@ import {
   requiredEnum,
   requireRef,
 } from ".../utils/validation/validationConstants.js";
-import { incidentReportingStatus } from ".../utils/enumValues/incidentReportingStatus.js";
+import incidentReportingStatus from ".../utils/enumValues/incidentReportingStatus.js";
 
 const incidentHeaderSchema = new mongoose.Schema({
   incident_date: requiredDate("Incident date"),

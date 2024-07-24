@@ -7,6 +7,7 @@ import {
   requiredPhoneNumber,
   optionalPhoneNumber,
 } from "../utils/validation/validationConstants.js";
+import stateAbbreviations from "../utils/enumValues/stateEnums.js";
 
 const stationSchema = new mongoose.Schema(
   {
@@ -23,7 +24,7 @@ const stationSchema = new mongoose.Schema(
       "Street or Highway name",
       30
     ),
-    street_type: requiredStringMaxLength("Street type", 4),
+    street_type: optionalStringMaxLength(4),
     street_suffix: optionalStringMaxLength(2),
     city: requiredStringMaxLength("City", 20),
     state: requiredEnum("State", stateAbbreviations),
