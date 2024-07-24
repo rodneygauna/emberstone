@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema(
       "Street or Highway name",
       30
     ),
-    street_type: requiredStringMaxLength("Street type", 4),
+    street_type: optionalStringMaxLength(4),
     street_suffix: optionalStringMaxLength(2),
     apartment_number: optionalStringMaxLength(15),
     city: requiredStringMaxLength("City", 20),
