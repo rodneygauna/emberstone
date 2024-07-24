@@ -5,7 +5,7 @@ import {
   requiredStringMaxLength,
 } from "../../utils/validation/validationConstants.js";
 
-const datesTimesSchema = new mongoose.Schema({
+const e1DatesTimesSchema = new mongoose.Schema({
   // Dates must be stored as YYYYMMDD
   // Times must be stored as HHMMSS (000000 - 235959)
   // TODO: Look into using the MongoooseJS Date schema type and validate the format
@@ -22,4 +22,4 @@ const datesTimesSchema = new mongoose.Schema({
   last_unit_clear_time: optionalStringMaxLength(6),
 });
 
-export default mongoose.model("datesTimes", datesTimesSchema);
+export default mongoose.model("datesTimes", e1DatesTimesSchema);
