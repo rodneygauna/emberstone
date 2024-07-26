@@ -91,6 +91,11 @@ const requiredDate = (fieldName) => ({
   required: [true, `${fieldName} is required`],
 });
 
+// Optional date validation
+const optionalDate = () => ({
+  type: Date,
+});
+
 // Required relational link (foreign keys)
 const requireRef = (fieldName, refTable) => ({
   type: Schema.Types.ObjectId,
@@ -111,5 +116,6 @@ export {
   requiredYesNo,
   optionalYesNo,
   requiredDate,
+  optionalDate,
   requireRef,
 };
