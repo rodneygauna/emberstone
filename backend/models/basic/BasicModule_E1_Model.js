@@ -1,18 +1,27 @@
 import mongoose from "mongoose";
 
+import {
+  requiredDate,
+  requiredStringMaxLength,
+  requiredYesNo,
+  optionalDate,
+  optionalStringMaxLength,
+} from "../../utils/validation/validationConstants.js";
+
 const BasicModule_E1_Schema = new mongoose.Schema({
-    dates___times: String,
-    alarm_date: String,
-    alarm_time: String,
-    arrival_date_flag: String,
-    arrival_date: String,
-    arrival_time: String,
-    controlled_date_flag: String,
-    controlled_date: String,
-    controlled_time: String,
-    last_unit_cleared_date_flag: String,
-    last_unit_cleared_date: String,
-    last_unit_cleared_time: String,
+  // Date must be formatted as YYYYMMDD
+  // Time must be formmateed as HHMMSS and 24-hour clock (000000 - 235959)
+  alarm_date: requiredDate("Alarm Date"),
+  alarm_time: requiredStringMaxLength("Alarm Time", 6),
+  arrival_date_flag: requiredYesNo("Arrival Date Flag"),
+  arrival_date: optionalDate(),
+  arrival_time: optionalStringMaxLength(6),
+  controlled_date_flag: requiredYesNo("Controlled Date Flag"),
+  controlled_date: optionalDate(),
+  controlled_time: optionalStringMaxLength(6),
+  last_unit_cleared_date_flag: requiredYesNo("Last Unit Cleared Date Flag"),
+  last_unit_cleared_date: optionalDate(),
+  last_unit_cleared_time: optionalStringMaxLength(6),
 });
 
 export default mongoose.model("BasicModule_E1", BasicModule_E1_Schema);
