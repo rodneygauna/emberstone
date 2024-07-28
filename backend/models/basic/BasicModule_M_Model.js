@@ -1,22 +1,27 @@
 import mongoose from "mongoose";
 
+import {
+  optionalStringMaxLength,
+  optionalDate,
+  optionalYesNo,
+} from "../../utils/validation/validationConstants.js";
+
 const BasicModule_M_Schema = new mongoose.Schema({
-    authorization: String,
-    officer_in_charge_id: String,
-    last_name__officer_in_charge: String,
-    first_name__officer_in_charge: String,
-    middle_initial__officer_in_charge: String,
-    position_or_rank__officer_in_charge: String,
-    assignment__officer_in_charge: String,
-    date__officer_in_charge: String,
-    same_as_officer_flag: String,
-    member_making_report_id: String,
-    last_name__member_making_report: String,
-    first_name__member_making_report: String,
-    middle_initial__member_making_report: String,
-    position_or_rank__member_making_report: String,
-    assignment__member_making_report: String,
-    date__member_making_report: String,
+  officer_in_charge_id: optionalStringMaxLength(9),
+  last_name__officer_in_charge: optionalStringMaxLength(25),
+  first_name__officer_in_charge: optionalStringMaxLength(15),
+  middle_initial__officer_in_charge: optionalStringMaxLength(1),
+  position_or_rank__officer_in_charge: optionalStringMaxLength(10),
+  assignment__officer_in_charge: optionalStringMaxLength(10),
+  date__officer_in_charge: optionalDate(), // Date must be formatted as YYYYMMDD
+  same_as_officer_flag: optionalYesNo(),
+  member_making_report_id: optionalStringMaxLength(9),
+  last_name__member_making_report: optionalStringMaxLength(25),
+  first_name__member_making_report: optionalStringMaxLength(15),
+  middle_initial__member_making_report: optionalStringMaxLength(1),
+  position_or_rank__member_making_report: optionalStringMaxLength(10),
+  assignment__member_making_report: optionalStringMaxLength(10),
+  date__member_making_report: optionalDate(), // Date must be formatted as YYYYMMDD
 });
 
 export default mongoose.model("BasicModule_M", BasicModule_M_Schema);

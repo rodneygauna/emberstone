@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
 
+import { optionalYesNo } from "../../utils/validation/validationConstants.js";
+
 const BasicModule_H_Schema = new mongoose.Schema({
-    system_module_flags____fire: String,
-    system_module_flags____structure: String,
-    system_module_flags____hazmat: String,
-    system_module_flags____wildland: String,
-    system_module_flags____civilian_fire_casualty: String,
-    system_module_flags____fire_service: String,
-    system_module_flags____apparatus: String,
-    system_module_flags____personnel: String,
-    system_module_flags____ems: String,
-    system_module_flags____arson: String,
+  system_module_flags__fire: optionalYesNo(),
+  system_module_flags__structure: optionalYesNo(),
+  system_module_flags__hazmat: optionalYesNo(),
+  system_module_flags__wildland: optionalYesNo(),
+  system_module_flags__civilian_fire_casualty: optionalYesNo(),
+  system_module_flags__fire_service: optionalYesNo(),
+  system_module_flags__apparatus: optionalYesNo(),
+  system_module_flags__personnel: optionalYesNo(),
+  system_module_flags__ems: optionalYesNo(),
+  system_module_flags__arson: optionalYesNo(),
 });
 
 export default mongoose.model("BasicModule_H", BasicModule_H_Schema);
