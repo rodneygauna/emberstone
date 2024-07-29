@@ -26,6 +26,9 @@ app.use(cookieParser());
 import userRoutes from "./routes/userRoutes.js";
 app.use("/api/v1/users", userRoutes);
 
+import basicModuleRoutes from "./routes/basicModuleRoutes.js";
+app.use("/api/v1/incidents/basicModule", basicModuleRoutes);
+
 // Error handling
 app.use(notFound);
 app.use(errorHandler);
