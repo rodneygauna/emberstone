@@ -2,7 +2,6 @@ import asyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
-import { protect } from "../middleware/authMiddleware.js";
 
 const SALT = await bcrypt.genSalt(10);
 
