@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import {
   optionalYesNo,
   optionalNumberMinMax,
-  optionalYesNo,
 } from "../../utils/validation/validationConstants.js";
 
 const BasicModule_G1_Schema = new mongoose.Schema({
