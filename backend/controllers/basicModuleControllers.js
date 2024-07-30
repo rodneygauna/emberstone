@@ -1,12 +1,13 @@
 import asyncHandler from "express-async-handler";
 
-import BasicModule from "../../models/basicModuleModel.js";
+import BasicModule from "../models/basic/BasicModuleModel.js";
 
 // @desc    Create a new basic module incident
 // @route   POST /api/v1/incidents/basicModule
 // @access  Private
 const createBasicModule = asyncHandler(async (req, res) => {
-  const basicModule = await BasicModule.create(req.body);
+  const { ...incidentData } = req.body;
+  const basicModule = await BasicModule.create({ ...incidentData });
 
   if (basicModule) {
     res.status(201).json(basicModule);
