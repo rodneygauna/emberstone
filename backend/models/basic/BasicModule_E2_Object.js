@@ -1,7 +1,7 @@
 import { optionalStringMaxLength } from "../../utils/validation/validationConstants.js";
 
 export const BasicModule_E2_Object = {
-  shifts_or_platoon: optionalStringMaxLength(1),
-  alarms: optionalStringMaxLength(2),
-  district: optionalStringMaxLength(3),
+  moduleE2_shifts_or_platoon: optionalStringMaxLength(1),
+  moduleE2_alarms: optionalStringMaxLength(2),
+  moduleE2_district: optionalStringMaxLength(3),
 };

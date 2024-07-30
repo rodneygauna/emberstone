@@ -3,5 +3,5 @@ import { optionalEnum } from "../../utils/validation/validationConstants.js";
 import mixedUsePropertyCodes from "../../utils/enumValues/mixedUsePropertyCodes.js";
 
 export const BasicModule_I_Object = {
-  mixed_use: optionalEnum(mixedUsePropertyCodes),
+  moduleI_mixed_use: optionalEnum(mixedUsePropertyCodes),
 };
