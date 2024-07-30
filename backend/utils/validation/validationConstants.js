@@ -62,7 +62,7 @@ const optionalEnum = (enumValues) => ({
   type: String,
   enum: {
     values: enumValues,
-    message: `Invalid ${fieldName} value. Must be [${enumValues}]`,
+    message: `Invalide value. Must be [${enumValues}]`,
   },
 });
 
