@@ -9,8 +9,36 @@ const SALT = await bcrypt.genSalt(10);
 // @route   POST /api/v1/users/register
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-  const { first_name, last_name, email, password, is_active, user_role } =
-    req.body;
+  const {
+    prefix_name,
+    first_name,
+    middle_initial,
+    last_name,
+    suffix_name,
+    street_number_or_milepost,
+    street_prefix,
+    street_or_highway_name,
+    street_type,
+    street_suffix,
+    apartment_number,
+    city,
+    state,
+    zip,
+    phone_number,
+    fax_number,
+    personnel_number,
+    rank,
+    email,
+    password,
+    is_active,
+    user_role,
+  } = req.body;
+
+  // Check if password input is present
+  if (!password) {
+    res.status(400);
+    throw new Error("Password is required");
+  }
 
   // Check if user already exists
   const userExists = await User.findOne({ email });
@@ -24,8 +52,24 @@ const registerUser = asyncHandler(async (req, res) => {
 
   // Create new user
   const user = await User.create({
+    prefix_name,
     first_name,
+    middle_initial,
     last_name,
+    suffix_name,
+    street_number_or_milepost,
+    street_prefix,
+    street_or_highway_name,
+    street_type,
+    street_suffix,
+    apartment_number,
+    city,
+    state,
+    zip,
+    phone_number,
+    fax_number,
+    personnel_number,
+    rank,
     email,
     password_hash: hashedPassword,
     is_active: is_active || true,
@@ -37,8 +81,24 @@ const registerUser = asyncHandler(async (req, res) => {
 
     res.status(201).json({
       _id: user._id,
+      prefix_name: user.prefix_name,
       first_name: user.first_name,
+      middle_initial: user.middle_initial,
       last_name: user.last_name,
+      suffix_name: user.suffix_name,
+      street_number_or_milepost: user.street_number_or_milepost,
+      street_prefix: user.street_prefix,
+      street_or_highway_name: user.street_or_highway_name,
+      street_type: user.street_type,
+      street_suffix: user.street_suffix,
+      apartment_number: user.apartment_number,
+      city: user.city,
+      state: user.state,
+      zip: user.zip,
+      phone_number: user.phone_number,
+      fax_number: user.fax_number,
+      personnel_number: user.personnel_number,
+      rank: user.rank,
       email: user.email,
       is_active: user.is_active,
       user_role: user.user_role,
