@@ -33,8 +33,6 @@ const userSchema = new mongoose.Schema(
     city: requiredStringMaxLength("City", 20),
     state: requiredEnum("State", stateAbbreviations),
     zip: requiredNumberMinMax("Zip code", 10000, 99999),
-    county_code: requiredStringMaxLength("County code", 3),
-    crossstreet_directions_nationalgrid: optionalStringMaxLength(30),
     // User Phone
     phone_number: requiredPhoneNumber(1000000000, 9999999999),
     fax_number: optionalPhoneNumber(1000000000, 9999999999),
