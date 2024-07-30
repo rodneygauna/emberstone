@@ -7,11 +7,11 @@ import {
   optionalYesNo,
 } from "../../utils/validation/validationConstants.js";
 
-import namePrefixEnums from "../../utils/validation/namePrefixEnums.js";
-import nameSuffixEnums from "../../utils/validation/nameSuffixEnums.js";
-import streetPrefixSuffix from "../../utils/validation/streetPrefixSuffixEnums.js";
-import streetTypeChoices from "../../utils/validation/streetTypeEnums.js";
-import stateAbbreviations from "../../utils/validation/stateEnums.js";
+import namePrefixEnums from "../../utils/enumValues/namePrefixEnums.js";
+import nameSuffixEnums from "../../utils/enumValues/nameSuffixEnums.js";
+import streetPrefixSuffix from "../../utils/enumValues/streetPrefixSuffixEnums.js";
+import streetTypeChoices from "../../utils/enumValues/streetTypeEnums.js";
+import stateAbbreviations from "../../utils/enumValues/stateEnums.js";
 
 const BasicModule_K1_Schema = new mongoose.Schema({
   business_name: optionalStringMaxLength(25),

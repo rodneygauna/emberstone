@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 import { optionalEnum } from "../../utils/validation/validationConstants.js";
 
-import mixedUsePropertyCodes from "../../utils/validation/mixedUsePropertyCodes.js";
+import mixedUsePropertyCodes from "../../utils/enumValues/mixedUsePropertyCodes.js";
 
 const BasicModule_I_Schema = new mongoose.Schema({
   mixed_use: optionalEnum(mixedUsePropertyCodes),
