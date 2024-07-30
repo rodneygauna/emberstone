@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 import {
   optionalYesNo,
   requiredEnum,
@@ -13,7 +11,7 @@ import streetPrefixSuffix from "../../utils/enumValues/streetPrefixSuffixEnums.j
 import streetTypeChoices from "../../utils/enumValues/streetTypeEnums.js";
 import stateAbbreviations from "../../utils/enumValues/stateEnums.js";
 
-const BasicModule_B_Schema = new mongoose.Schema({
+export const BasicModule_B_Object = {
   wildland_address_elsewhere_flag: optionalYesNo(),
   location_type: requiredEnum("Location Type", locationTypeCodes),
   census_tract: optionalStringMaxLength(6),
@@ -27,6 +25,4 @@ const BasicModule_B_Schema = new mongoose.Schema({
   state: requiredEnum("State", stateAbbreviations),
   zip: requiredStringMaxLength("Zip", 10),
   cross_street__directions_or_national_grid: optionalStringMaxLength(30),
-});
-
-export default mongoose.model("BasicModule_B", BasicModule_B_Schema);
+};

@@ -1,12 +1,10 @@
-import mongoose from "mongoose";
-
 import {
   optionalStringMaxLength,
   optionalDate,
   optionalYesNo,
 } from "../../utils/validation/validationConstants.js";
 
-const BasicModule_M_Schema = new mongoose.Schema({
+export const BasicModule_M_Object = {
   officer_in_charge_id: optionalStringMaxLength(9),
   last_name__officer_in_charge: optionalStringMaxLength(25),
   first_name__officer_in_charge: optionalStringMaxLength(15),
@@ -22,6 +20,4 @@ const BasicModule_M_Schema = new mongoose.Schema({
   position_or_rank__member_making_report: optionalStringMaxLength(10),
   assignment__member_making_report: optionalStringMaxLength(10),
   date__member_making_report: optionalDate(), // Date must be formatted as YYYYMMDD
-});
-
-export default mongoose.model("BasicModule_M", BasicModule_M_Schema);
+};

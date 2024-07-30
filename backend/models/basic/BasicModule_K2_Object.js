@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 import {
   optionalStringMaxLength,
   optionalPhoneNumber,
@@ -13,7 +11,8 @@ import streetPrefixSuffix from "../../utils/enumValues/streetPrefixSuffixEnums.j
 import streetTypeChoices from "../../utils/enumValues/streetTypeEnums.js";
 import stateAbbreviations from "../../utils/enumValues/stateEnums.js";
 
-const BasicModule_K1_Schema = new mongoose.Schema({
+export const BasicModule_K2_Object = {
+  same_person_involved_flag: optionalYesNo(),
   business_name: optionalStringMaxLength(25),
   telephone_number: optionalPhoneNumber(),
   name_prefix: optionalEnum(namePrefixEnums),
@@ -32,7 +31,4 @@ const BasicModule_K1_Schema = new mongoose.Schema({
   state: optionalEnum(stateAbbreviations),
   zip: optionalStringMaxLength(9),
   po_box: optionalStringMaxLength(10),
-  more_people_involved_record_flag: optionalYesNo(),
-});
-
-export default mongoose.model("BasicModule_K1", BasicModule_K1_Schema);
+};

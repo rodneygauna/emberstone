@@ -1,11 +1,7 @@
-import mongoose from "mongoose";
-
 import { optionalEnum } from "../../utils/validation/validationConstants.js";
 
 import hazardousMaterialsReleaseCodes from "../../utils/enumValues/hazardousMaterialsReleaseCodes.js";
 
-const BasicModule_H3_Schema = new mongoose.Schema({
+export const BasicModule_H3_Object = {
   hazmat_released: optionalEnum(hazardousMaterialsReleaseCodes),
-});
-
-export default mongoose.model("BasicModule_H3", BasicModule_H3_Schema);
+};

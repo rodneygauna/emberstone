@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 import {
   requiredDate,
   requiredStringMaxLength,
@@ -8,7 +6,7 @@ import {
   optionalStringMaxLength,
 } from "../../utils/validation/validationConstants.js";
 
-const BasicModule_E1_Schema = new mongoose.Schema({
+export const BasicModule_E1_Object = {
   // Date must be formatted as YYYYMMDD
   // Time must be formmateed as HHMMSS and 24-hour clock (000000 - 235959)
   alarm_date: requiredDate("Alarm Date"),
@@ -22,6 +20,4 @@ const BasicModule_E1_Schema = new mongoose.Schema({
   last_unit_cleared_date_flag: requiredYesNo("Last Unit Cleared Date Flag"),
   last_unit_cleared_date: optionalDate(),
   last_unit_cleared_time: optionalStringMaxLength(6),
-});
-
-export default mongoose.model("BasicModule_E1", BasicModule_E1_Schema);
+};
