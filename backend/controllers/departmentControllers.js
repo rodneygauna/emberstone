@@ -24,7 +24,7 @@ const getDepartments = asyncHandler(async (req, res) => {
   const departments = await Department.find({});
 
   if (departments) {
-    res.json(departments);
+    res.status(201).json(departments);
   } else {
     res.status(404);
     throw new Error("No departments found");
@@ -38,7 +38,7 @@ const getDepartmentById = asyncHandler(async (req, res) => {
   const department = await Department.findById(req.params.id);
 
   if (department) {
-    res.json(department);
+    res.status(201).json(department);
   } else {
     res.status(404);
     throw new Error("Department not found");
