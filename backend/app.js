@@ -22,13 +22,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Routes
+// Routes - Users
 import userRoutes from "./routes/userRoutes.js";
 app.use("/api/v1/users", userRoutes);
-
+// Routes - Departments
 import departmentRoutes from "./routes/departmentRoutes.js";
 app.use("/api/v1/departments", departmentRoutes);
-
+// Routes - Station
+import stationRoutes from "./routes/stationRoutes.js";
+app.use("/api/v1/stations", stationRoutes);
+// Routes - Incidents (Basic Module)
 import basicModuleRoutes from "./routes/basicModuleRoutes.js";
 app.use("/api/v1/incidents/basicModule", basicModuleRoutes);
 
