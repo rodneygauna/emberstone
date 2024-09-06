@@ -1,10 +1,34 @@
 services:
-  web:
+  nginx:
+    # restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./app/static:/static
+    links:
+      - app:app
+
+  app:
+    # restart: always
     build:
       context: app
       target: builder
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      MAIL_SERVER: ${MAIL_SERVER}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USE_TLS: ${MAIL_USE_TLS}
+      MAIL_USE_SSL: ${MAIL_USE_SSL}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    volumes:
+      - ./app/data:/app/app/data
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
     ports:
-      - '8000:8000'
+      - "8000:8000"
+    command: >
+      sh -c "python3 ./create_db.py &&
+             gunicorn -w 2 -b :8000 app:app"
