@@ -13,7 +13,6 @@ from controls.user_controls import handle_login, generate_short_code
 from app import db
 
 
-
 # Blueprint Configuration
 users = Blueprint("users", __name__)
 
