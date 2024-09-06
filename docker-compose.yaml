@@ -1,51 +1,10 @@
 services:
-  # MongoDB service
-  mongodb:
-    image: mongo
-    container_name: mongo
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+  web:
+    build:
+      context: app
+      target: builder
+    # flask requires SIGINT to stop gracefully
+    # (default stop signal from Compose is SIGTERM)
+    stop_signal: SIGINT
     ports:
-      - 27017:27017
-    volumes:
-      - data:/data/db
-    networks:
-      - backend
-  # Backend service
-  backend:
-    build: ./backend
-    container_name: backend
-    environment:
-      MONGO_HOST: mongodb
-      MONGO_USERNAME: ${MONGO_USERNAME}
-      MONGO_PASSWORD: ${MONGO_PASSWORD}
-      MONGO_DATABASE: ${MONGO_DATABASE}
-      JWT_SECRET: ${JWT_SECRET}
-    ports:
-      - 3001:3001
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    depends_on:
-      - mongodb
-    networks:
-      - backend
-      - frontend
-  # Frontend service
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    ports:
-      - 80:80
-    depends_on:
-      - backend
-    networks:
-      - frontend
-# Volumes
-volumes:
-  data:
-# Networks
-networks:
-  backend:
-  frontend:
+      - '8000:8000'
