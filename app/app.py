@@ -30,9 +30,11 @@ mail.init_app(app)
 
 
 # Flask Blueprints - Imports
+from views.core_views import core
 from views.user_views import users
 
 # Flask Blueprints - Register
+app.register_blueprint(core)
 app.register_blueprint(users)
 
 
