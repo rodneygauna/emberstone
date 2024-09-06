@@ -1,1 +1,14 @@
+email-validator
+faker
 flask
+flask-login
+flask-mail
+flask-sqlalchemy
+flask-wtf
+gunicorn
+pillow
+pytest
+requests
+selenium
+webdriver-manager
+wtforms
