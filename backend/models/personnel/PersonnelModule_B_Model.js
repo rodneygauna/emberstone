@@ -1,0 +1,36 @@
+import mongoose from "mongoose";
+
+const PersonnelModule_B_Schema = new mongoose.Schema({
+    personnel_record_number: String,
+    delete_change: String,
+    id_of_apparatus_or_resource: String,
+    type_of_apparatus_or_resource: String,
+    dispatch_flag: String,
+    dispatch_date: String,
+    dispatch_time: String,
+    arrival_flag: String,
+    arrival_date: String,
+    arrival_time: String,
+    clear_flag: String,
+    clear_date: String,
+    clear_time: String,
+    sent: String,
+    number_of_people: String,
+    use: String,
+    apparatus_or_resource_actions_taken: String,
+    action_1: String,
+    action_2: String,
+    action_3: String,
+    action_4: String,
+    personnel_id: String,
+    name_suffix: String,
+    rank_or_grade: String,
+    attend: String,
+    personnel_actions_taken: String,
+    action_1: String,
+    action_2: String,
+    action_3: String,
+    action_4: String,
+});
+
+export default mongoose.model("PersonnelModule_B", PersonnelModule_B_Schema);

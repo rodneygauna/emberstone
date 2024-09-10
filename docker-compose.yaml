@@ -1,34 +1,51 @@
 services:
-  nginx:
-    # restart: always
-    build: ./nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./app/static:/static
-    links:
-      - app:app
-
-  app:
-    # restart: always
-    build:
-      context: app
-      target: builder
+  # MongoDB service
+  mongodb:
+    image: mongo
+    container_name: mongo
     environment:
-      SECRET_KEY: ${SECRET_KEY}
-      MAIL_SERVER: ${MAIL_SERVER}
-      MAIL_PORT: ${MAIL_PORT}
-      MAIL_USE_TLS: ${MAIL_USE_TLS}
-      MAIL_USE_SSL: ${MAIL_USE_SSL}
-      MAIL_USERNAME: ${MAIL_USERNAME}
-      MAIL_PASSWORD: ${MAIL_PASSWORD}
-    volumes:
-      - ./app/data:/app/app/data
-    # flask requires SIGINT to stop gracefully
-    # (default stop signal from Compose is SIGTERM)
-    stop_signal: SIGINT
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     ports:
-      - "8000:8000"
-    command: >
-      sh -c "python3 ./create_db.py &&
-             gunicorn -w 2 -b :8000 app:app"
+      - 27017:27017
+    volumes:
+      - data:/data/db
+    networks:
+      - backend
+  # Backend service
+  backend:
+    build: ./backend
+    container_name: backend
+    environment:
+      MONGO_HOST: mongodb
+      MONGO_USERNAME: ${MONGO_USERNAME}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_DATABASE: ${MONGO_DATABASE}
+      JWT_SECRET: ${JWT_SECRET}
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+    networks:
+      - backend
+      - frontend
+  # Frontend service
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    networks:
+      - frontend
+# Volumes
+volumes:
+  data:
+# Networks
+networks:
+  backend:
+  frontend:
