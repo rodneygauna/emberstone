@@ -47,7 +47,15 @@ const BasicModuleDefinition = {
   ...BasicModule_M_Object,
 };
 
-const BasicModuleSchema = new mongoose.Schema(BasicModuleDefinition, {
+const BasicModuleSchema = new mongoose.Schema(
+  BasicModuleDefinition,
+  {
+    created_by: {
+      type: String,
+      required: [true, "User ID is required."]
+    }
+  },
+  {
   timestamps: true,
 });
 
