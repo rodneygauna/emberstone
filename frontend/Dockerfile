@@ -1,13 +1,22 @@
-# Use an official lightweight Nginx image
-FROM nginx:alpine
+# Create image based on the official Node image from dockerhub
+FROM node
 
-# Remove default nginx static assets
-RUN rm -rf /usr/share/nginx/html/*
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copy static assets from frontend directory to nginx server
-COPY . /usr/share/nginx/html
+# Copy dependency definitions
+COPY package.json /usr/src/app
+COPY package-lock.json /usr/src/app
 
-# Expose port 80 to the Docker host, so we can access it from the outside.
-EXPOSE 80
+# Install dependecies
+RUN npm ci
 
-CMD ["nginx", "-g", "daemon off;"]
+# Get all the code needed to run the app
+COPY . /usr/src/app
+
+# Expose the port the app runs in
+EXPOSE 3000
+
+# Serve the app
+# Learned that "-- --host" to expose the app to the network
+CMD ["npm", "run", "dev", "--", "--host"]

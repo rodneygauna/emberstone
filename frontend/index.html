@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Login Page</title>
-  <!-- Include HTMX -->
-  <script src="https://unpkg.com/htmx.org"></script>
-</head>
-
-<body>
-  <h1>Login</h1>
-  <!-- Modified Form with HTMX attributes -->
-<form id="loginForm" hx-post="http://localhost:3001/api/v1/users/auth" hx-target="#loginResult" hx-vals="javascript:{
-          email: document.getElementById('email').value,
-          password: document.getElementById('password').value
-      }">
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email" required><br><br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required><br><br>
-  <button type="submit">Login</button>
-</form>
-  <div id="loginResult"></div>
-</body>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

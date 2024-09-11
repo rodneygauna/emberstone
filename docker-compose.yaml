@@ -1,20 +1,23 @@
 services:
-  # MongoDB service
-  mongodb:
-    image: mongo
-    container_name: mongo
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+  # Frontend service
+  frontend:
+    build:
+      context: frontend
+    container_name: frontend
     ports:
-      - 27017:27017
+      - 3000:3000
     volumes:
-      - data:/data/db
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
+      - react-express
+    depends_on:
       - backend
+
   # Backend service
   backend:
-    build: ./backend
+    build:
+      context: backend
     container_name: backend
     environment:
       MONGO_HOST: mongodb
@@ -25,27 +28,33 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - express-mongo
+      - react-express
     depends_on:
       - mongodb
-    networks:
-      - backend
-      - frontend
-  # Frontend service
-  frontend:
-    build: ./frontend
-    container_name: frontend
+
+  # MongoDB service
+  mongodb:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
     ports:
-      - 80:80
-    depends_on:
-      - backend
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
     networks:
-      - frontend
-# Volumes
-volumes:
-  data:
+      - express-mongo
+
 # Networks
 networks:
-  backend:
-  frontend:
+  express-mongo:
+  react-express:
+
+# Volumes
+volumes:
+  mongo_data:
