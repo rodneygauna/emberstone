@@ -1,26 +1,33 @@
-# emberstone
+# EMBERSTONE
 
-![emberstone](/frontend/public/images/logos/emberstone_logo_1024x1024.png "emberstone")
+![emberstone](/frontend/public/images/logos/emberstone_logo_294x483.png "emberstone")
 
-## Docker
+Emberstone is a free and open source (FOSS) full-stack web application for managing fire and emergency medical incidents.
+
+The application follows the National Fire Incident Reporting System (NFIRS) standards for fire incidents and the National Emergency Medical Services Information System (NEMSIS) standards for emergency medical incidents.
+
+Functionality includes the ability to create, read, update, and delete (CRUD) fire and emergency medical incidents.
+
+## Technologies
+
+The application is built using the MERN stack (MongoDB, Express, React, Node.js).
+
+## Setup and Installation
 
 Before building the image and running the container, you'll have to create a `.env` file.
 This can be done by creating a new file in the parent directory (`emberstone`) with the filename of `.env`.
 
-Open the `.env` file and add the following:
+Open the `.env` file and update the following:
 
-```text
-SECRET_KEY="secret key goes here"
+```env
+MONGO_USERNAME=username_goes_here
+MONGO_PASSWORD=password_goes_here
+MONGO_DATABASE=emberstone
+JWT_SECRET="long_random_string_here"
 ```
 
 Remember to replace the examples in the quotes on your .env file.
 Make the necessary changes to the .env file and save the file.
-
-Lastly, for the data to be saved on the server, a database will need to be created. This can be done with the following command:
-
-```python
-flask commands db_create
-```
 
 ### Docker Build, Run, and Stop
 
@@ -38,4 +45,20 @@ docker-compose down --rmi all
 
 ### Makefile Commands
 
-Commands go here.
+To build the image and run the container:
+
+```terminal
+make build
+```
+
+To stop and remove the image:
+
+```terminal
+make stop
+```
+
+To restart the container:
+
+```terminal
+make restart
+```
