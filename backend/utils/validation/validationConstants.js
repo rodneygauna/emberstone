@@ -1,24 +1,24 @@
 // Required string
-const requiredString = (fieldName) => ({
+export const requiredString = (fieldName) => ({
   type: String,
   required: [true, `${fieldName} is required`],
 });
 
 // Required string with max length
-const requiredStringMaxLength = (fieldName, maxLength) => ({
+export const requiredStringMaxLength = (fieldName, maxLength) => ({
   type: String,
   required: [true, `${fieldName} is required`],
   maxLength: maxLength,
 });
 
 // Optional string with max length
-const optionalStringMaxLength = (maxLength) => ({
+export const optionalStringMaxLength = (maxLength) => ({
   type: String,
   maxLength: [maxLength, `Maximum length is ${maxLength}`],
 });
 
 // Required number with min and max
-const requiredNumberMinMax = (fieldName, min, max) => ({
+export const requiredNumberMinMax = (fieldName, min, max) => ({
   type: Number,
   required: [true, `${fieldName} is required`],
   min: [min, `Minimum value is ${min}`],
@@ -26,14 +26,14 @@ const requiredNumberMinMax = (fieldName, min, max) => ({
 });
 
 // Optional number with min and max
-const optionalNumberMinMax = (min, max) => ({
+export const optionalNumberMinMax = (min, max) => ({
   type: Number,
   min: [min, `Minimum value is ${min}`],
   max: [max, `Maximum value is ${max}`],
 });
 
 // Phone number required validation
-const requiredPhoneNumber = () => ({
+export const requiredPhoneNumber = () => ({
   type: Number,
   required: [true, "Phone number is required."],
   min: [1000000000, "Phone number is too short. Must be 10 digits."],
@@ -41,14 +41,14 @@ const requiredPhoneNumber = () => ({
 });
 
 // Phone number optinsal validation
-const optionalPhoneNumber = () => ({
+export const optionalPhoneNumber = () => ({
   type: Number,
   min: [1000000000, "Phone number is too short. Must be 10 digits."],
   max: [9999999999, "Phone number is too long. Must be 10 digits."],
 });
 
 // Required enum validation
-const requiredEnum = (fieldName, enumValues) => ({
+export const requiredEnum = (fieldName, enumValues) => ({
   type: String,
   required: [true, `${fieldName} is required`],
   enum: {
@@ -58,7 +58,7 @@ const requiredEnum = (fieldName, enumValues) => ({
 });
 
 // Optional enum validation
-const optionalEnum = (enumValues) => ({
+export const optionalEnum = (enumValues) => ({
   type: String,
   enum: {
     values: enumValues,
@@ -67,7 +67,7 @@ const optionalEnum = (enumValues) => ({
 });
 
 // Required Y/N
-const requiredYesNo = (fieldName) => ({
+export const requiredYesNo = (fieldName) => ({
   type: String,
   required: [true, `${fieldName} is required`],
   enum: {
@@ -77,7 +77,7 @@ const requiredYesNo = (fieldName) => ({
 });
 
 // Optional Y/N
-const optionalYesNo = () => ({
+export const optionalYesNo = () => ({
   type: String,
   enum: {
     values: ["Y", "N"],
@@ -86,36 +86,19 @@ const optionalYesNo = () => ({
 });
 
 // Required date validation
-const requiredDate = (fieldName) => ({
+export const requiredDate = (fieldName) => ({
   type: Date,
   required: [true, `${fieldName} is required`],
 });
 
 // Optional date validation
-const optionalDate = () => ({
+export const optionalDate = () => ({
   type: Date,
 });
 
 // Required relational link (foreign keys)
-const requireRef = (fieldName, refTable) => ({
+export const requireRef = (fieldName, refTable) => ({
   type: Schema.Types.ObjectId,
   ref: refTable,
   required: [true, `${fieldName} is required`],
 });
-
-export {
-  requiredString,
-  requiredStringMaxLength,
-  optionalStringMaxLength,
-  requiredNumberMinMax,
-  optionalNumberMinMax,
-  requiredPhoneNumber,
-  optionalPhoneNumber,
-  requiredEnum,
-  optionalEnum,
-  requiredYesNo,
-  optionalYesNo,
-  requiredDate,
-  optionalDate,
-  requireRef,
-};
