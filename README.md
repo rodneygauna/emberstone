@@ -1,6 +1,6 @@
 # emberstone
 
-![emberstone](/src/static/assets/logos/emberstone_logo_1024x1024.png "emberstone")
+![emberstone](/frontend/public/images/logos/emberstone_logo_1024x1024.png "emberstone")
 
 ## Docker
 
