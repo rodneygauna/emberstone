@@ -22,6 +22,7 @@ import { BasicModule_L1_Object } from "./BasicModule_L1_Object.js";
 import { BasicModule_L2_Object } from "./BasicModule_L2_Object.js";
 import { BasicModule_M_Object } from "./BasicModule_M_Object.js";
 
+import { CreatedBy_ObjectModule } from "../global/CreatedBy_ObjectModule.js";
 import { UpdatedBy_ObjectModule } from "../global/UpdatedBy_ObjectModule.js";
 
 // Combine all basic module schemas into one object
@@ -50,14 +51,11 @@ const BasicModuleDefinition = {
 };
 
 const BasicModuleSchema = new mongoose.Schema(
-  BasicModuleDefinition,
   {
-    created_by: {
-      type: String,
-      required: [true, "User ID is required."],
-    },
+    ...BasicModuleDefinition,
+    ...CreatedBy_ObjectModule,
+    ...UpdatedBy_ObjectModule,
   },
-  ...UpdatedBy_ObjectModule,
   {
     timestamps: true,
   }
