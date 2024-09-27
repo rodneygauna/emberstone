@@ -1,9 +1,10 @@
+import Hero from "../components/homepage/Hero";
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Emberstone</h1>
-      <p>Welcome to the home page!</p>
-    </div>
+    <>
+      <Hero />
+    </>
   );
 };
 
