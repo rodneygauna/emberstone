@@ -7,10 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 const MainLayout = () => {
   return (
     <>
-      <div className="container">
-        <Outlet />
-        <ToastContainer />
-      </div>
+      <Outlet />
+      <ToastContainer />
     </>
   );
 };
