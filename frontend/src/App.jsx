@@ -8,6 +8,7 @@ import {
 // Import CSS
 import "./assets/css/normalize.css";
 import "./assets/css/skeleton.css";
+import "./assets/css/custom.css";
 
 // Import Page Layouts
 import MainLayout from "./layouts/MainLayout";
