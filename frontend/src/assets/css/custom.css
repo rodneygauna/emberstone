@@ -16,7 +16,7 @@
 /* Login Page - Left Branding Panel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .login-branding {
-  background: linear-gradient(102deg, rgb(193, 0, 0) 10.6%, rgb(255, 73, 73) 90%);
+  background: rgb(29, 28, 32);
   border-right: 1px solid #fff;
   color: #fff;
 }
