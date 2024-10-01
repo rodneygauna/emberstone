@@ -7,6 +7,12 @@
   height: 100vh;
 }
 
+/* Vertically Centered Text
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.vertical-center-text {
+  margin-top: 5px;
+}
+
 /* Login Page - Left Branding Panel
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .login-branding {
