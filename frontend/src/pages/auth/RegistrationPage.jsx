@@ -71,6 +71,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="first_name"
               name="first_name"
+              placeholder="Bob"
               value={formData.first_name}
               onChange={handleChange}
               required
@@ -85,6 +86,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="last_name"
               name="last_name"
+              placeholder="Beckwith"
               value={formData.last_name}
               onChange={handleChange}
               required
@@ -99,6 +101,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="street_number_or_milepost"
               name="street_number_or_milepost"
+              placeholder="123"
               value={formData.street_number_or_milepost}
               onChange={handleChange}
               required
@@ -113,6 +116,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="street_or_highway_name"
               name="street_or_highway_name"
+              placeholder="Main"
               value={formData.street_or_highway_name}
               onChange={handleChange}
               required
@@ -127,6 +131,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="city"
               name="city"
+              placeholder="Anytown"
               value={formData.city}
               onChange={handleChange}
               required
@@ -141,6 +146,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="state"
               name="state"
+              placeholder="CA"
               value={formData.state}
               onChange={handleChange}
               required
@@ -155,6 +161,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="zip"
               name="zip"
+              placeholder="12345"
               value={formData.zip}
               onChange={handleChange}
               required
@@ -169,6 +176,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="phone_number"
               name="phone_number"
+              placeholder="5556661234"
               value={formData.phone_number}
               onChange={handleChange}
               required
@@ -183,6 +191,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="personnel_number"
               name="personnel_number"
+              placeholder="123456789"
               value={formData.personnel_number}
               onChange={handleChange}
               required
@@ -197,6 +206,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="text"
               id="rank"
               name="rank"
+              placeholder="Captain"
               value={formData.rank}
               onChange={handleChange}
               required
@@ -211,6 +221,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="email"
               id="email"
               name="email"
+              placeholder="bobbeckwith@email.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -225,6 +236,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="password"
               id="password"
               name="password"
+              placeholder="********"
               value={formData.password}
               onChange={handleChange}
               required
@@ -239,6 +251,7 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
               type="password"
               id="confirm_password"
               name="confirm_password"
+              placeholder="********"
               value={formData.confirm_password}
               onChange={handleChange}
               required
