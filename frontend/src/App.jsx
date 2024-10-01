@@ -13,8 +13,8 @@ import "./assets/css/custom.css";
 // Import Page Layouts
 import MainLayout from "./layouts/MainLayout";
 
-// Pages - Home Page
-import HomePage from "./pages/HomePage";
+// Pages - Login
+import LoginPage from "./pages/auth/LoginPage";
 
 // App
 function App() {
@@ -22,7 +22,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<LoginPage />} />
       </Route>
     )
   );
