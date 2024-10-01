@@ -13,21 +13,28 @@ import "./assets/css/custom.css";
 // Import Page Layouts
 import MainLayout from "./layouts/MainLayout";
 
-// Pages - Login
+// Pages - Login and Registration
 import LoginPage from "./pages/auth/LoginPage";
+import RegistrationPage from "./pages/auth/RegistrationPage";
 
 // Hooks - Auth
 import useUserAuth from "./hooks/auth/userAuth";
+import useUserRegister from "./hooks/auth/userRegister";
 
 // App
 function App() {
   const { loginUser } = useUserAuth();
+  const { registerUser } = useUserRegister();
 
   // Routes for pages
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<LoginPage userLoginSubmit={loginUser} />} />
+        <Route
+          path="/register"
+          element={<RegistrationPage userRegistrationSubmit={registerUser} />}
+        />
       </Route>
     )
   );
