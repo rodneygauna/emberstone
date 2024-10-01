@@ -65,6 +65,9 @@ const LoginPage = ({ userLoginSubmit }) => {
           <button className="u-pull-left" type="submit">
             Login
           </button>
+          <a href="#" className="u-pull-right vertical-center-text">
+            Forgot Password
+          </a>
         </form>
       </div>
     </div>
