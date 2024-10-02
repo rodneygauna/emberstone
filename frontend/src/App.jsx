@@ -16,6 +16,8 @@ import MainLayout from "./layouts/MainLayout";
 // Pages - Login and Registration
 import LoginPage from "./pages/auth/LoginPage";
 import RegistrationPage from "./pages/auth/RegistrationPage";
+// Pages - Incidents
+import IncidentsLandingPage from "./pages/incidents/IncidentsLandingPage";
 
 // Hooks - Auth
 import useUserAuth from "./hooks/auth/userAuth";
@@ -35,6 +37,7 @@ function App() {
           path="/register"
           element={<RegistrationPage userRegistrationSubmit={registerUser} />}
         />
+        <Route path="/incidents" element={<IncidentsLandingPage />} />
       </Route>
     )
   );
