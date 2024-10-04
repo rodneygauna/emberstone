@@ -1,16 +1,21 @@
 /* LeftNav.css */
-.container {
-  display: flex;
-  height: 100vh;
+.left-nav-container {
+  flex: 0 0 250px;
+  /* Fixed width for the left nav */
+  background-color: #f4f4f4;
+  /* Optional: background color for the left nav */
+  padding: 20px;
+  /* Optional: padding for the left nav */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* Optional: shadow for the left nav */
 }
 
 .left-nav {
-  width: 160px;
+  flex: 0 0 160px;
   background-color: #f4f4f4;
-  /* SkeletonCSS gray background */
   padding: 20px;
   height: 100vh;
-  border-right: 1px solid #ccc;
+  box-shadow: 4px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
