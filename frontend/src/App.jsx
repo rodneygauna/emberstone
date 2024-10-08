@@ -20,12 +20,16 @@ import RegistrationPage from "./pages/auth/RegistrationPage";
 import IncidentsLandingPage from "./pages/incidents/IncidentsLandingPage";
 // Pages - Settings - Department
 import CreateDepartmentPage from "./pages/department/CreateDepartmentPage";
+// Pages - Settings - Stations
+import CreateStationPage from "./pages/stations/CreateStationPage";
 
 // Hooks - Auth
 import useUserAuth from "./hooks/auth/userAuth";
 import useUserRegister from "./hooks/auth/userRegister";
 // Hooks - Settings - Department
 import useDepartmentAdd from "./hooks/department/departmentAdd";
+// Hooks - Settings - Stations
+import useStationAdd from "./hooks/stations/stationAdd";
 
 // App
 function App() {
@@ -34,6 +38,8 @@ function App() {
   const { registerUser } = useUserRegister();
   // Settings - Department hooks
   const { addDepartment } = useDepartmentAdd();
+  // Settings - Stations hooks
+  const { addStation } = useStationAdd();
 
   // Routes for pages
   const router = createBrowserRouter(
@@ -51,6 +57,11 @@ function App() {
         <Route
           path="/settings/department/add"
           element={<CreateDepartmentPage departmentAddSubmit={addDepartment} />}
+        />
+        {/*Routes - Settings - Stations*/}
+        <Route
+          path="/settings/stations/add"
+          element={<CreateStationPage stationAddSubmit={addStation} />}
         />
       </Route>
     )
