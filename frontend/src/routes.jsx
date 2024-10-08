@@ -8,8 +8,12 @@ import RegistrationPage from "./pages/auth/RegistrationPage";
 import IncidentsLandingPage from "./pages/incidents/IncidentsLandingPage";
 // Pages - Settings - Department
 import CreateDepartmentPage from "./pages/department/CreateDepartmentPage";
+import EditDepartmentPage from "./pages/department/EditDepartmentPage";
 // Pages - Settings - Stations
 import CreateStationPage from "./pages/stations/CreateStationPage";
+
+// Loaders
+import { departmentLoader } from "./loaders/Loaders";
 
 const createRoutes = (hooks) => (
   <Route path="/" element={<MainLayout />}>
@@ -27,6 +31,13 @@ const createRoutes = (hooks) => (
       element={
         <CreateDepartmentPage departmentAddSubmit={hooks.addDepartment} />
       }
+    />
+    <Route
+      path="/settings/department/edit/:id"
+      element={
+        <EditDepartmentPage departmentEditSubmit={hooks.editDepartment} />
+      }
+      loader={departmentLoader}
     />
     {/* Routes - Settings - Stations */}
     <Route
