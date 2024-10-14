@@ -3,9 +3,17 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
+import useAuthRedirect from "../../hooks/auth/useAuthRedirect";
+
 import LeftNav from "../../components/global/LeftNav";
 
 const EditDepartmentPage = ({ departmentEditSubmit }) => {
+  // Redirect to login page if user is not logged in
+  useAuthRedirect();
+
+  // Navigate
+  const navigate = useNavigate();
+
   // Loader data
   const department = useLoaderData();
 
@@ -36,9 +44,6 @@ const EditDepartmentPage = ({ departmentEditSubmit }) => {
       [name]: value,
     }));
   };
-
-  // Navigation
-  const navigate = useNavigate();
 
   // Form submit handler
   const submitForm = (e) => {

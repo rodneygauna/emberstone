@@ -3,9 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
+import useAuthRedirect from "../../hooks/auth/useAuthRedirect";
+
 import LeftNav from "../../components/global/LeftNav";
 
 const CreateStationPage = ({ stationAddSubmit }) => {
+  // Redirect to login page if user is not logged in
+  useAuthRedirect();
+
+  // Navigate
+  const navigate = useNavigate();
+
   // Form state
   const [formData, setFormData] = useState({
     name: "",
@@ -31,9 +39,6 @@ const CreateStationPage = ({ stationAddSubmit }) => {
       [name]: value,
     }));
   };
-
-  // Navigation
-  const navigate = useNavigate();
 
   // Form submit handler
   const submitForm = (e) => {
