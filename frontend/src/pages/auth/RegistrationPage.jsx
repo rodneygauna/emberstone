@@ -3,9 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
+import useLandingRedirect from "../../hooks/auth/useLandingRedirect";
+
 import LoginBrandingLeftPanel from "../../components/auth/LoginBrandingLeftPanel";
 
 const RegistrationPage = ({ userRegistrationSubmit }) => {
+  // Redirect to landing page if user is already logged in
+  useLandingRedirect();
+
   // Navigation
   const navigate = useNavigate();
 
