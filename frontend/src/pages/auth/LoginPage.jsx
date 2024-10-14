@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
@@ -6,12 +6,19 @@ import PropTypes from "prop-types";
 import LoginBrandingLeftPanel from "../../components/auth/LoginBrandingLeftPanel";
 
 const LoginPage = ({ userLoginSubmit }) => {
+  // Navigation
+  const navigate = useNavigate();
+
+  // If user is already logged in, redirect to incidents page
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/incidents");
+    }
+  }, [navigate]);
+
   // Form state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  // Navigation
-  const navigate = useNavigate();
 
   // Form submit handler
   const submitForm = (e) => {
