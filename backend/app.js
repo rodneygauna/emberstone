@@ -34,6 +34,9 @@ app.use("/api/v1/stations", stationRoutes);
 // Routes - Incidents (Basic Module)
 import basicModuleRoutes from "./routes/basicModuleRoutes.js";
 app.use("/api/v1/incidents/basicModule", basicModuleRoutes);
+// Routes - Enums
+import enumRoutes from "./routes/enumRoutes.js";
+app.use("/api/v1/enums", enumRoutes);
 
 // Error handling
 app.use(notFound);
