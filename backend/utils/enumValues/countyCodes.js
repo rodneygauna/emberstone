@@ -1,4 +1,4 @@
-const countCodes = [
+const countyCodes = [
   "1001", // AL Autauga
   "1003", // AL Baldwin
   "1005", // AL Barbour
@@ -3226,4 +3226,4 @@ const countCodes = [
   "72153", // PR Yauco
 ];
 
-export default countCodes;
+export default countyCodes;
