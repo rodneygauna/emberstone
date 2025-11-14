@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   FaHome,
   FaChartPie,
@@ -21,10 +22,15 @@ const LeftNav = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    // Clear authentication token from localStorage
-    localStorage.removeItem("userInfo");
+    // Clear authentication data from localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("current_user_id");
+    // Trigger storage event for other components
+    window.dispatchEvent(new Event("storage"));
     // Navigate to login page
-    navigate("/login");
+    navigate("/");
+    // Show success message
+    toast.success("Logged out successfully");
   };
 
   return (
