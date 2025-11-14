@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 import useAuthRedirect from "../../hooks/auth/useAuthRedirect";
+import { editDepartment } from "../../api/departments";
 
 import LeftNav from "../../components/global/LeftNav";
 
-const EditDepartmentPage = ({ departmentEditSubmit }) => {
+const EditDepartmentPage = () => {
   // Redirect to login page if user is not logged in
   useAuthRedirect();
 
@@ -46,7 +46,7 @@ const EditDepartmentPage = ({ departmentEditSubmit }) => {
   };
 
   // Form submit handler
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
     // Filter out empty strings and undefined values
@@ -56,14 +56,13 @@ const EditDepartmentPage = ({ departmentEditSubmit }) => {
       )
     );
 
-    departmentEditSubmit(filteredData)
-      .then(() => {
-        navigate("/department");
-        toast.success("Department updated successfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    try {
+      await editDepartment(filteredData);
+      navigate("/department");
+      toast.success("Department updated successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // HTML form
@@ -276,10 +275,6 @@ const EditDepartmentPage = ({ departmentEditSubmit }) => {
       </div>
     </>
   );
-};
-
-EditDepartmentPage.propTypes = {
-  departmentEditSubmit: PropTypes.func.isRequired,
 };
 
 export default EditDepartmentPage;

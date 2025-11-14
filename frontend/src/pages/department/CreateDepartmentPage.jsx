@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 import useAuthRedirect from "../../hooks/auth/useAuthRedirect";
+import { addDepartment } from "../../api/departments";
 
 import LeftNav from "../../components/global/LeftNav";
 
-const CreateDepartmentPage = ({ departmentAddSubmit }) => {
+const CreateDepartmentPage = () => {
   // Redirect to login page if user is not logged in
   useAuthRedirect();
 
@@ -42,7 +42,7 @@ const CreateDepartmentPage = ({ departmentAddSubmit }) => {
   };
 
   // Form submit handler
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
     // filter out empty strings
@@ -50,14 +50,13 @@ const CreateDepartmentPage = ({ departmentAddSubmit }) => {
       Object.entries(formData).filter(([, value]) => value.trim() !== "")
     );
 
-    departmentAddSubmit(filteredData)
-      .then(() => {
-        navigate("/department");
-        toast.success("Department added successfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    try {
+      await addDepartment(filteredData);
+      navigate("/department");
+      toast.success("Department added successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // HTML form
@@ -284,10 +283,6 @@ const CreateDepartmentPage = ({ departmentAddSubmit }) => {
       </div>
     </>
   );
-};
-
-CreateDepartmentPage.propTypes = {
-  departmentAddSubmit: PropTypes.func.isRequired,
 };
 
 export default CreateDepartmentPage;

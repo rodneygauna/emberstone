@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 import useLandingRedirect from "../../hooks/auth/useLandingRedirect";
+import { loginUser } from "../../api/auth";
 
 import LoginBrandingLeftPanel from "../../components/auth/LoginBrandingLeftPanel";
 
-const LoginPage = ({ userLoginSubmit }) => {
+const LoginPage = () => {
   // Redirect to landing page if user is already logged in
   useLandingRedirect();
 
@@ -26,17 +26,16 @@ const LoginPage = ({ userLoginSubmit }) => {
   const [password, setPassword] = useState("");
 
   // Form submit handler
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    userLoginSubmit({ email, password })
-      .then(() => {
-        navigate("/incidents");
-        toast.success("Logged in successfully");
-        window.dispatchEvent(new Event("storage"));
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    try {
+      await loginUser({ email, password });
+      navigate("/incidents");
+      toast.success("Logged in successfully");
+      window.dispatchEvent(new Event("storage"));
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // HTML structure for the login form
@@ -84,10 +83,6 @@ const LoginPage = ({ userLoginSubmit }) => {
       </div>
     </div>
   );
-};
-
-LoginPage.propTypes = {
-  userLoginSubmit: PropTypes.func.isRequired,
 };
 
 export default LoginPage;

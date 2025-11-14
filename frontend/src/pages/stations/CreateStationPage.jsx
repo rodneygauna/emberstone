@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 import useAuthRedirect from "../../hooks/auth/useAuthRedirect";
+import { addStation } from "../../api/stations";
 
 import LeftNav from "../../components/global/LeftNav";
 
-const CreateStationPage = ({ stationAddSubmit }) => {
+const CreateStationPage = () => {
   // Redirect to login page if user is not logged in
   useAuthRedirect();
 
@@ -41,7 +41,7 @@ const CreateStationPage = ({ stationAddSubmit }) => {
   };
 
   // Form submit handler
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
     // filter out empty strings
@@ -49,14 +49,13 @@ const CreateStationPage = ({ stationAddSubmit }) => {
       Object.entries(formData).filter(([, value]) => value.trim() !== "")
     );
 
-    stationAddSubmit(filteredData)
-      .then(() => {
-        navigate("/stations");
-        toast.success("Station added successfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    try {
+      await addStation(filteredData);
+      navigate("/stations");
+      toast.success("Station added successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // HTML form
@@ -243,10 +242,6 @@ const CreateStationPage = ({ stationAddSubmit }) => {
       </div>
     </>
   );
-};
-
-CreateStationPage.propTypes = {
-  stationAddSubmit: PropTypes.func.isRequired,
 };
 
 export default CreateStationPage;

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 import useLandingRedirect from "../../hooks/auth/useLandingRedirect";
+import { registerUser } from "../../api/auth";
 
 import LoginBrandingLeftPanel from "../../components/auth/LoginBrandingLeftPanel";
 
-const RegistrationPage = ({ userRegistrationSubmit }) => {
+const RegistrationPage = () => {
   // Redirect to landing page if user is already logged in
   useLandingRedirect();
 
@@ -48,21 +48,20 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
   };
 
   // Form submit handler
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     // Validate password
     if (formData.password !== formData.confirm_password) {
       toast.error("Passwords do not match");
       return;
     }
-    userRegistrationSubmit(formData)
-      .then(() => {
-        navigate("/");
-        toast.success("Registered successfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    try {
+      await registerUser(formData);
+      navigate("/");
+      toast.success("Registered successfully");
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   // HTML structure for the registration form
@@ -276,10 +275,6 @@ const RegistrationPage = ({ userRegistrationSubmit }) => {
       </div>
     </div>
   );
-};
-
-RegistrationPage.propTypes = {
-  userRegistrationSubmit: PropTypes.func.isRequired,
 };
 
 export default RegistrationPage;
