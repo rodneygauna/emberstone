@@ -11,16 +11,25 @@
 }
 
 .left-nav {
-  flex: 0 0 160px;
+  width: 200px;
+  flex: 0 0 200px;
   background-color: #f4f4f4;
   padding: 20px;
   height: 100vh;
   box-shadow: 4px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .nav-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .nav-list li {
@@ -39,5 +48,26 @@
 }
 
 .nav-list a svg {
+  margin-right: 10px;
+}
+
+.nav-logout {
+  flex-shrink: 0;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.nav-logout a {
+  text-decoration: none;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.nav-logout a:hover {
+  color: #c9302c;
+  cursor: pointer;
+}
+
+.nav-logout a svg {
   margin-right: 10px;
 }

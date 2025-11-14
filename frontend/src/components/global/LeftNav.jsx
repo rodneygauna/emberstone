@@ -1,5 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaChartPie, FaFireAlt, FaFile, FaCogs } from "react-icons/fa";
+import {
+  FaHome,
+  FaChartPie,
+  FaFireAlt,
+  FaFile,
+  FaCogs,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 import "./LeftNav.css";
 
@@ -10,6 +17,14 @@ const LeftNav = () => {
   const handleNavigation = (path) => (e) => {
     e.preventDefault();
     navigate(path);
+  };
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    // Clear authentication token from localStorage
+    localStorage.removeItem("userInfo");
+    // Navigate to login page
+    navigate("/login");
   };
 
   return (
@@ -46,6 +61,12 @@ const LeftNav = () => {
           </a>
         </li>
       </ul>
+      <div className="nav-logout">
+        <a href="#" onClick={handleLogout}>
+          <FaSignOutAlt />
+          Logout
+        </a>
+      </div>
     </nav>
   );
 };
