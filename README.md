@@ -1,5 +1,7 @@
 # EMBERSTONE
 
+**Starting January 31, 2026, NFIRS is being sunsetted by the U.S. Fire Administration (USFA). For more information, visit the [USFA NFIRS Sunset Announcement](https://www.usfa.fema.gov/nfirs/sunset/) page.**
+
 ![emberstone](/frontend/public/images/logos/emberstone_logo_294x483.png "emberstone")
 
 Emberstone is a free and open source (FOSS) full-stack web application for managing fire and emergency medical incidents.
